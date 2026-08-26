@@ -1,0 +1,20 @@
+{
+  "terminals": [
+    {
+      "terminalId": "Z100000001",
+      "filterIds": [
+        "5e87dd4d29a8b1e8c95c1564614e1ac1",
+        "3b039df7c0dd954c69540c24d641322c",
+        "80d3229a04be71c8f24cebda875a0e72"
+      ]
+    },
+    {
+      "terminalId": "Z200000001",
+      "filterIds": [
+        "457006736d51aee2af7d41cc177634e6",
+        "be6114376f4b9213febde767a4dacf8b",
+        "a11edcba2bec69b96f82f4a2a09d03ee"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1088 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  annotations:
+    vs.axis-dev.io/stage-type: build
+  name: gui-build
+spec:
+  params:
+    - description: 'gui-git-checkout: URL of the GIT repository with https protocol'
+      name: gitCloneUrl
+    - description: 'gui-git-checkout: Git source revision'
+      name: gitRevision
+    - default: "true"
+      description: 'gui-git-checkout: Clean out of the destination directory if it already exists before cloning (default: true)'
+      name: gitRepositoryDeleteExisting
+    - default: ""
+      description: 'gui-git-checkout: Subdirectory in the source directory to clone Git repository (default: "")'
+      name: gitCheckoutSubDirectory
+    - description: 'gui-git-checkout: Git token sercret name'
+      name: gitTokenSecretName
+    - default: Dockerfile
+      description: 'gui-kaniko-build-push: The path to the dockerfile to build (relative to the context) (default: Dockerfile)'
+      name: pathToDockerFile
+    - default: .
+      description: 'gui-kaniko-build-push: The path to the build context (default: .)'
+      name: pathToContext
+    - default: ""
+      description: 'gui-kaniko-build-push: The Short name of the image (default: "")'
+      name: imageShortName
+    - default: latest
+      description: 'gui-kaniko-build-push: The tag name of container (default: latest)'
+      name: imageTag
+    - description: 'gui-kaniko-build-push: The secret name of GCP SA credential'
+      name: gcpServiceAccountSecretName
+    - description: 'gui-kaniko-build-push: Path of the container registry without image name'
+      name: imageRegistryPath
+    - default: ""
+      description: 'gui-kaniko-build-push: Additional parameters for Kaniko (default: "")'
+      name: kanikoOptions
+  results:
+    - description: Full name of the image with its tag
+      name: imageFullNameTag
+      value: $(tasks.build.results.imageFullNameTag)
+    - description: Full name of the image with its SHA digest
+      name: imageFullNameDigest
+      value: $(tasks.build.results.imageFullNameDigest)
+  tasks:
+    - name: checkout
+      params:
+        - name: gitCloneUrl
+          value: $(params.gitCloneUrl)
+        - name: gitRevision
+          value: $(params.gitRevision)
+        - name: gitRepositoryDeleteExisting
+          value: $(params.gitRepositoryDeleteExisting)
+        - name: gitCheckoutSubDirectory
+          value: $(params.gitCheckoutSubDirectory)
+        - name: gitTokenSecretName
+          value: $(params.gitTokenSecretName)
+      taskRef:
+        name: gui-git-checkout
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: build
+      params:
+        - name: pathToDockerFile
+          value: $(params.pathToDockerFile)
+        - name: pathToContext
+          value: $(params.pathToContext)
+        - name: imageShortName
+          value: $(params.imageShortName)
+        - name: imageTag
+          value: $(params.imageTag)
+        - name: gcpServiceAccountSecretName
+          value: $(params.gcpServiceAccountSecretName)
+        - name: imageRegistryPath
+          value: $(params.imageRegistryPath)
+        - name: kanikoOptions
+          value: $(params.kanikoOptions)
+      runAfter:
+        - checkout
+      taskRef:
+        name: gui-kaniko-build-push
+      workspaces:
+        - name: shared
+          workspace: shared
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  annotations:
+    pipeline.qmonus.net/secrets-request: '[{"name":"keystonePassword"}]'
+    vs.axis-dev.io/stage-type: deploy
+  name: gui-deploy
+spec:
+  params:
+    - description: 'gui-git-checkout: URL of the GIT repository with https protocol'
+      name: gitCloneUrl
+    - description: 'gui-git-checkout: Git source revision'
+      name: gitRevision
+    - default: "true"
+      description: 'gui-git-checkout: Clean out of the destination directory if it already exists before cloning (default: true)'
+      name: gitRepositoryDeleteExisting
+    - default: ""
+      description: 'gui-git-checkout: Subdirectory in the source directory to clone Git repository (default: "")'
+      name: gitCheckoutSubDirectory
+    - description: |-
+        gui-git-checkout: Git token sercret name
+        gui-compile-design-pattern: Git token sercret name
+      name: gitTokenSecretName
+    - default: ""
+      description: 'gui-compile-design-pattern: Relative path from source directory (default: "")'
+      name: pathToSource
+    - description: 'gui-compile-design-pattern: Path to QVS Config'
+      name: qvsConfigPath
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: k8sNamespace
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: version
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: casvalImage
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: globalIp
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: redisIp
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: internalPublicEndpoint
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: publicEndpoint
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: certName
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: securityPolicy
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: sslPolicy
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: configPath
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: internalIp
+    - description: 'gui-deployment-worker: Application Name of QmonusVS'
+      name: appName
+    - description: 'gui-deployment-worker: Deployment Name of QmonusVS'
+      name: qvsDeploymentName
+    - default: main
+      description: 'gui-deployment-worker: Used as pulumi-stack name suffix (default: main)'
+      name: deployStateName
+    - default: kubernetes
+      description: 'gui-deployment-worker: Deployment-worker provider type (default: kubernetes)'
+      name: providerType
+    - description: 'gui-deployment-worker: The secret name of Kubeconfig'
+      name: kubeconfigSecretName
+  results:
+    - description: Adapter module
+      name: module
+      value: $(tasks.compile.results.module)
+    - description: Adapter version
+      name: adapterRevision
+      value: $(tasks.compile.results.adapterRevision)
+    - description: List of Adapters used in Assemblyline
+      name: adapters
+      value: $(tasks.compile.results.adapters)
+  tasks:
+    - name: checkout
+      params:
+        - name: gitCloneUrl
+          value: $(params.gitCloneUrl)
+        - name: gitRevision
+          value: $(params.gitRevision)
+        - name: gitRepositoryDeleteExisting
+          value: $(params.gitRepositoryDeleteExisting)
+        - name: gitCheckoutSubDirectory
+          value: $(params.gitCheckoutSubDirectory)
+        - name: gitTokenSecretName
+          value: $(params.gitTokenSecretName)
+      taskRef:
+        name: gui-git-checkout
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: compile
+      params:
+        - name: pathToSource
+          value: $(params.pathToSource)
+        - name: qvsConfigPath
+          value: $(params.qvsConfigPath)
+        - name: gitTokenSecretName
+          value: $(params.gitTokenSecretName)
+        - name: k8sNamespace
+          value: $(params.k8sNamespace)
+        - name: version
+          value: $(params.version)
+        - name: casvalImage
+          value: $(params.casvalImage)
+        - name: globalIp
+          value: $(params.globalIp)
+        - name: redisIp
+          value: $(params.redisIp)
+        - name: internalPublicEndpoint
+          value: $(params.internalPublicEndpoint)
+        - name: publicEndpoint
+          value: $(params.publicEndpoint)
+        - name: certName
+          value: $(params.certName)
+        - name: securityPolicy
+          value: $(params.securityPolicy)
+        - name: sslPolicy
+          value: $(params.sslPolicy)
+        - name: configPath
+          value: $(params.configPath)
+        - name: internalIp
+          value: $(params.internalIp)
+      runAfter:
+        - checkout
+      taskRef:
+        name: gui-compile-design-pattern
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: deploy
+      params:
+        - name: appName
+          value: $(params.appName)
+        - name: qvsDeploymentName
+          value: $(params.qvsDeploymentName)
+        - name: deployStateName
+          value: $(params.deployStateName)
+        - name: providerType
+          value: $(params.providerType)
+        - name: kubeconfigSecretName
+          value: $(params.kubeconfigSecretName)
+      runAfter:
+        - compile
+      taskRef:
+        name: gui-deployment-worker
+      workspaces:
+        - name: shared
+          workspace: shared
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  annotations:
+    pipeline.qmonus.net/secrets-request: '[{"name":"keystonePassword"}]'
+    vs.axis-dev.io/stage-type: deploy-preview
+  name: gui-deploy-preview
+spec:
+  params:
+    - description: 'gui-git-checkout: URL of the GIT repository with https protocol'
+      name: gitCloneUrl
+    - description: 'gui-git-checkout: Git source revision'
+      name: gitRevision
+    - default: "true"
+      description: 'gui-git-checkout: Clean out of the destination directory if it already exists before cloning (default: true)'
+      name: gitRepositoryDeleteExisting
+    - default: ""
+      description: 'gui-git-checkout: Subdirectory in the source directory to clone Git repository (default: "")'
+      name: gitCheckoutSubDirectory
+    - description: |-
+        gui-git-checkout: Git token sercret name
+        gui-compile-design-pattern: Git token sercret name
+      name: gitTokenSecretName
+    - default: ""
+      description: 'gui-compile-design-pattern: Relative path from source directory (default: "")'
+      name: pathToSource
+    - description: 'gui-compile-design-pattern: Path to QVS Config'
+      name: qvsConfigPath
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: k8sNamespace
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: version
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: casvalImage
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: globalIp
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: redisIp
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: internalPublicEndpoint
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: publicEndpoint
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: certName
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: securityPolicy
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: sslPolicy
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: configPath
+    - description: 'gui-compile-design-pattern: Parameter used in QVS Config'
+      name: internalIp
+    - description: |-
+        gui-deployment-worker-preview: Application Name of QmonusVS With Preview
+        gui-deployment-worker: Application Name of QmonusVS
+      name: appName
+    - description: |-
+        gui-deployment-worker-preview: Deployment Name of QmonusVS With Preview
+        gui-deployment-worker: Deployment Name of QmonusVS
+      name: qvsDeploymentName
+    - default: main
+      description: 'gui-deployment-worker-preview: Used as pulumi-stack name suffix With Preview (default: main)'
+      name: deployStateNameWithPreview
+    - default: kubernetes
+      description: 'gui-deployment-worker-preview: Deployment-worker provider type With Preview (default: kubernetes)'
+      name: providerTypeWithPreview
+    - description: |-
+        gui-deployment-worker-preview: The secret name of Kubeconfig
+        gui-deployment-worker: The secret name of Kubeconfig
+      name: kubeconfigSecretName
+    - default: main
+      description: 'gui-deployment-worker: Used as pulumi-stack name suffix (default: main)'
+      name: deployStateName
+    - default: kubernetes
+      description: 'gui-deployment-worker: Deployment-worker provider type (default: kubernetes)'
+      name: providerType
+  results:
+    - description: Adapter module
+      name: module
+      value: $(tasks.compile.results.module)
+    - description: Adapter version
+      name: adapterRevision
+      value: $(tasks.compile.results.adapterRevision)
+    - description: List of Adapters used in Assemblyline
+      name: adapters
+      value: $(tasks.compile.results.adapters)
+  tasks:
+    - name: checkout
+      params:
+        - name: gitCloneUrl
+          value: $(params.gitCloneUrl)
+        - name: gitRevision
+          value: $(params.gitRevision)
+        - name: gitRepositoryDeleteExisting
+          value: $(params.gitRepositoryDeleteExisting)
+        - name: gitCheckoutSubDirectory
+          value: $(params.gitCheckoutSubDirectory)
+        - name: gitTokenSecretName
+          value: $(params.gitTokenSecretName)
+      taskRef:
+        name: gui-git-checkout
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: compile
+      params:
+        - name: pathToSource
+          value: $(params.pathToSource)
+        - name: qvsConfigPath
+          value: $(params.qvsConfigPath)
+        - name: gitTokenSecretName
+          value: $(params.gitTokenSecretName)
+        - name: k8sNamespace
+          value: $(params.k8sNamespace)
+        - name: version
+          value: $(params.version)
+        - name: casvalImage
+          value: $(params.casvalImage)
+        - name: globalIp
+          value: $(params.globalIp)
+        - name: redisIp
+          value: $(params.redisIp)
+        - name: internalPublicEndpoint
+          value: $(params.internalPublicEndpoint)
+        - name: publicEndpoint
+          value: $(params.publicEndpoint)
+        - name: certName
+          value: $(params.certName)
+        - name: securityPolicy
+          value: $(params.securityPolicy)
+        - name: sslPolicy
+          value: $(params.sslPolicy)
+        - name: configPath
+          value: $(params.configPath)
+        - name: internalIp
+          value: $(params.internalIp)
+      runAfter:
+        - checkout
+      taskRef:
+        name: gui-compile-design-pattern
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: deploy-preview
+      params:
+        - name: appName
+          value: $(params.appName)
+        - name: qvsDeploymentName
+          value: $(params.qvsDeploymentName)
+        - name: deployStateNameWithPreview
+          value: $(params.deployStateNameWithPreview)
+        - name: providerTypeWithPreview
+          value: $(params.providerTypeWithPreview)
+        - name: kubeconfigSecretName
+          value: $(params.kubeconfigSecretName)
+      runAfter:
+        - compile
+      taskRef:
+        name: gui-deployment-worker-preview
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: deploy-after-approval
+      params:
+        - name: appName
+          value: $(params.appName)
+        - name: qvsDeploymentName
+          value: $(params.qvsDeploymentName)
+        - name: deployStateName
+          value: $(params.deployStateName)
+        - name: providerType
+          value: $(params.providerType)
+        - name: kubeconfigSecretName
+          value: $(params.kubeconfigSecretName)
+      runAfter:
+        - approval-deploy-preview
+      taskRef:
+        name: gui-deployment-worker
+      workspaces:
+        - name: shared
+          workspace: shared
+    - name: approval-deploy-preview
+      runAfter:
+        - deploy-preview
+      taskRef:
+        name: approval
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gui-git-checkout
+spec:
+  params:
+    - description: URL of the GIT repository with https protocol
+      name: gitCloneUrl
+    - description: Git source revision
+      name: gitRevision
+    - default: "true"
+      description: Clean out of the destination directory if it already exists before cloning
+      name: gitRepositoryDeleteExisting
+    - default: ""
+      description: Subdirectory in the source directory to clone Git repository
+      name: gitCheckoutSubDirectory
+    - description: Git token sercret name
+      name: gitTokenSecretName
+  results:
+    - description: Git commit ID that was checked out by this Task
+      name: gitCommitId
+    - description: The directory that was cloned repository by this Task
+      name: gitCheckoutDirectory
+  steps:
+    - env:
+        - name: GIT_REPO_DELETE_EXISTING
+          value: $(params.gitRepositoryDeleteExisting)
+        - name: GIT_CHECKOUT_DIR
+          value: $(workspaces.shared.path)/source/$(params.gitCheckoutSubDirectory)
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/docker:25.0.5-git
+      name: clean-dir
+      script: |
+        if [ "${GIT_REPO_DELETE_EXISTING}" = "true" ]; then
+          if [ -d "${GIT_CHECKOUT_DIR}" ]; then
+            # Delete non-hidden files and directories
+            rm -rf "${GIT_CHECKOUT_DIR:?}"/*
+            # Delete files and directories starting with . but excluding ..
+            rm -rf "${GIT_CHECKOUT_DIR}"/.[!.]*
+            # Delete files and directories starting with .. plus any other character
+            rm -rf "${GIT_CHECKOUT_DIR}"/..?*
+          fi
+        fi
+    - env:
+        - name: GIT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: $(params.gitTokenSecretName)
+        - name: GIT_CHECKOUT_DIR
+          value: $(workspaces.shared.path)/source/$(params.gitCheckoutSubDirectory)
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/docker:25.0.5-git
+      name: git-clone
+      script: |-
+        set +x
+        GIT_REPOSITORY_URL=`echo $(params.gitCloneUrl) | sed "s/https:\/\///g"`
+        GIT_TOKEN=`echo ${GIT_TOKEN} | sed "s/^ //" | sed "s/^　//" | sed "s/ $//" | sed "s/　$//"`
+        git clone https://${GIT_TOKEN}:x-oauth-basic@${GIT_REPOSITORY_URL} ${GIT_CHECKOUT_DIR}
+        set -x
+    - env:
+        - name: GIT_CHECKOUT_DIR
+          value: $(workspaces.shared.path)/source/$(params.gitCheckoutSubDirectory)
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/docker:25.0.5-git
+      name: git-checkout
+      script: |
+        cd ${GIT_CHECKOUT_DIR}
+        git fetch origin $(params.gitRevision)
+        git checkout $(params.gitRevision)
+        git rev-parse $(params.gitRevision) | tr -d '\n' | tee $(results.gitCommitId.path)
+        echo ""
+        echo -n ${GIT_CHECKOUT_DIR} | tee $(results.gitCheckoutDirectory.path)
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gui-kaniko-build-push
+spec:
+  params:
+    - default: Dockerfile
+      description: The path to the dockerfile to build (relative to the context)
+      name: pathToDockerFile
+    - default: .
+      description: The path to the build context
+      name: pathToContext
+    - default: ""
+      description: The Short name of the image
+      name: imageShortName
+    - default: latest
+      description: The tag name of container
+      name: imageTag
+    - description: The secret name of GCP SA credential
+      name: gcpServiceAccountSecretName
+    - description: Path of the container registry without image name
+      name: imageRegistryPath
+    - default: ""
+      description: Additional parameters for Kaniko
+      name: kanikoOptions
+  results:
+    - description: Full name of the image with its tag
+      name: imageFullNameTag
+    - description: Full name of the image with its SHA digest
+      name: imageFullNameDigest
+  steps:
+    - args:
+        - --dockerfile=$(params.pathToDockerFile)
+        - --destination=$(params.imageRegistryPath)/$(params.imageShortName):$(params.imageTag)
+        - --context=$(params.pathToContext)
+        - --image-name-with-digest-file=/tekton/results/imageFullNameDigest
+      env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /secret/account.json
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/kaniko-project/executor:v1.24.0-debug
+      name: build-and-push
+      resources:
+        limits:
+          cpu: "2"
+          memory: 5Gi
+        requests:
+          cpu: "2"
+          memory: 5Gi
+      script: |-
+        #!/busybox/sh -x
+        set -o nounset
+        set -o xtrace
+        extraparams=$(awk -v arg="$(params.kanikoOptions)" '
+          BEGIN {
+            n=split(arg, params,  "," )
+            for (i=1; i<=n; i++) {
+              v = params[i]
+              gsub("^ +", "", v); gsub(" +$", "", v);
+              prefix = substr(v, 1, 2)
+              if (prefix == "--") {
+                print(v)
+              }
+            }
+          }'
+        )
+        /kaniko/executor $@ ${extraparams}
+      volumeMounts:
+        - mountPath: /secret
+          name: user-gcp-secret
+      workingDir: $(workspaces.shared.path)/source/
+    - image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/bash:5.3.9
+      name: dump-result
+      script: |-
+        #!/usr/bin/env bash
+        echo -n $(params.imageRegistryPath)/$(params.imageShortName):$(params.imageTag) | tee /tekton/results/imageFullNameTag
+  volumes:
+    - name: user-gcp-secret
+      secret:
+        items:
+          - key: serviceaccount
+            path: account.json
+        secretName: $(params.gcpServiceAccountSecretName)
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gui-compile-design-pattern
+spec:
+  params:
+    - default: ""
+      description: Relative path from source directory
+      name: pathToSource
+    - description: Path to QVS Config
+      name: qvsConfigPath
+    - description: Git token sercret name
+      name: gitTokenSecretName
+    - description: Parameter used in QVS Config
+      name: k8sNamespace
+    - description: Parameter used in QVS Config
+      name: version
+    - description: Parameter used in QVS Config
+      name: casvalImage
+    - description: Parameter used in QVS Config
+      name: globalIp
+    - description: Parameter used in QVS Config
+      name: redisIp
+    - description: Parameter used in QVS Config
+      name: internalPublicEndpoint
+    - description: Parameter used in QVS Config
+      name: publicEndpoint
+    - description: Parameter used in QVS Config
+      name: certName
+    - description: Parameter used in QVS Config
+      name: securityPolicy
+    - description: Parameter used in QVS Config
+      name: sslPolicy
+    - description: Parameter used in QVS Config
+      name: configPath
+    - description: Parameter used in QVS Config
+      name: internalIp
+  results:
+    - description: Adapter module
+      name: module
+    - description: Adapter version
+      name: adapterRevision
+    - description: List of Adapters used in Assemblyline
+      name: adapters
+  steps:
+    - image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/linuxserver/yq:3.2.3
+      name: display-adapter-info
+      onError: continue
+      script: |-
+        #!/usr/bin/env bash
+
+        # Set Default Pipeline Results
+        echo -n "" > /tekton/results/module
+        echo -n "" > /tekton/results/adapterRevision
+        echo -n "" > /tekton/results/adapters
+
+        # Extract module name
+        module=$(yq -r '.modules[0].name' $(params.qvsConfigPath))
+        echo "module: $module"
+        echo -n $module > /tekton/results/module
+
+        # Extract adapter_revision
+        module_revision=$(yq -r '.modules[0].revision' $(params.qvsConfigPath))
+        module_local_path=$(yq -r '.modules[0].local.path' $(params.qvsConfigPath))
+        module_remote_revision=$(yq -r '.modules[0].remote.revision' $(params.qvsConfigPath))
+        			
+        if [ "$module_revision" == "null" ]; then
+        	case "$module_local_path" in
+        		null)
+        			# Extract adapter_revision when using remote/repo style module
+        			adapter_revision=$module_remote_revision
+        			;;
+        		*)
+        			# Extract adapter_revision when using local module
+        			qvsctl_mod_path="$(dirname $(params.qvsConfigPath))/${module_local_path}/qvsctl.mod"
+        			if [ -r "$qvsctl_mod_path" ]; then
+        				IFS='@' read -ra separated_list < "$qvsctl_mod_path"
+        				adapter_revision=${separated_list[1]}
+        			fi
+        			;;
+        	esac
+        else
+        	# Extract adapter_revision when using remote module
+        	adapter_revision=$module_revision
+        fi
+        echo "adapter_revision: $adapter_revision"
+        echo -n $adapter_revision > /tekton/results/adapterRevision
+
+        # Extract design patterns as a comma-separated line
+        adapters=$(yq -r '.designPatterns[].pattern' $(params.qvsConfigPath) | tr '
+        ' ',' | sed 's/,$//')
+        echo "adapters: $adapters"
+        echo -n $adapters > /tekton/results/adapters
+      workingDir: $(workspaces.shared.path)/source
+    - env:
+        - name: VS_SECRETS
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['pipeline.qmonus.net/secrets']
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/python:3.14.2
+      name: make-params-json
+      script: |-
+        #!/usr/bin/env python3
+        import json
+        import os
+        params = []
+        params.append({'name': 'k8sNamespace', 'value': '''$(params.k8sNamespace)'''})
+        params.append({'name': 'version', 'value': '''$(params.version)'''})
+        params.append({'name': 'casvalImage', 'value': '''$(params.casvalImage)'''})
+        params.append({'name': 'globalIp', 'value': '''$(params.globalIp)'''})
+        params.append({'name': 'redisIp', 'value': '''$(params.redisIp)'''})
+        params.append({'name': 'internalPublicEndpoint', 'value': '''$(params.internalPublicEndpoint)'''})
+        params.append({'name': 'publicEndpoint', 'value': '''$(params.publicEndpoint)'''})
+        params.append({'name': 'certName', 'value': '''$(params.certName)'''})
+        params.append({'name': 'securityPolicy', 'value': '''$(params.securityPolicy)'''})
+        params.append({'name': 'sslPolicy', 'value': '''$(params.sslPolicy)'''})
+        params.append({'name': 'configPath', 'value': '''$(params.configPath)'''})
+        params.append({'name': 'internalIp', 'value': '''$(params.internalIp)'''})
+        vs_secrets = os.environ.get('VS_SECRETS')
+        secrets = json.loads(vs_secrets) if vs_secrets else []
+        print(json.dumps({'params': params, 'secrets': secrets}, indent=4))
+        open('$(workspaces.shared.path)/params.json', 'w').write(json.dumps({'params': params, 'secrets': secrets}, indent=4))
+      workingDir: $(workspaces.shared.path)/source/$(params.pathToSource)
+    - args:
+        - manifest
+        - compile
+        - -o
+        - $(workspaces.shared.path)/manifests/manifests-setup.yml
+        - -c
+        - $(params.qvsConfigPath)
+        - -p
+        - $(workspaces.shared.path)/params.json
+        - --setup
+      env:
+        - name: GIT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: $(params.gitTokenSecretName)
+        - name: TMPDIR
+          value: /tmpdir
+        - name: QVSCTL_SKIP_UPDATE_CHECK
+          value: "true"
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream/qvsctl:v0.19.4
+      name: compile-setup
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      volumeMounts:
+        - mountPath: /tmpdir
+          name: tmpdir
+      workingDir: $(workspaces.shared.path)/source/$(params.pathToSource)
+    - args:
+        - manifest
+        - compile
+        - -o
+        - $(workspaces.shared.path)/manifests/manifests-app.yml
+        - -c
+        - $(params.qvsConfigPath)
+        - -p
+        - $(workspaces.shared.path)/params.json
+      env:
+        - name: GIT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: $(params.gitTokenSecretName)
+        - name: TMPDIR
+          value: /tmpdir
+        - name: QVSCTL_SKIP_UPDATE_CHECK
+          value: "true"
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream/qvsctl:v0.19.4
+      name: compile-app
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: "1"
+          memory: 512Mi
+      volumeMounts:
+        - mountPath: /tmpdir
+          name: tmpdir
+      workingDir: $(workspaces.shared.path)/source/$(params.pathToSource)
+    - image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/bash:5.3.9
+      name: check-manifest
+      script: |-
+        #!/usr/bin/env bash
+        if [ -e $(workspaces.shared.path)/manifests/manifests-setup.yml ]; then
+          echo '[setup]\n'
+          cat $(workspaces.shared.path)/manifests/manifests-setup.yml
+        fi
+        echo
+        if [ -e $(workspaces.shared.path)/manifests/manifests-app.yml ]; then
+          echo '[app]\n'
+          cat $(workspaces.shared.path)/manifests/manifests-app.yml
+        fi
+  volumes:
+    - emptyDir: {}
+      name: tmpdir
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gui-deployment-worker
+spec:
+  params:
+    - description: Application Name of QmonusVS
+      name: appName
+    - description: Deployment Name of QmonusVS
+      name: qvsDeploymentName
+    - default: main
+      description: Used as pulumi-stack name suffix
+      name: deployStateName
+    - default: kubernetes
+      description: Deployment-worker provider type
+      name: providerType
+    - description: The secret name of Kubeconfig
+      name: kubeconfigSecretName
+  steps:
+    - env:
+        - name: VS_API_ENDPOINT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['vs.axis-dev.io/api-endpoint']
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/google/cloud-sdk:365.0.1-slim@sha256:2575543b18e06671eac29aae28741128acfd0e4376257f3f1246d97d00059dcb
+      name: download-state
+      script: |
+        #!/usr/bin/env bash
+        set -o nounset
+        set -o xtrace
+        set -o pipefail
+
+        mkdir -p '$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateName)'
+        cd '$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateName)'
+        if [[ -d .pulumi ]]; then
+          exit 0
+        fi
+        SIGNED_URL=`curl -X POST -fs ${VS_API_ENDPOINT}'/apis/v1/projects/$(context.taskRun.namespace)/applications/$(params.appName)/deployments/$(params.qvsDeploymentName)/deploy-state/$(params.deployStateName)/action/signed-url-to-get?taskrun_name=$(context.taskRun.name)&taskrun_uid=$(context.taskRun.uid)' | xargs`
+        mkdir -p /tekton/home/pulumi/old
+        STATUS=`curl -fs ${SIGNED_URL} -o /tekton/home/pulumi/old/state.tgz -w '%{http_code}\n'`
+        if [ ! -z $STATUS ] && [ $STATUS -eq 404 ]; then
+          echo "No state file is provided. Create a new state."
+          exit 0
+        elif [ -z $STATUS ] || [ $STATUS -ne 200 ]; then
+          echo "Error: failed to download state file."
+          exit 1
+        fi
+        if [ -f /tekton/home/pulumi/old/state.tgz ]; then
+          tar xzvf /tekton/home/pulumi/old/state.tgz
+        else
+          echo "Error: status_code is 200 but no state file is provided."
+          exit 1
+        fi
+      workingDir: /opt
+    - args:
+        - --design-pattern=$(params.providerType)
+        - --solarray-env=local
+        - --namespace=$(context.taskRun.namespace)-$(params.appName)-$(params.qvsDeploymentName)
+        - --app-version=$(params.deployStateName)
+        - --disabled-stack-validation
+        - --local-state-path=$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateName)
+      env:
+        - name: KUBECONFIG
+          value: /secret/kubeconfig
+        - name: CONFIG_PATH
+          value: $(workspaces.shared.path)/manifests
+        - name: GOMEMLIMIT
+          value: 700MiB
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream/deployment-worker:7cffe3722aec08ae44a71f322a4074b6b2478267
+      name: deploy
+      onError: continue
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: "1"
+          memory: 1Gi
+      volumeMounts:
+        - mountPath: /secret
+          name: user-kubeconfig
+          readOnly: true
+      workingDir: /opt
+    - env:
+        - name: VS_API_ENDPOINT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['vs.axis-dev.io/api-endpoint']
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/google/cloud-sdk:365.0.1-slim@sha256:2575543b18e06671eac29aae28741128acfd0e4376257f3f1246d97d00059dcb
+      name: upload-state
+      script: |
+        #!/usr/bin/env bash
+        set -o nounset
+        set -o xtrace
+        set -o pipefail
+
+        cd '$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateName)'
+
+        DEPLOYMENT_STACK_NAME=$(context.taskRun.namespace)-$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateName)
+
+        cleanupFiles() {
+          local dir=$1
+          if [[ "$dir" == *"history"* ]]; then
+            for file_type in "checkpoint" "history"; do
+              local latest_file=$(ls -t "$dir"/"$DEPLOYMENT_STACK_NAME"*.$file_type.json 2>/dev/null | head -n 1)
+              if [ -z "$latest_file" ]; then
+                echo "No $file_type files found in $dir."
+                continue
+              fi
+        	  local sequence=$(basename "$latest_file" | sed -E "s/^([^-]+-)+([0-9]+)\.$file_type\.json$/\2/")
+        	  echo "Latest $file_type file: $(basename "$latest_file")"
+              for old_file in "$dir"/"$DEPLOYMENT_STACK_NAME"*.$file_type.json; do
+                if [[ -f "$old_file" && "$old_file" != "$latest_file" ]]; then
+                  echo "delete $file_type file: $(basename "$old_file")"
+                  rm "$old_file"
+                fi
+              done
+              for attrs_file in "$dir"/"$DEPLOYMENT_STACK_NAME"*.$file_type.json.attrs; do
+                if [[ -f "$attrs_file" && "$attrs_file" != *"$sequence"* ]]; then
+                  echo "delete $file_type attrs file: $(basename "$attrs_file")"
+                  rm "$attrs_file"
+                fi
+              done
+            done
+          else
+            local latest_file=$(ls -t "$dir"/"$DEPLOYMENT_STACK_NAME"*.json 2>/dev/null | head -n 1)
+        	if [ -z "$latest_file" ]; then
+        	  echo "No files found in $dir."
+        	  return 1
+        	fi
+        	local sequence=$(basename "$latest_file" | sed -E "s/^([^-]+-)+([0-9]+)\..*\.json$/\2/")
+            if [ -z "$sequence" ]; then
+              echo "Failed to extract sequence from file: $latest_file"
+        	  return 1
+            fi
+            echo "Sequence to retain: $sequence"
+        	for file in "$dir"/*; do
+              if [[ -f "$file" && "$file" != *"$sequence"* ]]; then
+                echo "delete $file"
+                rm "$file"
+              fi
+            done
+          fi
+          echo "Cleanup completed for $dir."
+        }
+
+        cleanupFiles ".pulumi/history/local/$DEPLOYMENT_STACK_NAME"
+        cleanupFiles ".pulumi/backups/local/$DEPLOYMENT_STACK_NAME"
+
+        mkdir -p /tekton/home/pulumi/new
+        tar czvf /tekton/home/pulumi/new/state.tgz .pulumi
+        for i in $(seq 1 5); do
+          SIGNED_URL=`curl -X POST -fs ${VS_API_ENDPOINT}'/apis/v1/projects/$(context.taskRun.namespace)/applications/$(params.appName)/deployments/$(params.qvsDeploymentName)/deploy-state/$(params.deployStateName)/action/signed-url-to-put?taskrun_name=$(context.taskRun.name)&taskrun_uid=$(context.taskRun.uid)' | xargs`
+          STATUS=`curl -X PUT -fs ${SIGNED_URL} --upload-file /tekton/home/pulumi/new/state.tgz -w '%{http_code}\n'`
+          if [ ! -z $STATUS ] && [ $STATUS -eq 200 ]; then
+            break
+          fi
+          if [ $i -eq 5 ]; then
+            echo "Error: failed to upload new state file."
+            exit 1
+          fi
+          sleep 10
+        done
+        if [ $(cat $(steps.step-deploy.exitCode.path)) -ne 0 ]; then
+          echo "Error: new state file is uploaded, but step-deploy is failed."
+          exit 1
+        fi
+      workingDir: /opt
+  volumes:
+    - name: user-kubeconfig
+      secret:
+        items:
+          - key: kubeconfig
+            path: kubeconfig
+        secretName: $(params.kubeconfigSecretName)
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gui-deployment-worker-preview
+spec:
+  params:
+    - description: Application Name of QmonusVS With Preview
+      name: appName
+    - description: Deployment Name of QmonusVS With Preview
+      name: qvsDeploymentName
+    - default: main
+      description: Used as pulumi-stack name suffix With Preview
+      name: deployStateNameWithPreview
+    - default: kubernetes
+      description: Deployment-worker provider type With Preview
+      name: providerTypeWithPreview
+    - description: The secret name of Kubeconfig
+      name: kubeconfigSecretName
+  steps:
+    - env:
+        - name: VS_API_ENDPOINT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['vs.axis-dev.io/api-endpoint']
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream-public-image-cache/google/cloud-sdk:365.0.1-slim@sha256:2575543b18e06671eac29aae28741128acfd0e4376257f3f1246d97d00059dcb
+      name: download-state
+      script: |
+        #!/usr/bin/env bash
+        set -o nounset
+        set -o xtrace
+        set -o pipefail
+
+        mkdir -p '$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateNameWithPreview)'
+        cd '$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateNameWithPreview)'
+        if [[ -d .pulumi ]]; then
+          exit 0
+        fi
+        SIGNED_URL=`curl -X POST -fs ${VS_API_ENDPOINT}'/apis/v1/projects/$(context.taskRun.namespace)/applications/$(params.appName)/deployments/$(params.qvsDeploymentName)/deploy-state/$(params.deployStateNameWithPreview)/action/signed-url-to-get?taskrun_name=$(context.taskRun.name)&taskrun_uid=$(context.taskRun.uid)' | xargs`
+        mkdir -p /tekton/home/pulumi/old
+        STATUS=`curl -fs ${SIGNED_URL} -o /tekton/home/pulumi/old/state.tgz -w '%{http_code}\n'`
+        if [ ! -z $STATUS ] && [ $STATUS -eq 404 ]; then
+          echo "No state file is provided. Create a new state."
+          exit 0
+        elif [ -z $STATUS ] || [ $STATUS -ne 200 ]; then
+          echo "Error: failed to download state file."
+          exit 1
+        fi
+        if [ -f /tekton/home/pulumi/old/state.tgz ]; then
+          tar xzvf /tekton/home/pulumi/old/state.tgz
+        else
+          echo "Error: status_code is 200 but no state file is provided."
+          exit 1
+        fi
+      workingDir: /opt
+    - args:
+        - --design-pattern=$(params.providerTypeWithPreview)
+        - --solarray-env=local
+        - --namespace=$(context.taskRun.namespace)-$(params.appName)-$(params.qvsDeploymentName)
+        - --app-version=$(params.deployStateNameWithPreview)
+        - --disabled-stack-validation
+        - --local-state-path=$(workspaces.shared.path)/pulumi/$(params.appName)-$(params.qvsDeploymentName)-$(params.deployStateNameWithPreview)
+        - --preview
+      env:
+        - name: KUBECONFIG
+          value: /secret/kubeconfig
+        - name: CONFIG_PATH
+          value: $(workspaces.shared.path)/manifests
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream/deployment-worker:7cffe3722aec08ae44a71f322a4074b6b2478267
+      name: deploy-preview
+      onError: continue
+      resources:
+        limits:
+          cpu: "1"
+          memory: 1Gi
+        requests:
+          cpu: "1"
+          memory: 1Gi
+      volumeMounts:
+        - mountPath: /secret
+          name: user-kubeconfig
+          readOnly: true
+      workingDir: /opt
+  volumes:
+    - name: user-kubeconfig
+      secret:
+        items:
+          - key: kubeconfig
+            path: kubeconfig
+        secretName: $(params.kubeconfigSecretName)
+  workspaces:
+    - name: shared
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: approval
+spec:
+  steps:
+    - args:
+        - monitor
+        - --url
+        - $(VS_API_ENDPOINT)/apis/v1/projects/{{.Project}}/taskruns/{{.TaskRun}}/confirmations/{{.Code}}
+        - --project
+        - $(context.taskRun.namespace)
+        - --taskrun
+        - $(context.taskRun.name)
+      env:
+        - name: VS_API_ENDPOINT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['vs.axis-dev.io/api-endpoint']
+      image: asia-northeast1-docker.pkg.dev/solarray-pro-83383605/valuestream/vs-confirmation:d619ca5bdf036c2065ebb957b39dc0d152bb5a75
+      name: approval

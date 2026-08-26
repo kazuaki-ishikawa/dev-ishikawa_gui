@@ -1,0 +1,149 @@
+{
+  "terminal": {
+    "customerNote": "端末編集テスト",
+    "breakOut": ["windowsUpdate", "googleMeet", "microsoft365NotTeams", "microsoft365"],
+    "interceptDnsServers": ["3.3.3.3", "2.2.2.2", "1.1.1.1"],
+    "installationPostalCode": "100-0004",
+    "installationAddress": "東京都千代田区大手町",
+    "guarantee": {
+      "guaranteeId": "Z000000003",
+      "vpn": {
+        "act": {
+          "connectedIpv4Prefix": "1.1.1.1/30"
+        },
+        "sby": {
+          "connectedIpv4Prefix": "2.2.2.2/30"
+        }
+      }
+    },
+    "ipoeId": "Z123456789",
+    "vpnId": "Z123456789",
+    "loopbackIpv4Address": "123.123.123.123",
+    "lanType": "switchPort",
+    "lans": [
+      {
+        "type": "primary",
+        "ipv4Address": "1.1.1.1",
+        "ipv4PrefixLength": "23",
+        "vpnRouting": false,
+        "vpnNats": [
+          { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+          { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+        ],
+        "lanInFilters": {
+          "defaultPolicy": "discard",
+          "accessControlList": [
+            {
+              "action": "accept",
+              "protocol": "tcp",
+              "sourcePort": "22",
+              "destinationPort": "443",
+              "sourceIpv4Prefix": "192.168.1.0/24",
+              "destinationIpv4Prefix": "10.0.0.0/8"
+            }
+          ]
+        }
+      },
+      {
+        "type": "secondary",
+        "ipv4Address": "1.1.1.122",
+        "ipv4PrefixLength": "12",
+        "vpnRouting": false
+      }
+    ],
+    "lanStaticRoutes": [
+      {
+        "destinationIpv4Prefix": "12.12.12.12/12",
+        "nexthopIpv4Address": "13.13.13.13",
+        "vpnRouting": true,
+        "vpnNats": [
+          {
+            "type": "partialNat",
+            "innerIpv4Prefix": "2.2.2.2/1",
+            "outerIpv4Prefix": "2.2.2.2/24"
+          }
+        ]
+      }
+    ],
+    "wanStaticRoutes": [
+      {
+        "destinationIpv4Prefix": "5.5.5.5/5",
+        "nexthopNetwork": "vpn"
+      },
+      {
+        "destinationIpv4Prefix": "52.52.52.52/15",
+        "nexthopNetwork": "internet"
+      }
+    ],
+    "defaultGateway": {
+      "nexthopNetwork": "vpn"
+    },
+    "vpnInFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "any",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "1.1.1.1/1",
+          "destinationIpv4Prefix": "1.1.1.1/24",
+          "action": "discard"
+        }
+      ]
+    },
+    "vpnOutFilters": {
+      "defaultPolicy": "discard",
+      "accessControlList": [
+        {
+          "protocol": "tcp",
+          "sourcePort": "80",
+          "destinationPort": "100",
+          "sourceIpv4Prefix": "2.2.2.2/1",
+          "destinationIpv4Prefix": "2.2.2.2/24",
+          "action": "accept"
+        }
+      ]
+    },
+    "inet4OutFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "icmp",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "3.3.3.3/1",
+          "destinationIpv4Prefix": "3.3.3.3/2",
+          "action": "accept"
+        }
+      ]
+    },
+    "threatDetection": {
+      "threatDetectionPlan": "3months"
+    },
+    "flowCollector": {
+      "flowCollectorPlan": "3months"
+    },
+    "behaviorDetection": {
+      "behaviorDetectionPlan": "subscription"
+    }
+  },
+  "dhcpServer": {
+    "ipv4AddressRanges": [
+      { "start": "1.1.1.1", "end": "2.2.2.2" },
+      { "start": "3.3.3.3", "end": "4.4.4.4" }
+    ],
+    "domain": "example.com",
+    "primaryDnsServer": "3.3.3.3",
+    "secondaryDnsServer": "4.4.4.4",
+    "primaryWinsServer": "5.5.5.5",
+    "secondaryWinsServer": "6.6.6.6"
+  },
+  "dhcpRelayServers": [{ "serverIpv4Address": "7.7.7.7" }, { "serverIpv4Address": "8.8.8.8" }],
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "5GB",
+    "trafficReportFlowAnalyzerAlert": true
+  },
+  "mobile": {
+    "rat": "lte"
+  }
+}

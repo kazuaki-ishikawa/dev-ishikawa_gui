@@ -1,0 +1,22 @@
+{
+  "rat": "lte",
+  "japanCorporateNumber": "123456789012",
+  "contractIdentificationDocumentType": "certificateOfPresentMatters",
+  "contractIdentificationDocumentId": "",
+  "picName": "１２３　１２３",
+  "picNameKana": "１２　１２",
+  "picPostalCode": "100-0001",
+  "picAddress": "東京都千代田区千代田",
+  "picAddressKana": "トウキョウトチヨダクチヨダ",
+  "picPhoneNumber": "03-1234-1234",
+  "picDateOfBirth": "1990-02-05",
+  "picEmploymentDocumentType": "employeeIdCard",
+  "picEmployeeCode": "12345",
+  "picEmploymentDocumentId": "",
+  "networkPinCode": "1234",
+  "customerReceiptRequired": true,
+  "callDetailDesired": true,
+  "callDetailBreakdownSetting": "showAll",
+  "callDetailDestinationNumberSetting": "hideLast4Digits",
+  "jpkiRequestId": "jpki-req-123456"
+}

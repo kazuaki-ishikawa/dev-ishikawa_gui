@@ -1,0 +1,35 @@
+{
+  "fieldSurvey": {
+    "type": "fieldSurvey",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "admissionApplicationInfo": "noApplication",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス１",
+    "attendanceDepartmentName": "プラットフォームサービス本部１",
+    "attendancePersonName": "山田　太郎１",
+    "attendancePersonNameKana": "ヤマダ　タロウ　イチ",
+    "attendancePhoneNumber": "03-0000-0000"
+  },
+  "construction": {
+    "type": "construction",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "admissionApplicationInfo": "companyInfo",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス２",
+    "attendanceDepartmentName": "プラットフォームサービス本部２",
+    "attendancePersonName": "山田　太郎２",
+    "attendancePersonNameKana": "ヤマダ　タロウ　ニ",
+    "attendancePhoneNumber": "03-1111-1111"
+  },
+  "removal": {
+    "type": "removal",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "admissionApplicationInfo": "companyInfoAndWorkCandidateName",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス３",
+    "attendanceDepartmentName": "プラットフォームサービス本部３",
+    "attendancePersonName": "山田　太郎３",
+    "attendancePersonNameKana": "ヤマダ　タロウ　サン",
+    "attendancePhoneNumber": "03-1234-5678"
+  }
+}

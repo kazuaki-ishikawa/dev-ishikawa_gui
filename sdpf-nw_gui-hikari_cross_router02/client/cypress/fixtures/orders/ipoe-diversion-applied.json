@@ -1,0 +1,45 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "resourceType": "ipoe",
+  "requestType": "update",
+  "orderStatus": "applied",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "diversionNumber": "E1234567890",
+    "contractInfo": {
+      "contractType": "individual",
+      "contractorName": "山田　太郎",
+      "contractorNameKana": "ヤマダ　タロウ"
+    },
+    "diversionDate": "2025-12-01"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "ipoeId": "Z000000001",
+      "postalCode": "100-0000",
+      "address": "東京都港区港南１丁目９−１",
+      "ref": "/v1/ipoe/hikari-collabo/Z000000001",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "ipv4Address": "192.0.2.1/32",
+      "resourceStatus": "active",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "completed",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "光コラボ回線1",
+      "fletsOrderType": "diversion",
+      "fletsType": "family200M",
+      "ipoeType": "normal",
+      "appControl": false,
+      "installationPlaceCode": "212dd263522c4e73887212edfc7273e6",
+      "onSiteRepairOption": true
+    },
+    "remarks": null
+  }
+}

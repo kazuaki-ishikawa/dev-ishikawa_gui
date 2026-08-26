@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+@forward 'vuetify/settings' with (
+  $body-font-family: (
+    'Noto Sans JP',
+    sans-serif,
+  ),
+  // v-switch
+  $switch-inset-disabled-unselected-thumb-color: #fff,
+  $switch-inset-thumb-off-height: 24px,
+  $switch-inset-thumb-off-scale: 1,
+  $switch-inset-thumb-pressed-scale: math.div(7, 6),
+  $switch-thumb-width: 12px,
+  // border
+  $border-radius-root: 6px,
+  // breadcrumbs
+  $breadcrumbs-item-disabled-opacity: 1,
+  // card
+  $card-title-font-weight: 700,
+  // label
+  $label-font-size: 0.85rem,
+  // table
+  $data-table-header-sort-icon-default-opacity: 1,
+  $data-table-header-sort-icon-margin-inline: 5px
+);

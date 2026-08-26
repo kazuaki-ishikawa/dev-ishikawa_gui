@@ -1,0 +1,15 @@
+{
+  "shippingAddresses": [
+    {
+      "packageRecipient": "東京　太郎",
+      "shippingPostalCode": "1000001",
+      "shippingPrefecture": "東京都",
+      "shippingCity": "千代田区",
+      "shippingCityAdditionalInfo": "千代田",
+      "shippingAddressBlock": "２丁目",
+      "shippingAddressNumber": "３番１号",
+      "shippingBuilding": "大手町プレイスウエストタワー",
+      "phoneNumber": "0312345678"
+    }
+  ]
+}

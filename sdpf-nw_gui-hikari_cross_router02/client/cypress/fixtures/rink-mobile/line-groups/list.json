@@ -1,0 +1,28 @@
+{
+  "lineGroupList": [
+    {
+      "lineGroupId": "1",
+      "lineGroupName": "シェアグループ１",
+      "lineCount": 1,
+      "lineGroupLimit": 125000000
+    },
+    {
+      "lineGroupId": "2",
+      "lineGroupName": "シェアグループ２",
+      "lineCount": 2,
+      "lineGroupLimit": 250000000
+    },
+    {
+      "lineGroupId": "3",
+      "lineGroupName": "シェアグループ３",
+      "lineCount": 3,
+      "lineGroupLimit": 375000000
+    },
+    {
+      "lineGroupId": "4",
+      "lineGroupName": "シェアグループ４",
+      "lineCount": 0,
+      "lineGroupLimit": 0
+    }
+  ]
+}

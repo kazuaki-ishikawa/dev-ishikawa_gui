@@ -1,0 +1,5 @@
+id,mobile_access_id,calling_number,price_course_name,price_course_code
+1,Z000000001,02011111111,planC,
+2,Z000000001,02022222222,planC,
+3,Z000000001,02033333333,planB,
+4,Z000000001,02099999999,planA,

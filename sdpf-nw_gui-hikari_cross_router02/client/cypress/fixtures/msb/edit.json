@@ -1,0 +1,11 @@
+{
+  "emailAddress": "updated@example.com",
+  "customerSpecialNote": "更新後のメモ",
+  "licensePacks": {
+    "1licensePacks": 0,
+    "10licensePacks": 0,
+    "100licensePacks": 1,
+    "1000licensePacks": 0,
+    "10000licensePacks": 1
+  }
+}

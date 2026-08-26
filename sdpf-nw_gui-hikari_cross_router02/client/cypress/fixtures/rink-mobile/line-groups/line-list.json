@@ -1,0 +1,40 @@
+{
+  "total": 3,
+  "lineList": [
+    {
+      "lineNumber": "0000000001",
+      "lineStatus": "active",
+      "plan": "dataPlan",
+      "planName": "Data Plan (1GB)",
+      "sms": false,
+      "accessType": "LTE",
+      "isLocked": false,
+      "lineGroupId": "1",
+      "authenticationId": "",
+      "actIpAddress": "1.1.1.1/32"
+    },
+    {
+      "lineNumber": "0000000002",
+      "lineStatus": "active",
+      "plan": "dataPlan",
+      "planName": "Data Plan (1GB)",
+      "sms": false,
+      "accessType": "LTE",
+      "isLocked": false,
+      "authenticationId": "",
+      "actIpAddress": "2.2.2.2/32"
+    },
+    {
+      "lineNumber": "1000000001",
+      "lineStatus": "active",
+      "plan": "zero",
+      "planName": "Zero Plan",
+      "sms": false,
+      "accessType": "LTE",
+      "isLocked": false,
+      "lineGroupId": "1",
+      "authenticationId": "",
+      "actIpAddress": "3.3.3.3/32"
+    }
+  ]
+}

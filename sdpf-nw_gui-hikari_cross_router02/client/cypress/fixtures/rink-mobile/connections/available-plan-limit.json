@@ -1,0 +1,41 @@
+{
+  "planList": [
+    {
+      "planName": "planA",
+      "planLimitAlias": "default_dataPlan_A",
+      "availableAccessType": ["5GNSA"]
+    },
+    {
+      "planName": "planB",
+      "planLimitAlias": "default_dataPlan_B",
+      "availableAccessType": ["LTE"]
+    },
+    {
+      "planName": "planC",
+      "planLimitAlias": "default_dataPlan_C",
+      "availableAccessType": ["LTE", "5GNSA"]
+    }
+  ],
+  "deviceList": [
+    {
+      "deviceName": "device1",
+      "deviceNameAlias": "device_name_noKitting_noInsurance_alias_1"
+    },
+    {
+      "deviceName": "device2",
+      "deviceNameAlias": "device_name_noKitting_noInsurance_alias_2"
+    },
+    {
+      "deviceName": "device3(キッティング付)",
+      "deviceNameAlias": "device_name_kitting_noInsurance_alias_3"
+    },
+    {
+      "deviceName": "device4(あんしん保証付き)",
+      "deviceNameAlias": "device_name_noKitting_insurance_alias_4"
+    },
+    {
+      "deviceName": "device5(キッティング・あんしん保証付き)",
+      "deviceNameAlias": "device_name_kitting_insurance_alias_5"
+    }
+  ]
+}

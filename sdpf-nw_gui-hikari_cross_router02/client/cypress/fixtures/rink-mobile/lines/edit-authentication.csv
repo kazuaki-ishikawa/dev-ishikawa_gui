@@ -1,0 +1,4 @@
+id,mobile_access_id,calling_number,auth_id,password
+1,Z000000001,02011111111,n_device_a,001
+2,Z000000001,02022222222,n_device_b,
+3,Z000000001,02099999999,n_device_x,009

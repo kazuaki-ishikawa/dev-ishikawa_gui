@@ -1,0 +1,75 @@
+{
+  "terminalIds": ["Z123456789", "Z123456799", "Z123459999"],
+  "vpnId": "Z123456789",
+  "breakOut": ["teams", "webex"],
+  "interceptDnsServers": ["10.0.0.0", "20.0.0.0"],
+  "defaultGateway": {
+    "nexthopNetwork": "vpn"
+  },
+  "wanStaticRoutes": [
+    {
+      "destinationIpv4Prefix": "5.5.5.5/5",
+      "nexthopNetwork": "vpn"
+    }
+  ],
+  "vpnInFilters": {
+    "defaultPolicy": "accept",
+    "accessControlList": [
+      {
+        "protocol": "any",
+        "sourcePort": "",
+        "destinationPort": "",
+        "sourceIpv4Prefix": "1.1.1.1/1",
+        "destinationIpv4Prefix": "0.0.0.0/0",
+        "action": "discard"
+      }
+    ]
+  },
+  "vpnOutFilters": {
+    "defaultPolicy": "discard",
+    "accessControlList": [
+      {
+        "protocol": "tcp",
+        "sourcePort": "80",
+        "destinationPort": "100",
+        "sourceIpv4Prefix": "0.0.0.0/0",
+        "destinationIpv4Prefix": "2.2.2.2/24",
+        "action": "accept"
+      }
+    ]
+  },
+  "inet4OutFilters": {
+    "defaultPolicy": "accept",
+    "accessControlList": [
+      {
+        "protocol": "icmp",
+        "sourcePort": "",
+        "destinationPort": "",
+        "sourceIpv4Prefix": "0.0.0.0/0",
+        "destinationIpv4Prefix": "3.3.3.3/2",
+        "action": "accept"
+      }
+    ]
+  },
+  "dhcpServer": {
+    "domain": "example.com",
+    "primaryDnsServer": "3.3.3.3",
+    "secondaryDnsServer": "4.4.4.4",
+    "primaryWinsServer": "5.5.5.5",
+    "secondaryWinsServer": "6.6.6.6"
+  },
+  "dhcpRelayServers": null,
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "70GB",
+    "trafficReportFlowAnalyzerAlert": true
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "12months"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "6months"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "noSubscription"
+  }
+}

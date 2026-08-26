@@ -1,0 +1,376 @@
+{
+  "terminals": [
+    {
+      "customerNote": "ギャランティアクセス - IPoE回線",
+      "deliveryName": "山田　太郎",
+      "deliveryDepartmentName": "営業課",
+      "deliveryPhoneNumber": "03-0000-0000",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "guarantee",
+      "secondaryCircuitType": "ipoe",
+      "guarantee": {
+        "guaranteeId": "Z000000001",
+        "vpn": {
+          "act": {
+            "connectedIpv4Prefix": "11.11.11.11/30"
+          },
+          "sby": {
+            "connectedIpv4Prefix": "22.22.22.22/30"
+          }
+        }
+      },
+      "ipoeId": "Z123456789",
+      "loopbackIpv4Address": "1.12.13.123",
+      "lanType": "routedPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": true,
+          "portNumber": 2,
+          "vpnNats": [{ "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }],
+          "lanInFilters": {
+            "defaultPolicy": "accept",
+            "accessControlList": [
+              {
+                "protocol": "icmp",
+                "sourcePort": "",
+                "destinationPort": "",
+                "sourceIpv4Prefix": "192.168.0.0/16",
+                "destinationIpv4Prefix": "10.10.0.0/16",
+                "action": "discard"
+              }
+            ]
+          }
+        },
+        {
+          "type": "primary",
+          "ipv4Address": "2.2.2.2",
+          "ipv4PrefixLength": "24",
+          "vpnRouting": false,
+          "portNumber": 3,
+          "lanInFilters": {
+            "defaultPolicy": "discard",
+            "accessControlList": [
+              {
+                "protocol": "tcp",
+                "sourcePort": "80",
+                "destinationPort": "443",
+                "sourceIpv4Prefix": "10.0.0.0/8",
+                "destinationIpv4Prefix": "172.16.0.0/12",
+                "action": "accept"
+              }
+            ]
+          }
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "internet"
+      },
+      "dhcpRelayServers": [{ "serverIpv4Address": "7.7.7.7" }, { "serverIpv4Address": "8.8.8.8" }],
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription",
+        "trafficReportFlowAnalyzerAlert": false
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "customerNote": "ギャランティアクセス - モバイル回線",
+      "deliveryName": "山田　太郎２",
+      "deliveryDepartmentName": "営業課２",
+      "deliveryPhoneNumber": "03-0000-2222",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "guarantee",
+      "secondaryCircuitType": "mobile",
+      "guarantee": {
+        "guaranteeId": "Z000000002",
+        "vpn": {
+          "act": {
+            "connectedIpv4Prefix": "10.5.1.1/30"
+          },
+          "sby": {
+            "connectedIpv4Prefix": "10.5.2.1/30"
+          }
+        }
+      },
+      "ipoeId": "",
+      "loopbackIpv4Address": "123.123.123.123",
+      "lanType": "switchPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false,
+          "vpnNats": [
+            { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+            { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+          ],
+          "lanInFilters": {
+            "defaultPolicy": "accept",
+            "accessControlList": [
+              {
+                "protocol": "udp",
+                "sourcePort": "53",
+                "destinationPort": "53",
+                "sourceIpv4Prefix": "192.168.1.0/24",
+                "destinationIpv4Prefix": "0.0.0.0/0",
+                "action": "discard"
+              }
+            ]
+          }
+        },
+        {
+          "type": "secondary",
+          "ipv4Address": "12.122.12.122",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": true
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "lan",
+        "nexthopIpv4Address": "1.2.3.4",
+        "vpnRouting": true
+      },
+      "dhcpRelayServers": [{ "serverIpv4Address": "122.12.12.12" }, { "serverIpv4Address": "28.118.128.23" }],
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB",
+        "trafficReportFlowAnalyzerAlert": true
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "12months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "6months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    },
+    {
+      "customerNote": "IPoE回線",
+      "deliveryName": "山田　太郎３",
+      "deliveryDepartmentName": "営業課３",
+      "deliveryPhoneNumber": "03-0000-3333",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "ipoe",
+      "ipoeId": "Z000000001",
+      "loopbackIpv4Address": "123.123.123.123",
+      "lanType": "switchPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "3.3.3.3",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "internet"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription",
+        "trafficReportFlowAnalyzerAlert": false
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "12months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "customerNote": "IPoE回線 - モバイル回線",
+      "breakOut": ["teams", "zoom", "webex"],
+      "interceptDnsServers": ["1.1.1.1"],
+      "deliveryName": "山田　太郎４",
+      "deliveryDepartmentName": "営業課４",
+      "deliveryPhoneNumber": "03-0000-4444",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "ipoe",
+      "secondaryCircuitType": "mobile",
+      "ipoeId": "Z000000002",
+      "loopbackIpv4Address": "2.2.2.2",
+      "lanType": "routedPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false,
+          "portNumber": 2,
+          "dhcpServer": {
+            "ipv4AddressRanges": [
+              { "start": "1.1.1.1", "end": "2.2.2.2" },
+              { "start": "3.3.3.3", "end": "4.4.4.4" }
+            ],
+            "domain": "example.com",
+            "primaryDnsServer": "3.3.3.3",
+            "secondaryDnsServer": "4.4.4.4",
+            "primaryWinsServer": "5.5.5.5",
+            "secondaryWinsServer": "6.6.6.6"
+          }
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "vpn"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription",
+        "trafficReportFlowAnalyzerAlert": false
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "6months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    },
+    {
+      "customerNote": "モバイル回線",
+      "breakOut": [],
+      "interceptDnsServers": [],
+      "deliveryName": "山田　太郎５",
+      "deliveryDepartmentName": "営業課５",
+      "deliveryPhoneNumber": "03-0000-5555",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "mobile",
+      "loopbackIpv4Address": "1.1.3.3",
+      "lanType": "routedPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false,
+          "portNumber": 2,
+          "vpnNats": [
+            { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+            { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+          ]
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "vpn"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription",
+        "trafficReportFlowAnalyzerAlert": false
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "3months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    },
+    {
+      "customerNote": "ギャランティアクセス",
+      "deliveryName": "山田　太郎６",
+      "deliveryDepartmentName": "営業課６",
+      "deliveryPhoneNumber": "03-0000-6666",
+      "deliveryPostalCode": "100-0005",
+      "deliveryAddress": "東京都千代田区丸の内",
+      "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "100-0004",
+      "installationAddress": "東京都千代田区大手町",
+      "primaryCircuitType": "guarantee",
+      "breakOut": [],
+      "interceptDnsServers": [],
+      "guarantee": {
+        "guaranteeId": "Z000000003",
+        "vpn": {
+          "act": {
+            "connectedIpv4Prefix": "11.11.11.11/30"
+          },
+          "sby": {
+            "connectedIpv4Prefix": "22.22.22.22/30"
+          }
+        }
+      },
+      "loopbackIpv4Address": "1.12.13.123",
+      "lanType": "routedPort",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "2.2.2.2",
+          "ipv4PrefixLength": "24",
+          "vpnRouting": false,
+          "portNumber": 3,
+          "dhcpServer": {
+            "ipv4AddressRanges": [
+              { "start": "1.1.1.1", "end": "2.2.2.2" },
+              { "start": "3.3.3.3", "end": "4.4.4.4" }
+            ],
+            "domain": "example.com",
+            "primaryDnsServer": "3.3.3.3",
+            "secondaryDnsServer": "4.4.4.4",
+            "primaryWinsServer": "5.5.5.5",
+            "secondaryWinsServer": "6.6.6.6"
+          }
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "vpn"
+      },
+      "dhcpRelayServers": null,
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription",
+        "trafficReportFlowAnalyzerAlert": false
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    }
+  ]
+}

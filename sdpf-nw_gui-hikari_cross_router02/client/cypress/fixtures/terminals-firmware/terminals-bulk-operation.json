@@ -1,0 +1,123 @@
+{
+  "terminals": [
+    {
+      "terminalId": "Z000000001",
+      "operations": [
+        {
+          "terminalId": "Z000000001",
+          "operation": "firmwareUpdate",
+          "status": "completed",
+          "requestTime": "2019-05-20T10:05:50+09:00"
+        }
+      ]
+    },
+    {
+      "terminalId": "Z000000002",
+      "operations": [
+        {
+          "terminalId": "Z000000002",
+          "operation": "reboot",
+          "status": "completed",
+          "requestTime": "2019-05-19T10:05:50+09:00",
+          "completionTime": "2019-05-21T10:10:50+09:00"
+        },
+        {
+          "terminalId": "Z000000002",
+          "operation": "firmwareUpdate",
+          "status": "completed",
+          "requestTime": "2019-05-19T10:05:50+09:00",
+          "completionTime": "2019-05-21T10:10:50+09:00"
+        }
+      ]
+    },
+    {
+      "terminalId": "Z000000003",
+      "operations": [
+        {
+          "terminalId": "Z000000003",
+          "operation": "reboot",
+          "status": "completed",
+          "requestTime": "2019-05-19T10:05:50+09:00",
+          "completionTime": "2019-05-21T10:10:50+09:00"
+        },
+        {
+          "terminalId": "Z000000003",
+          "operation": "firmwareUpdateNoReboot",
+          "status": "cancelled",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        },
+        {
+          "terminalId": "Z000000003",
+          "operation": "firmwareUpdate",
+          "status": "cancelled",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        }
+      ]
+    },
+    {
+      "terminalId": "Z000000004",
+      "operations": [
+        {
+          "terminalId": "Z000000004",
+          "operation": "reboot",
+          "status": "failed",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        },
+        {
+          "terminalId": "Z000000004",
+          "operation": "firmwareUpdateNoReboot",
+          "status": "failed",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        },
+        {
+          "terminalId": "Z000000004",
+          "operation": "firmwareUpdate",
+          "status": "failed",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        }
+      ]
+    },
+    {
+      "terminalId": "Z000000005",
+      "operations": [
+        {
+          "terminalId": "Z000000005",
+          "operation": "breakOutListUpdate",
+          "status": "completed",
+          "requestTime": "2019-05-19T10:05:50+09:00",
+          "completedTime": "2019-05-19T10:05:50+09:00"
+        },
+        {
+          "terminalId": "Z000000005",
+          "operation": "firmwareUpdateNoReboot",
+          "status": "waiting",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        },
+        {
+          "terminalId": "Z000000005",
+          "operation": "firmwareUpdate",
+          "status": "waiting",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        }
+      ]
+    },
+    {
+      "terminalId": "Z000000007",
+      "operations": [
+        {
+          "terminalId": "Z000000007",
+          "operation": "reboot",
+          "status": "processing",
+          "requestTime": "2019-05-19T10:05:50+09:00",
+          "completionTime": "2019-05-21T10:10:50+09:00"
+        },
+        {
+          "terminalId": "Z000000007",
+          "operation": "firmwareUpdate",
+          "status": "processing",
+          "requestTime": "2019-05-19T10:05:50+09:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "lineList": [
+    {
+      "lineNumber": "02011112222",
+      "lineStatus": "deleted",
+      "enabledAt": "2025-01-01 00:00:00",
+      "plan": "dataPlan",
+      "planName": "Data Plan (1GB)",
+      "sms": false,
+      "accessType": "5GNSA",
+      "isLocked": false,
+      "simNumber": "AX1111111111",
+      "lineGroupId": "1234567",
+      "deviceName": "DEVICE_A",
+      "imei": "1234567890000001",
+      "authenticationId": "device_a",
+      "actIpAddress": "10.128.0.12",
+      "sbyIpAddress": "10.128.1.13"
+    },
+    {
+      "lineNumber": "02033334444",
+      "lineStatus": "active",
+      "enabledAt": "2025-01-01 00:00:00",
+      "plan": "zero",
+      "planName": "Zero Plan",
+      "sms": false,
+      "accessType": "LTE",
+      "isLocked": true,
+      "simNumber": "AX0000001112",
+      "lineGroupId": "1234567",
+      "deviceName": "DEVICE_B",
+      "imei": "1234567890000002",
+      "authenticationId": "device_b",
+      "actIpAddress": "10.128.0.2",
+      "sbyIpAddress": "10.128.112.2"
+    }
+  ],
+  "total": 2
+}

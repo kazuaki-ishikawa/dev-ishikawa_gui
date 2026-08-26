@@ -1,0 +1,18 @@
+{
+  "contractor": {
+    "name": "ＮＴＴドコモビジネス　株式会社",
+    "nameKana": "エヌティティドコモビジネス　カブシキガイシャ",
+    "picName": "山田　太郎",
+    "picNameKana": "ヤマダ　タロウ",
+    "postalCode": "160-0023",
+    "address": "東京都新宿区西新宿",
+    "houseNumber": "１９−２−５",
+    "buildingName": "山田ビル",
+    "addressKana": "トウキョウトニシシンジュク１９−２−５ヤマダビル",
+    "phoneNumber": "03-1234-5678",
+    "addressCode": "13104070003"
+  },
+  "mobile": {
+    "mobileDiscountCode": "5GT-ZABCDEFA"
+  }
+}

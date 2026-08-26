@@ -1,0 +1,409 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "bulkOrderId": "",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "resourceType": "terminal",
+  "requestType": "create",
+  "orderStatus": "rejected",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "customerNote": "端末新規作成テスト用オーダー(ipoe-mobile)",
+    "terminalDeviceType": "router01",
+    "deliveryName": "山田　太郎",
+    "deliveryDepartmentName": "営業所１２３４５",
+    "deliveryPhoneNumber": "03-3333-3333",
+    "deliveryPostalCode": "123-1234",
+    "deliveryAddress": "東京都千代田区大手町１−２−３",
+    "deliveryAddressKana": "カタカナ",
+    "deliveryDate": "2025-03-14",
+    "installationPostalCode": "123-1222",
+    "installationAddress": "東京都千代田区大手町１−２−３",
+    "primaryCircuitType": "ipoe",
+    "secondaryCircuitType": "mobile",
+    "ipoeId": "Z123456789",
+    "vpnId": "V000000002",
+    "loopbackIpv4Address": "1.2.2.2",
+    "lanType": "switchPort",
+    "lans": [
+      {
+        "type": "primary",
+        "ipv4Address": "2.2.2.2",
+        "ipv4PrefixLength": "22",
+        "vpnRouting": false,
+        "lanInFilters": {
+          "defaultPolicy": "discard",
+          "accessControlList": [
+            {
+              "action": "accept",
+              "protocol": "any",
+              "sourcePort": "",
+              "destinationPort": "",
+              "sourceIpv4Prefix": "10.0.0.0/8",
+              "destinationIpv4Prefix": "172.16.0.0/12"
+            }
+          ]
+        }
+      },
+      {
+        "type": "secondary",
+        "vpnRouting": true,
+        "ipv4Address": "4.4.4.4",
+        "ipv4PrefixLength": "4",
+        "vpnNats": [
+          {
+            "type": "partialNat",
+            "innerIpv4Prefix": "4.4.4.4/1",
+            "outerIpv4Prefix": "4.4.4.4/2"
+          }
+        ]
+      }
+    ],
+    "lanStaticRoutes": [
+      {
+        "destinationIpv4Prefix": "192.168.2.0/24",
+        "nexthopIpv4Address": "2.2.2.2",
+        "vpnRouting": false,
+        "vpnNats": [
+          {
+            "type": "partialNat",
+            "innerIpv4Prefix": "2.2.2.2/1",
+            "outerIpv4Prefix": "2.2.2.2/24"
+          },
+          {
+            "type": "nat",
+            "innerIpv4Prefix": "2.2.2.2/1",
+            "outerIpv4Prefix": "2.2.2.2/24"
+          }
+        ]
+      },
+      {
+        "destinationIpv4Prefix": "192.168.2.0/0",
+        "nexthopIpv4Address": "13.13.13.13",
+        "vpnRouting": true
+      },
+      {
+        "destinationIpv4Prefix": "192.168.2.0/0",
+        "nexthopIpv4Address": "13.13.13.13",
+        "vpnRouting": false
+      }
+    ],
+    "defaultGateway": {
+      "nexthopNetwork": "lan",
+      "nexthopIpv4Address": "22.2.2.2",
+      "vpnRouting": true
+    },
+    "vpnInFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "action": "accept",
+          "protocol": "tcp",
+          "sourcePort": "any",
+          "destinationPort": "any",
+          "sourceIpv4Prefix": "3.3.3.231/21",
+          "destinationIpv4Prefix": "12.123.123.12/12"
+        },
+        {
+          "action": "accept",
+          "protocol": "icmp",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "3.3.3.3/21",
+          "destinationIpv4Prefix": "123.12.2.122/12"
+        }
+      ]
+    },
+    "inet4OutFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "action": "discard",
+          "protocol": "any",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "1.1.1.1/1",
+          "destinationIpv4Prefix": "1.1.1.1/24"
+        },
+        {
+          "action": "accept",
+          "protocol": "tcp",
+          "sourcePort": "80",
+          "destinationPort": "100",
+          "sourceIpv4Prefix": "2.2.2.2/1",
+          "destinationIpv4Prefix": "2.2.2.2/24"
+        }
+      ]
+    },
+    "vpnOutFilters": {
+      "defaultPolicy": "discard",
+      "accessControlList": [
+        {
+          "action": "discard",
+          "protocol": "udp",
+          "sourcePort": "10000",
+          "destinationPort": "99999",
+          "sourceIpv4Prefix": "33.30.30.30/21",
+          "destinationIpv4Prefix": "22.22.22.22/22"
+        },
+        {
+          "action": "accept",
+          "protocol": "udp",
+          "sourcePort": "any",
+          "destinationPort": "any",
+          "sourceIpv4Prefix": "33.3.3.3/21",
+          "destinationIpv4Prefix": "22.2.2.2/22"
+        }
+      ]
+    },
+    "trafficReportFlowAnalyzer": {
+      "trafficReportFlowAnalyzerPlan": "noSubscription",
+      "trafficReportFlowAnalyzerAlert": false
+    },
+    "threatDetection": {
+      "threatDetectionPlan": "noSubscription"
+    },
+    "flowCollector": {
+      "flowCollectorPlan": "noSubscription"
+    },
+    "behaviorDetection": {
+      "behaviorDetectionPlan": "noSubscription"
+    },
+    "mobile": {
+      "rat": "lte",
+      "picName": "山田　太郎",
+      "picNameKana": "ヤマダ　タロウ",
+      "picPostalCode": "123-1234",
+      "picAddress": "東京都",
+      "picAddressKana": "トウキョウト",
+      "picPhoneNumber": "03-0000-0000",
+      "picDateOfBirth": "2019-01-01",
+      "networkPinCode": "2222",
+      "callDetailDesired": false,
+      "japanCorporateNumber": "9111111111111",
+      "customerReceiptRequired": false,
+      "picEmploymentDocumentId": "86201666-633e-4866-91f0-b942e64d4f9e",
+      "picEmploymentDocumentType": "businessCard",
+      "picIdentificationDocumentType": "indivisualNumberCard",
+      "contractIdentificationDocumentId": "a250ae8b-a6de-4b69-9c32-d57aaa7fd5c2",
+      "picIdentificationFrontDocumentId": "584fad5c-eda9-4b29-a166-6a38d12c72ff",
+      "contractIdentificationDocumentType": "sealCertificate"
+    },
+    "dhcpRelayServers": null
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "terminalId": "Z000000998",
+      "ref": "/v1/terminals/Z000000998",
+      "tenantId": "67fad6dc66b2ecdfc1b7da7e8b181b1d",
+      "resourceStatus": "inactive",
+      "orderId": "82e4a80139d9f8ff1bc9f37fb3012de2",
+      "orderStatus": "processing",
+      "creationTime": "2024-02-29T12:09:29+09:00",
+      "updateTime": "2024-02-29T12:09:29+09:00",
+      "serviceStartTime": null,
+      "customerNote": "端末新規作成テスト用オーダー(ipoe)",
+      "defaultGateway": {
+        "nexthopNetwork": "lan",
+        "nexthopIpv4Address": "22.2.2.2",
+        "vpnRouting": true
+      },
+      "deliveryName": "山田　太郎",
+      "deliveryDepartmentName": "営業所１２３４５",
+      "deliveryPhoneNumber": "03-3333-3333",
+      "deliveryPostalCode": "123-1234",
+      "deliveryAddress": "東京都千代田区大手町１−２−３",
+      "deliveryAddressKana": "カタカナ",
+      "deliveryDate": "2025-03-14",
+      "removalName": null,
+      "removalDepartmentName": null,
+      "removalPostalCode": null,
+      "removalAddress": null,
+      "removalPhoneNumber": null,
+      "removalAddressKana": null,
+      "installationPostalCode": "123-1222",
+      "installationAddress": "東京都千代田区大手町１−２−３",
+      "ipoeId": "Z123456789",
+      "vpnId": "V000000002",
+      "mobileId": "Z502105444",
+      "loopbackIpv4Address": "1.2.2.2",
+      "lanType": "switchPort",
+      "mobile": {
+        "rat": "lte",
+        "mobileId": "Z502105444",
+        "msisdn": "440102886336741",
+        "japanCorporateNumber": "9111111111111",
+        "contractIdentificationDocumentType": "sealCertificate",
+        "contractIdentificationDocumentId": "a250ae8b-a6de-4b69-9c32-d57aaa7fd5c2",
+        "picName": "た　t",
+        "picNameKana": "タロウ　タロウ",
+        "picPhoneNumber": "03-3333-3333",
+        "picIdentificationDocumentType": "indivisualNumberCard",
+        "picIdentificationFrontDocumentId": "584fad5c-eda9-4b29-a166-6a38d12c72ff",
+        "picEmploymentDocumentType": "businessCard",
+        "picEmploymentDocumentId": "86201666-633e-4866-91f0-b942e64d4f9e",
+        "networkPinCode": "2222",
+        "customerReceiptRequired": false,
+        "callDetailDesired": false
+      },
+      "terminalDevices": [
+        {
+          "model": "NXR-610X5G",
+          "deviceAttribute": "active",
+          "serialNumber": "112340123-313",
+          "firmwareVersion": {
+            "displayName": "202410-01",
+            "attribute": "latest"
+          }
+        },
+        {
+          "model": "ZXR-325Z",
+          "deviceAttribute": "coldStandby",
+          "serialNumber": "112340123-314",
+          "firmwareVersion": {
+            "displayName": "202410-01",
+            "attribute": "latest"
+          }
+        }
+      ],
+      "primaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "Z000000057",
+        "ref": "/v1/ipoe/hikari-collabo/Z000000057"
+      },
+      "secondaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "Z502105444"
+      },
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "2.2.2.2",
+          "ipv4PrefixLength": "22",
+          "vpnRouting": false
+        },
+        {
+          "type": "secondary",
+          "vpnRouting": true,
+          "ipv4Address": "4.4.4.4",
+          "ipv4PrefixLength": "4",
+          "vpnNats": [
+            {
+              "type": "partialNat",
+              "innerIpv4Prefix": "4.4.4.4/1",
+              "outerIpv4Prefix": "4.4.4.4/2"
+            }
+          ]
+        }
+      ],
+      "lanStaticRoutes": [
+        {
+          "destinationIpv4Prefix": "192.168.2.0/24",
+          "nexthopIpv4Address": "2.2.2.2",
+          "vpnRouting": false,
+          "vpnNats": [
+            {
+              "type": "partialNat",
+              "innerIpv4Prefix": "2.2.2.2/1",
+              "outerIpv4Prefix": "2.2.2.2/24"
+            },
+            {
+              "type": "nat",
+              "innerIpv4Prefix": "2.2.2.2/1",
+              "outerIpv4Prefix": "2.2.2.2/24"
+            }
+          ]
+        },
+        {
+          "destinationIpv4Prefix": "192.168.2.0/0",
+          "nexthopIpv4Address": "13.13.13.13",
+          "vpnRouting": true
+        },
+        {
+          "destinationIpv4Prefix": "192.168.2.0/0",
+          "nexthopIpv4Address": "13.13.13.13",
+          "vpnRouting": false
+        }
+      ],
+      "vpnInFilters": {
+        "defaultPolicy": "accept",
+        "accessControlList": [
+          {
+            "action": "accept",
+            "protocol": "tcp",
+            "sourcePort": "any",
+            "destinationPort": "any",
+            "sourceIpv4Prefix": "3.3.3.231/21",
+            "destinationIpv4Prefix": "12.123.123.12/12"
+          },
+          {
+            "action": "accept",
+            "protocol": "icmp",
+            "sourcePort": "",
+            "destinationPort": "",
+            "sourceIpv4Prefix": "3.3.3.3/21",
+            "destinationIpv4Prefix": "123.12.2.122/12"
+          }
+        ]
+      },
+      "inet4OutFilters": {
+        "defaultPolicy": "accept",
+        "accessControlList": [
+          {
+            "action": "discard",
+            "protocol": "any",
+            "sourcePort": "",
+            "destinationPort": "",
+            "sourceIpv4Prefix": "1.1.1.1/1",
+            "destinationIpv4Prefix": "1.1.1.1/24"
+          },
+          {
+            "action": "accept",
+            "protocol": "tcp",
+            "sourcePort": "80",
+            "destinationPort": "100",
+            "sourceIpv4Prefix": "2.2.2.2/1",
+            "destinationIpv4Prefix": "2.2.2.2/24"
+          }
+        ]
+      },
+      "vpnOutFilters": {
+        "defaultPolicy": "discard",
+        "accessControlList": [
+          {
+            "action": "discard",
+            "protocol": "udp",
+            "sourcePort": "10000",
+            "destinationPort": "99999",
+            "sourceIpv4Prefix": "33.30.30.30/21",
+            "destinationIpv4Prefix": "22.22.22.22/22"
+          },
+          {
+            "action": "accept",
+            "protocol": "udp",
+            "sourcePort": "any",
+            "destinationPort": "any",
+            "sourceIpv4Prefix": "33.3.3.3/21",
+            "destinationIpv4Prefix": "22.2.2.2/22"
+          }
+        ]
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    "remarks": ""
+  }
+}

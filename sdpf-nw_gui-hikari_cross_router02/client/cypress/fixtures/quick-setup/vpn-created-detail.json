@@ -1,0 +1,22 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "vpnId": "Z000000009",
+  "ref": "/v1/vpns/Z000000009",
+  "resourceStatus": "active",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "completed",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "serviceStartTime": "2019-05-21T10:05:48+09:00",
+  "customerNote": "かんたん申込VPN新規作成テスト",
+  "internalAddress": "10.128.121.0/26",
+  "routeCount": 1,
+  "routes": [
+    {
+      "terminalId": "Z000000001",
+      "routes": [
+        "10.128.121.0/26"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "planList": [
+    {
+      "planName": "モバイルアクセス データ通信 1GB",
+      "planLimitAlias": "plan_limit_1gb",
+      "availableAccessType": ["LTE"]
+    },
+    {
+      "planName": "モバイルアクセス データ通信 3GB",
+      "planLimitAlias": "plan_limit_3gb",
+      "availableAccessType": ["5GNSA"]
+    }
+  ],
+  "deviceList": [
+    {
+      "deviceName": "MR10LN",
+      "deviceNameAlias": "device_mr10ln"
+    },
+    {
+      "deviceName": "test",
+      "deviceNameAlias": "device_test"
+    }
+  ]
+}

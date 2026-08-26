@@ -1,0 +1,19 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env*.local
+dist
+.DS_Store
+cache
+install-state.gz
+launch.json
+cypress/videos
+cypress/screenshots
+cypress/downloads
+
+# cypress-parallel 自動生成ファイル
+runner-results
+multi-reporter-config.json

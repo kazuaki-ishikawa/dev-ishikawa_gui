@@ -1,0 +1,13 @@
+{
+  "ficConnectionId": "Z000000064",
+  "tenantId": "67fad6dc66b2ecdfc1b7da7e8b181b1d",
+  "vpnId": "Z123456789",
+  "resourceStatus": "inactive",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "applied",
+  "creationTime": "2024-07-26T10:45:30+09:00",
+  "customerNote": "post intercept",
+  "routeAdvertisement": "fullRoute",
+  "ficPremium": true,
+  "publicServiceKey": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+}

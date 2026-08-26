@@ -1,0 +1,12 @@
+{
+  "connectionType": "vpn-only",
+  "vpnId": "Z123456789",
+  "dnsIpAddressPrimary": "202.234.232.6/32",
+  "dnsIpAddressSecondary": "221.113.139.250/32",
+  "authDomainName": "example.vpn-only.com",
+  "apn": "w.rink.ntt.com",
+  "poiRedundancy": false,
+  "lineActPrefix": ["10.128.192.0/24"],
+  "vpnNetworkPrefix": "10.10.0.0/28",
+  "createdAt": "2024-06-03T02:00:00Z"
+}

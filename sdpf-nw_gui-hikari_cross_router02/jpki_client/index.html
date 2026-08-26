@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>docomo business RINK</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>docomo business RINK</h1>
+    </header>
+
+    <main class="main">
+      <section class="card">
+        <div class="card-header">
+          本人確認
+        </div>
+        <div class="card-body">
+          <p>本人確認を行います。<br />本人確認開始ボタンを押下してください。</p>
+          <button type="button" id="auth-btn" class="btn" disabled>
+            <span class="btn-text">本人確認開始</span>
+            <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm-57-162v-188l163 94z" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div id="error-dialog" class="dialog-overlay">
+        <div class="dialog" role="alertdialog" aria-modal="true">
+          <div id="error-dialog-message" class="dialog-message"></div>
+          <button type="button" id="error-dialog-close" class="btn dialog-close-button">
+            <span class="btn-text">閉じる</span>
+            <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm-57-162v-188l163 94z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

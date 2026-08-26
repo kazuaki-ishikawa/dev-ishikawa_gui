@@ -1,0 +1,17 @@
+{
+  "buildingType": "apartment",
+  "postalCode": "160-0023",
+  "prefecture": "東京都",
+  "municipalityList": ["新宿区"],
+  "largerSectionList": ["西新宿"],
+  "sectionList": ["３丁目"],
+  "houseNumber1List": ["１９"],
+  "houseNumber2List": ["２"],
+  "houseNumber3List": ["５"],
+  "buildingName1List": ["山田ビル１"],
+  "buildingName2List": ["山田ビル２"],
+  "buildingName3List": ["大和ハイツ"],
+  "buildingFacilityNameList": ["大和ハイツ"],
+  "installationPlaceCode": "212dd263522c4e73887212edfc7273e6",
+  "addressCode": "12345678901"
+}

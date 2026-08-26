@@ -1,0 +1,12 @@
+{
+  "response": {
+    "tenantId": "550e8400e29b41d4a716446655440000",
+    "resourceId": "00000000000000000000000000000001",
+    "orderId": "550e8400e29b41d4a716446655440002"
+  },
+  "request": {
+    "reason": "契約終了のため",
+    "emailAddress": "delete@example.com",
+    "customerSpecialNote": "廃止に関するメモ"
+  }
+}

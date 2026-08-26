@@ -1,0 +1,78 @@
+{
+  "offset": 0,
+  "total": 5,
+  "ipoes": [
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "ipoeId": "Z123456789",
+      "fletsId": "CAF0123456789",
+      "ipv4Address": "192.0.2.1/32",
+      "customerNote": "IPoE回線1",
+      "ref": "/v1/ipoe/hikari-collabo/Z123456789"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "ipoeId": "Z000000001",
+      "fletsId": "CAF0123456789",
+      "ipv4Address": "192.0.2.1/32",
+      "customerNote": "IPoE回線2",
+      "ref": "/v1/ipoe/hikari-collabo/Z123456789"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "ipoeId": "Z000000002",
+      "fletsId": "CAF0123456789",
+      "ipv4Address": "192.0.2.1/32",
+      "customerNote": "IPoE回線3",
+      "ref": "/v1/ipoe/hikari-collabo/Z123456789"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "ipoeId": "Z000000003",
+      "fletsId": "CAF0123456789",
+      "ipv4Address": "192.0.2.1/32",
+      "customerNote": "IPoE回線4",
+      "hikariPlan": "next",
+      "ref": "/v1/ipoe/flets-separate/Z000000003"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "ipoeId": "Z000000004",
+      "fletsId": "CAF0123456789",
+      "ipv4Address": "192.0.2.1/32",
+      "customerNote": "IPoE回線5",
+      "hikariPlan": "cross",
+      "ref": "/v1/ipoe/flets-separate/Z000000004"
+    }
+  ]
+}

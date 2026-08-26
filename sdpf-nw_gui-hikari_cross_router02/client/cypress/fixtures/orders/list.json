@@ -1,0 +1,31 @@
+{
+  "total": 1,
+  "offset": 0,
+  "orders": [
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceId": "Z123456789",
+      "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+      "bulkOrderId": "62ec2b62646740b5809f695dea7b2bbf",
+      "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+      "resourceType": "ipoe",
+      "requestType": "create",
+      "orderStatus": "applied",
+      "downloadableDocumentId": {
+        "collaboFieldSurveyWorkCandidate": "1e115026499c42d783b53c04b4808f1e",
+        "collaboConstructionWorkCandidate": "1e115026499c42d783b53c04b4808f1e",
+        "collaboRemovalWorkCandidate": "1e115026499c42d783b53c04b4808f1e",
+        "collaboSiteRouteSurveyReport": "1e115026499c42d783b53c04b4808f1e",
+        "collaboConstructionResultReport": "1e115026499c42d783b53c04b4808f1e"
+      },
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "request": {},
+      "response": {
+        "statusCode": 202,
+        "message": {},
+        "remarks": "住所 (英語) を訂正したいとの旨ご連絡を頂いたので、差し戻します。オーダー内容を編集してください。"
+      }
+    }
+  ]
+}

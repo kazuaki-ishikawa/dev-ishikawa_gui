@@ -1,0 +1,65 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "guaranteeId": "Z123456789",
+  "ref": "/v1/guarantees/Z123456789",
+  "resourceStatus": "active",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "applied",
+  "creationTime": "2023-05-21T10:05:48+09:00",
+  "updateTime": "2023-05-21T10:05:48+09:00",
+  "serviceStartTime": "2023-05-21T10:05:48+09:00",
+  "customerNote": "現調・工事情報がrejectedのギャランティアクセス",
+  "userInterfaceType": "100BASE-TX",
+  "physicalBandwidth": "100M",
+  "internet": {
+    "rateLimit": "30M",
+    "alertSetting": {
+      "threshold": null,
+      "duration": null,
+      "notificationInterval": null
+    }
+  },
+  "vpn": {
+    "rateLimit": "50M",
+    "alertSetting": {
+      "threshold": null,
+      "duration": null,
+      "notificationInterval": null
+    }
+  },
+  "installationPlaceCode": "212dd263522c4e73887212edfc7273e6",
+  "constructionType": "toTerminal",
+  "wiringType": "rental",
+  "communicationMode": "auto-nego",
+  "fieldSurveyLess": false,
+  "fieldSurvey": {
+    "operationAdjustment": false,
+    "reserveStatus": "approved",
+    "date": "2024-06-23",
+    "time": "9-10",
+    "workerInfoUpdateTime": "2022-01-02T10:05:48+09:00",
+    "workerInfo": {
+      "constructionType": "fieldSurvey"
+    },
+    "preContactCompanyName": "ＮＴＴドコモビジネス",
+    "preContactPersonName": "山田　太郎",
+    "preContactPhoneNumber": "03-1234-5678",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス",
+    "attendancePersonName": "山田　太郎",
+    "attendancePhoneNumber": "03-1234-5678",
+    "admissionApplicationRequired": true
+  },
+  "construction": {
+    "operationAdjustment": false,
+    "reserveStatus": "rejected",
+    "date": "2024-07-02",
+    "time": "9-10",
+    "preContactCompanyName": "ＮＴＴドコモビジネス",
+    "preContactPersonName": "山田　太郎",
+    "preContactPhoneNumber": "03-1234-5678",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス",
+    "attendancePersonName": "山田　太郎",
+    "attendancePhoneNumber": "03-1234-5678",
+    "admissionApplicationRequired": true
+  }
+}

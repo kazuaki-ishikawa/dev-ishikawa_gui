@@ -1,0 +1,49 @@
+{
+  "customerNote": "ギャランティ回線新規作成テスト(100M)",
+  "userInterfaceType": "100BASE-TX",
+  "physicalBandwidth": "100M",
+  "internet": {
+    "rateLimit": "30M",
+    "alertSetting": {
+      "threshold": "70",
+      "duration": "1hour",
+      "notificationInterval": "1day"
+    }
+  },
+  "vpn": {
+    "rateLimit": "70M",
+    "alertSetting": {
+      "threshold": "50",
+      "duration": "5min",
+      "notificationInterval": "1day"
+    }
+  },
+  "constructionType": "toTerminal",
+  "wiringType": "rental",
+  "communicationMode": "full-duplex",
+  "fieldSurveyLess": false,
+  "fieldSurvey": {
+    "operationAdjustment": false,
+    "date": "2022-02-02",
+    "time": "9-10",
+    "preContactCompanyName": "ＮＴＴドコモビジネス１",
+    "preContactPersonName": "山田　太郎２",
+    "preContactPhoneNumber": "03-1234-0000",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス３",
+    "attendancePersonName": "山田　太郎４",
+    "attendancePhoneNumber": "03-1234-1111",
+    "admissionApplicationRequired": true
+  },
+  "construction": {
+    "operationAdjustment": false,
+    "date": "2022-02-02",
+    "time": "9-10",
+    "preContactCompanyName": "ＮＴＴドコモビジネス５",
+    "preContactPersonName": "山田　太郎６",
+    "preContactPhoneNumber": "03-1234-2222",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス７",
+    "attendancePersonName": "山田　太郎８",
+    "attendancePhoneNumber": "03-1234-3333",
+    "admissionApplicationRequired": true
+  }
+}

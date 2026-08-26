@@ -1,0 +1,63 @@
+{
+  "connection-type": {
+    "internet-only": {
+      "dnsIpAddressPrimary": "192.168.111.1/32",
+      "dnsIpAddressSecondary": "192.168.1.12/32"
+    },
+    "vpn-only": {
+      "vpnId": "V000000002",
+      "vpnNetworkPrefix": "192.168.1.5/28"
+    },
+    "internet-vpn": {
+      "vpnConnectionPrefix": ["8.8.4.0/24", "23.0.0.0/12", "1.1.1.1/32"],
+      "dnsIpAddressPrimary": "192.168.123.0/32"
+    },
+    "vpn-breakout": {
+      "optionLocalBreakOut": true,
+      "systemLocalBreakOutList": [{ "name": "microsoft365" }, { "name": "microsoft365NotTeams" }],
+      "dnsIpAddressSecondary": "192.168.2.2/32"
+    }
+  },
+  "dns-server": {
+    "dnsIpAddressPrimary": "192.168.123.120/32",
+    "dnsIpAddressSecondary": "192.168.2.112/32"
+  },
+  "vpn-connection-prefix": {
+    "vpnConnectionPrefix": ["1.1.1.1/32", "52.96.0.0/14"]
+  },
+  "local-breakout-list": {
+    "systemLocalBreakOutList": [{ "name": "webex" }, { "name": "windowsUpdate" }],
+    "customLocalBreakOutList": [
+      {
+        "name": "custom3",
+        "nameAlias": "custom3-nameAlias",
+        "dstPrefixList": [{ "prefix": "192.0.2.1/32" }, { "prefix": "192.168.1.0/24" }],
+        "fqdnList": [{ "fqdn": "a.example.com" }, { "fqdn": "*.example.com" }, { "fqdn": "c-d.example.com" }]
+      },
+      {
+        "name": "custom4",
+        "nameAlias": "custom4-nameAlias"
+      },
+      {
+        "name": "custom5",
+        "nameAlias": "custom5-nameAlias"
+      },
+      {
+        "name": "custom6",
+        "nameAlias": "custom6-nameAlias"
+      },
+      {
+        "name": "custom7",
+        "nameAlias": "custom7-nameAlias"
+      },
+      {
+        "name": "custom8",
+        "nameAlias": "custom8-nameAlias"
+      },
+      {
+        "name": "custom9",
+        "nameAlias": "custom9-nameAlias"
+      }
+    ]
+  }
+}

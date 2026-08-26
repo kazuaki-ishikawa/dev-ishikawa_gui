@@ -1,0 +1,16 @@
+{
+  "connectionType": "vpn-breakout",
+  "vpnId": "Z123456789",
+  "systemLocalBreakOutList": [{ "name": "webex" }, { "name": "windowsUpdate" }],
+  "customLocalBreakOutList": ["bb0c10fb-693b-ef39-24d2-d5ed19434673", "7a2fe6a3-f94b-86bc-776e-5751a080dbe8"],
+  "dnsIpAddressPrimary": "192.2.1.1/32",
+  "dnsIpAddressSecondary": "192.2.2.2/32",
+  "authDomainName": "example.vpn-breakout.com",
+  "apn": "w.rink.ntt.com",
+  "poiRedundancy": true,
+  "lineActPrefix": ["10.128.192.0/24"],
+  "lineSbyPrefix": ["10.128.193.0/24"],
+  "vpnNetworkPrefix": "10.101.10.110/28",
+  "createdAt": "2024-06-03T22:00:00Z",
+  "deletedAt": null
+}

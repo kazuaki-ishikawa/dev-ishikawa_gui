@@ -1,0 +1,42 @@
+[
+  {
+    "name": "custom1",
+    "nameAlias": "example1",
+    "dstPrefixList": [
+      {
+        "prefix": "192.0.2.1/32"
+      },
+      {
+        "prefix": "198.51.100.0/24"
+      },
+      {
+        "prefix": "203.0.113.1/32"
+      }
+    ],
+    "fqdnList": [
+      {
+        "fqdn": "a.example.com"
+      },
+      {
+        "fqdn": "*.b.example.com"
+      }
+    ]
+  },
+  {
+    "name": "custom2",
+    "nameAlias": "example2",
+    "dstPrefixList": [
+      {
+        "prefix": "203.0.113.1/32"
+      }
+    ],
+    "fqdnList": [
+      {
+        "fqdn": "*.c.example.com"
+      },
+      {
+        "fqdn": "*.d.example.com"
+      }
+    ]
+  }
+]

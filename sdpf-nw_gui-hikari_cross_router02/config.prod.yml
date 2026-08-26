@@ -1,0 +1,139 @@
+## アプリケーション名
+appname: docomo business RINK
+
+## ポート番号
+appport: 8081
+
+## productionモード
+production: true
+
+baseURL: https://console-ztgict.sdpf.ntt.com
+
+## httpsモード
+secure: false
+
+## Cookieの設定
+session:
+  cookieSecure: true
+  cookieSameSite: none
+
+## コンテンツ設定
+content:
+  title: docomo business RINK
+  desc: docomo business RINK Web Console by NTT Communications
+
+  ## フレーム描画モード
+  isFrame: false
+
+  # history mode (SSS新ヘッダ・フッタ入れて iframe やめたときに jquery error がでたので vue app の routing を変えた)
+  enableHistory: true
+
+  # スニペットの埋め込み設定（contentキーで指定したページに適用）
+  snipets:
+    css:
+      - https://jp1.ecl.ntt.com/gui/sss-common/css/common.css
+    js:
+      - https://jp1.ecl.ntt.com/gui/sss-common/js/env/sss_env_prod.js
+      - https://jp1.ecl.ntt.com/gui/sss-common/js/first.js
+      - https://jp1.ecl.ntt.com/gui/sss-common/js/read_header_footer.js
+    favicon:
+      - https://jp1.ecl.ntt.com/gui/sss-assets/img/favicon.png
+    script:
+      - 'var sssGUIURL = "https://jp1.ecl.ntt.com"'
+      - setInterval( function(){ let head = document.getElementsByTagName("header")[0]; if(!head) return; head.classList.toggle("-active", head.getElementsByClassName( "-active" ).length > 0 ); }, 300 ); # IFrame 使わない場合のための z-index 調整
+      - 'var consoleSolutionURL = "https://console-solution.sdpf.ntt.com";'
+      - 'var ficConsoleURL = "https://console-eri.fic.ntt.com";'
+    style:
+      - header.sss-header { position:fixed; top:0px; width:100%; z-index:30; }
+      - .sss-header.-active { z-index:100000000; } # IFrame 使わない場合のための z-index 調整
+      - body { width:100%; margin-top:70px; height:calc(100vh - 109px) !important; }
+      - .v-application , .v-application--wrap { min-height:100% !important; }
+      - .v-navigation-drawer--fixed { top:70px !important; height:calc(100% - 39px) !important; padding-bottom:70px !important; } # paddingして中身がフッタに重ならないように調整
+      - footer.sss-footer { height:39px; width:100%; position:absolute; }
+
+  ## ベースディレクトリ
+  base: ./client/dist
+
+  ## メインファイル
+  main: index.html
+
+  # セキュリティポリシーの設定
+  securityPolicyOptions:
+    additionalScriptSrc: "https://www.googletagmanager.com"
+
+  # Nuxt.js の自動生成する inline script を許可する
+  enableInlineScript: true
+
+## CORS設定など
+pushheaders:
+  'Access-Control-Allow-Origin': 'https://auth.ecl.ntt.com'
+  'Access-Control-Allow-Credentials': true
+
+## バックエンドAPI設定(proxypathの指定がない場合、CORSアクセス)
+backend:
+  - proxypath: /rink-wan
+    target: https://api.ntt.com/sdpf-ztgict/v1
+  - proxypath: /rink-mobile
+    target: https://api.ntt.com/rink-mobile/v1
+  - proxypath: /rink-idaas
+    target: https://api.ntt.com/rink-idaas/v1
+  - proxypath: /rink-msb
+    target: https://api.ntt.com/rink-msb/v1
+
+    
+
+## 認証・認可
+authentication:
+  cacheTokens: true
+
+  ################################
+  ## openid(sss.ntt.com) Settings
+  ################################
+  # mandatory
+  strategy: openid
+
+  # 認証パラメータ（ロジックによって項目は異なる）
+  options:
+    providerURL: https://auth.ecl.ntt.com/auth/open.jsp
+    returnURL: https://console-ztgict.sdpf.ntt.com/auth/openid/callback
+    realm: https://console-ztgict.sdpf.ntt.com/
+    profile: true
+
+    ## discoverの通信量削減のため、事前に設定
+    discover:
+      match: https://auth.ecl.ntt.com/auth/*
+      version: http://specs.openid.net/auth/2.0
+      endpoint: https://auth.ecl.ntt.com/auth/server
+
+  # 認証プロバイダー（Strategy専用プロバイダーがBuiltinにない場合、pluginから読み込む）
+  provider: sss.ntt.com
+  provider_plugin: ./plugin/auth_v5.js
+
+  # 認証トークンジェネレータ（Strategy専用ジェネレータがBuiltinにない場合、pluginから読み込む）
+  generator: keystone
+  generator_plugin: ./plugin/token_v5.js
+
+  # プロバイダープロパティ
+  properties:
+    # token 取得先
+    keystone_admin_endpoint: https://keystone.ecl.ntt.com
+    keystone_public_endpoint: https://api.ntt.com/keystone
+
+    # admin account　###商用のやつに直す###
+    keystone_projectid: e0f8c99ccebd4d788238b8282cdf31eb
+    keystone_username: sdp_ztgict_admin
+    keystone_password: "${KEYSTONE_PASSWORD}"
+
+    # SSS API admin endpoint
+    sss_endpoint: https://sss.ecl.ntt.com
+    favicon: https://jp1.ecl.ntt.com/gui/assets/img/favicon.png
+
+## Options
+options:
+  # ブラウザエラーをサーバに転送する機能. ユーザ環境起因のSPAの問題の解析用
+  enableCollectErrors: true
+  # not yet implemented
+  enableCollectFeedback: false
+
+## アプリケーションコンフィグ設定（フロントエンドから/sessionAPIにて取得可能）
+configs:

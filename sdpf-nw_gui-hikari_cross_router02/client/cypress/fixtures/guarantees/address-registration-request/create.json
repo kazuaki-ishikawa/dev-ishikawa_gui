@@ -1,0 +1,19 @@
+{
+  "postalCode": "160-0023",
+  "prefecture": "東京都",
+  "municipality": "千代田区",
+  "largerSection": "大手町",
+  "section": "２丁目",
+  "houseNumber1": "９",
+  "houseNumber2": "２",
+  "houseNumber3": "５",
+  "buildingName1": "山田ビル１",
+  "buildingName2": "山田ビル２",
+  "buildingName3": "ハイツＡＢＣ",
+  "latitude": "35.687046",
+  "longitude": "139.767876",
+  "mapDocumentId": "550e8400e29b41d4a716446655440000",
+  "companyName": "ＮＴＴドコモビジネス",
+  "personName": "山田　太郎",
+  "phoneNumber": "03-1234-5678"
+}

@@ -1,0 +1,29 @@
+{
+  "operations": [
+    {
+      "operation": "reboot",
+      "status": "processing",
+      "requestTime": "2019-05-21T10:05:50+09:00"
+    },
+    {
+      "operation": "firmwareUpdate",
+      "status": "completed",
+      "requestTime": "2019-05-20T10:05:50+09:00"
+    },
+    {
+      "operation": "breakOutListUpdate",
+      "status": "processing",
+      "requestTime": "2019-05-19T10:05:50+09:00"
+    },
+    {
+      "operation": "switchover",
+      "status": "completed",
+      "requestTime": "2019-05-20T10:05:50+09:00"
+    },
+    {
+      "operation": "switchback",
+      "status": "completed",
+      "requestTime": "2019-05-19T10:05:50+09:00"
+    }
+  ]
+}

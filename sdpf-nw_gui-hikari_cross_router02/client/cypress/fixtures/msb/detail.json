@@ -1,0 +1,11 @@
+{
+  "resourceId": "00000000000000000000000000000001",
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "licensePacks": {
+    "1licensePacks": 1,
+    "10licensePacks": 2,
+    "100licensePacks": 0,
+    "1000licensePacks": 0,
+    "10000licensePacks": 0
+  }
+}

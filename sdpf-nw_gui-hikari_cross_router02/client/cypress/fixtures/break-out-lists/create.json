@@ -1,0 +1,5 @@
+{
+  "customerNote": "特定通信ブレイクアウト対象リスト新規作成",
+  "fqdnList": ["example.com", "example.jp", "*.example.com"],
+  "prefixList": ["192.0.2.0/24", "198.51.100.0/24", "203.0.11.1/32"]
+}

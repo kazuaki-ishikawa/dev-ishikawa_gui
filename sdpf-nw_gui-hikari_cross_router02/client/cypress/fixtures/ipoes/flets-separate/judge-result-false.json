@@ -1,0 +1,43 @@
+{
+  "diversionNumber": "E1234567890",
+  "contractInfo": {
+    "contractType": "individual",
+    "contractorName": "山田　太郎",
+    "contractorNameKana": "ヤマダ　タロウ"
+  },
+  "diversionCheckResult": {
+    "result": false,
+    "errors": [
+      {
+        "code": "001",
+        "reason": "不正な転用承諾番号です。\n入力された番号をご確認のうえ、正しい番号をご入力ください。"
+      },
+      {
+        "code": "009",
+        "reason": "システムエラーです。\n問い合わせをお願いします。"
+      },
+      { "code": "010", "reason": "転用不可です。\n問い合わせをお願いします。" },
+      {
+        "code": "900",
+        "reason": "ひかり電話の契約が確認されました。\nお手数ですが、事前に契約を解除のうえ、再度転用手続きを行ってください。"
+      },
+      {
+        "code": "902",
+        "reason": "テレビオプションの契約が確認されました。\nお手数ですが、事前に契約を解除のうえ、再度転用手続きを行ってください。"
+      },
+      {
+        "code": "904",
+        "reason": "ホームゲートウェイの契約が確認されました。\nお手数ですが、事前に契約を解除のうえ、再度転用手続きを行ってください。"
+      }
+    ]
+  },
+  "customerNote": "IPoE回線1",
+  "fletsType": "family200M",
+  "ipoeType": "normal",
+  "appControl": true,
+  "onSiteRepairOption": true,
+  "installationPlace": {
+    "postalCode": "100-8019",
+    "address": "東京都千代田区永田町４丁目 ２３ー６ 鈴木ビル"
+  }
+}

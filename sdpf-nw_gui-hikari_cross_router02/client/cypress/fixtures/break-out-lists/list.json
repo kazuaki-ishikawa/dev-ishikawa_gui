@@ -1,0 +1,42 @@
+{
+  "breakOutLists": [
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "breakOutListId": "550e8400e29b41d4a716446655440001",
+      "ref": "/v1/break-out-lists/550e8400e29b41d4a716446655440001",
+      "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "list1",
+      "fqdnList": ["example1.com", "example1.jp", "*.example1.com"],
+      "prefixList": ["192.0.2.0/24", "198.51.100.0/24", "203.0.11.1/32"]
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "breakOutListId": "550e8400e29b41d4a716446655440002",
+      "ref": "/v1/break-out-lists/550e8400e29b41d4a716446655440002",
+      "orderId": "62ec2b62646740b5809f695dea7b2bb0",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "list2",
+      "fqdnList": ["example2.com", "example2.jp", "*.example2.com"],
+      "prefixList": ["192.0.2.10/24", "198.51.100.10/24", "203.0.11.11/32"]
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "terminated",
+      "breakOutListId": "550e8400e29b41d4a716446655440003",
+      "ref": "/v1/break-out-lists/550e8400e29b41d4a716446655440003",
+      "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+      "orderStatus": "applied",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "list3",
+      "fqdnList": ["example3.com", "example3.jp", "*.example3.com"],
+      "prefixList": ["192.0.2.30/24", "198.51.100.30/24", "203.0.11.31/32"]
+    }
+  ]
+}

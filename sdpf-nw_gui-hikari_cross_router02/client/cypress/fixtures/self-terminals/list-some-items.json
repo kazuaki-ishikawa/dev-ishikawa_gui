@@ -1,0 +1,262 @@
+{
+  "total": 4,
+  "offset": 0,
+  "terminals": [
+    {
+      "terminalId": "Z000000001",
+      "terminalType": "selfTerminal",
+      "ref": "/v1/self-terminals/Z100000020",
+      "resourceStatus": "active",
+      "orderId": "2b1d881d7ecb94ef7e33eabdbc927210",
+      "creationTime": "2024-10-19T05:48:27.979Z",
+      "updateTime": "2024-10-19T05:50:12.860Z",
+      "serviceStartTime": "2024-10-19",
+      "customerNote": "自営ルーターリスト1",
+      "installationPostalCode": "123-1234",
+      "installationAddress": "テスト",
+      "vpnId": "V000000001",
+      "asNumber": "1234",
+      "vpnRouteLimit": 200,
+      "vpnAdvertiseNetworks": ["192.0.2.0/30", "192.168.1.0/24"],
+      "guarantee": {
+        "guaranteeId": "Z000000002",
+        "internet": {
+          "advertise": true,
+          "pingMonitoring": true
+        },
+        "vpn": {
+          "act": {
+            "vlan": 1437,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "23.240.165.209",
+            "cpeConnectedIpv4Address": "76.1.99.243"
+          },
+          "sby": {
+            "vlan": 1522,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "187.137.13.25",
+            "cpeConnectedIpv4Address": "89.8.223.183"
+          }
+        }
+      },
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000020",
+        "ref": "/v1/guarantee/Z000000020"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "12months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000003",
+      "terminalType": "selfTerminal",
+      "ref": "/v1/self-terminals/Z100000020",
+      "resourceStatus": "active",
+      "orderId": "2b1d881d7ecb94ef7e33eabdbc927210",
+      "creationTime": "2024-10-19T05:48:27.979Z",
+      "updateTime": "2024-10-19T05:50:12.860Z",
+      "serviceStartTime": "2024-10-19",
+      "customerNote": "自営ルーターリスト3",
+      "installationPostalCode": "123-1234",
+      "installationAddress": "テスト",
+      "vpnId": "V000000001",
+      "asNumber": "1234",
+      "vpnRouteLimit": 200,
+      "vpnAdvertiseNetworks": ["192.0.2.0/30", "192.168.1.0/24"],
+      "guarantee": {
+        "guaranteeId": "Z000000003",
+        "internet": {
+          "advertise": true,
+          "pingMonitoring": true
+        },
+        "vpn": {
+          "act": {
+            "vlan": 1437,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "23.240.165.209",
+            "cpeConnectedIpv4Address": "76.1.99.243"
+          },
+          "sby": {
+            "vlan": 1522,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "187.137.13.25",
+            "cpeConnectedIpv4Address": "89.8.223.183"
+          }
+        }
+      },
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000020",
+        "ref": "/v1/guarantee/Z000000020"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "12months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000002",
+      "terminalType": "selfTerminal",
+      "ref": "/v1/self-terminals/Z100000020",
+      "resourceStatus": "active",
+      "orderId": "2b1d881d7ecb94ef7e33eabdbc927210",
+      "creationTime": "2024-10-19T05:48:27.979Z",
+      "updateTime": "2024-10-19T05:50:12.860Z",
+      "serviceStartTime": "2024-10-19",
+      "customerNote": "自営ルーターリスト2",
+      "installationPostalCode": "123-1234",
+      "installationAddress": "テスト",
+      "vpnId": "V000000001",
+      "asNumber": "1234",
+      "vpnRouteLimit": 200,
+      "vpnAdvertiseNetworks": ["192.0.2.0/30", "192.168.1.0/24"],
+      "guarantee": {
+        "guaranteeId": "Z000000002",
+        "internet": {
+          "advertise": true,
+          "pingMonitoring": true
+        },
+        "vpn": {
+          "act": {
+            "vlan": 1437,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "23.240.165.209",
+            "cpeConnectedIpv4Address": "76.1.99.243"
+          },
+          "sby": {
+            "vlan": 1522,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "187.137.13.25",
+            "cpeConnectedIpv4Address": "89.8.223.183"
+          }
+        }
+      },
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000020",
+        "ref": "/v1/guarantee/Z000000020"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "12months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000004",
+      "terminalType": "selfTerminal",
+      "ref": "/v1/self-terminals/Z100000020",
+      "resourceStatus": "active",
+      "orderId": "2b1d881d7ecb94ef7e33eabdbc927210",
+      "creationTime": "2024-10-19T05:48:27.979Z",
+      "updateTime": "2024-10-19T05:50:12.860Z",
+      "serviceStartTime": "2024-10-19",
+      "customerNote": "自営ルーターリスト4",
+      "installationPostalCode": "123-1234",
+      "installationAddress": "テスト",
+      "vpnId": "V000000001",
+      "asNumber": "1234",
+      "vpnRouteLimit": 200,
+      "vpnAdvertiseNetworks": ["192.0.2.0/30", "192.168.1.0/24"],
+      "guarantee": {
+        "guaranteeId": "Z000000004",
+        "internet": {
+          "advertise": true,
+          "pingMonitoring": true
+        },
+        "vpn": {
+          "act": {
+            "vlan": 1437,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "23.240.165.209",
+            "cpeConnectedIpv4Address": "76.1.99.243"
+          },
+          "sby": {
+            "vlan": 1522,
+            "connectedIpv4Prefix": "10.0.0.0/30",
+            "peConnectedIPv4Address": "187.137.13.25",
+            "cpeConnectedIpv4Address": "89.8.223.183"
+          }
+        }
+      },
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000020",
+        "ref": "/v1/guarantee/Z000000020"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "12months"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z123456789",
+      "terminalType": "rentalTerminal",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "サービスルーター",
+      "ipoeId": "Z000000001",
+      "vpnId": null,
+      "mobileId": "Z540221033",
+      "loopbackIpv4Address": "1.1.1.1",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000001"
+      },
+      "secondaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "Z540221033",
+        "ref": ""
+      },
+      "ref": "/v1/terminals/Z123456789",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "active",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    }
+  ]
+}

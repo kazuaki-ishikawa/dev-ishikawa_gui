@@ -1,0 +1,162 @@
+{
+  "terminalId": "Z123456789",
+  "ref": "/v1/terminals/Z123456789",
+  "tenantId": "10262b146c5229334f85a209805daffe",
+  "resourceStatus": "active",
+  "creationTime": "2023-08-30T11:07:37+09:00",
+  "updateTime": "2023-08-30T11:07:52+09:00",
+  "serviceStartTime": "2023-08-30T00:00:00+09:00",
+  "customerNote": "端末詳細画面CustomerNote",
+  "terminalDeviceType": "router01",
+  "defaultGateway": {
+    "nexthopNetwork": "vpn"
+  },
+  "breakOut": ["zoom"],
+  "breakOutDnsServers": ["172.16.0.1", "172.16.0.2"],
+  "interceptDnsServers": null,
+  "deliveryName": "山田　太郎",
+  "deliveryDepartmentName": "営業課",
+  "deliveryPostalCode": "123-1234",
+  "deliveryAddress": "東京都",
+  "deliveryPhoneNumber": "03-2222-2222",
+  "deliveryAddressKana": "トウキョウト",
+  "deliveryDate": "2023-09-09",
+  "removalName": null,
+  "removalDepartmentName": null,
+  "removalPostalCode": null,
+  "removalAddress": null,
+  "removalAddressKana": null,
+  "removalPhoneNumber": null,
+  "installationPostalCode": "222-2222",
+  "installationAddress": "東京都千代田区大手町１−２−３",
+  "ipoeId": null,
+  "vpnId": "Z000000006",
+  "lanType": "routedPort",
+  "mobileId": "Z540221033",
+  "loopbackIpv4Address": "1.1.1.1",
+  "guarantee": null,
+  "mobile": {
+    "rat": "auto",
+    "mobileId": "Z540221033",
+    "msisdn": "440105120348208",
+    "picName": "山田　太郎",
+    "picNameKana": "ヤマダ　タロウ",
+    "picPhoneNumber": "03-1234-1234",
+    "customerReceiptRequired": false,
+    "callDetailDesired": false,
+    "callDetailBreakdownSetting": null,
+    "callDetailDestinationNumberSetting": null
+  },
+  "terminalDevices": [
+    {
+      "model": "NXR-610X5G",
+      "deviceAttribute": "active",
+      "serialNumber": "112340123-313",
+      "firmwareVersion": {
+        "displayName": "202410-01",
+        "attribute": "latest"
+      }
+    },
+    {
+      "model": "ZXR-325Z",
+      "deviceAttribute": "coldStandby",
+      "serialNumber": "112340123-314",
+      "firmwareVersion": {
+        "displayName": "202410-01",
+        "attribute": "latest"
+      }
+    }
+  ],
+  "primaryCircuit": {
+    "circuitType": "mobile",
+    "circuitId": "Z540221033"
+  },
+  "secondaryCircuit": null,
+  "lans": [
+    {
+      "type": "primary",
+      "ipv4Address": "123.123.123.222",
+      "ipv4PrefixLength": "22",
+      "vpnRouting": true,
+      "portNumber": 2,
+      "vpnNats": [
+        {
+          "type": "partialNat",
+          "innerIpv4Prefix": "3.3.3.3/21",
+          "outerIpv4Prefix": "2.2.2.2/22"
+        }
+      ],
+      "lanInFilters": {
+        "defaultPolicy": "accept",
+        "accessControlList": [
+          {
+            "action": "accept",
+            "protocol": "tcp",
+            "sourcePort": "80",
+            "destinationPort": "443",
+            "sourceIpv4Prefix": "192.168.1.0/24",
+            "destinationIpv4Prefix": "10.0.0.0/8"
+          }
+        ]
+      }
+    },
+    {
+      "type": "primary",
+      "ipv4Address": "10.10.10.1",
+      "ipv4PrefixLength": "24",
+      "vpnRouting": false,
+      "portNumber": 3,
+      "vpnNats": []
+    }
+  ],
+  "lanStaticRoutes": null,
+  "wanStaticRoutes": null,
+  "inet4OutFilters": null,
+  "vpnInFilters": {
+    "defaultPolicy": "accept",
+    "accessControlList": [
+      {
+        "action": "accept",
+        "protocol": "tcp",
+        "sourcePort": "any",
+        "destinationPort": "any",
+        "sourceIpv4Prefix": "3.3.3.231/21",
+        "destinationIpv4Prefix": "12.123.123.12/12"
+      },
+      {
+        "action": "accept",
+        "protocol": "icmp",
+        "sourcePort": "",
+        "destinationPort": "",
+        "sourceIpv4Prefix": "3.3.3.3/21",
+        "destinationIpv4Prefix": "123.12.2.122/12"
+      }
+    ]
+  },
+  "vpnOutFilters": {
+    "defaultPolicy": "discard",
+    "accessControlList": [
+      {
+        "action": "accept",
+        "protocol": "udp",
+        "sourcePort": "any",
+        "destinationPort": "any",
+        "sourceIpv4Prefix": "33.3.3.3/21",
+        "destinationIpv4Prefix": "22.2.2.2/22"
+      }
+    ]
+  },
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "noSubscription",
+    "trafficReportFlowAnalyzerAlert": false
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "noSubscription"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "noSubscription"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "noSubscription"
+  }
+}

@@ -1,0 +1,176 @@
+@use 'sass:map';
+
+html {
+  // Vuetify のデフォルト(overflow-x: hidden)を上書きし、狭い画面での横スクロールを許可する
+  overflow-x: auto;
+}
+
+body {
+  margin: 0;
+  // 全体的なレイアウト崩れの防止（不要になったら消す）
+  box-sizing: initial;
+}
+
+a {
+  color: rgb(var(--v-theme-primary));
+  width: fit-content;
+  &:hover {
+    color: rgb(var(--v-theme-primary-darken-1));
+  }
+}
+
+$flex-justify-values: (
+  center,
+  start,
+  end,
+  flex-start,
+  flex-end,
+  left,
+  right,
+  space-between,
+  space-around,
+  space-evenly,
+  stretch,
+  inherit,
+  initial,
+  unset
+);
+
+$flex-align-values: (
+  auto,
+  center,
+  end,
+  flex-start,
+  flex-end,
+  inherit,
+  initial,
+  normal,
+  self-end,
+  self-start,
+  start,
+  stretch,
+  unset,
+  baseline
+);
+
+@each $justify in $flex-justify-values {
+  @each $align in $flex-align-values {
+    .flex-#{$justify}-#{$align} {
+      display: flex;
+      justify-content: $justify;
+      align-items: $align;
+    }
+  }
+}
+
+$text-sizes: (
+  xs: (
+    font-size: 0.75rem,
+    line-height: 1rem,
+  ),
+  sm: (
+    font-size: 0.875rem,
+    line-height: 1.25rem,
+  ),
+  base: (
+    font-size: 1rem,
+    line-height: 1.5rem,
+  ),
+  lg: (
+    font-size: 1.125rem,
+    line-height: 1.75rem,
+  ),
+  xl: (
+    font-size: 1.25rem,
+    line-height: 1.75rem,
+  ),
+  2xl: (
+    font-size: 1.5rem,
+    line-height: 2rem,
+  ),
+  3xl: (
+    font-size: 1.875rem,
+    line-height: 2.25rem,
+  ),
+  4xl: (
+    font-size: 2.25rem,
+    line-height: 2.5rem,
+  ),
+  5xl: (
+    font-size: 3rem,
+    line-height: 1,
+  ),
+  6xl: (
+    font-size: 3.75rem,
+    line-height: 1,
+  ),
+);
+
+@each $key, $values in $text-sizes {
+  .text-#{$key} {
+    font-size: map.get($values, font-size);
+    line-height: map.get($values, line-height);
+  }
+}
+
+// scrollbar
+$scrollbar-color: rgb(var(--v-theme-info));
+$scrollbar-arrow-transparent: 8px solid transparent;
+$scrollbar-arrow-solid: 10px solid $scrollbar-color;
+
+::-webkit-scrollbar {
+  height: 15px;
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(var(--v-theme-light-info));
+  border-radius: 10px;
+  margin: -8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: block;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  border-top: $scrollbar-arrow-transparent;
+  border-bottom: $scrollbar-arrow-transparent;
+  border-right: $scrollbar-arrow-solid;
+}
+::-webkit-scrollbar-button:horizontal:end:increment {
+  border-top: $scrollbar-arrow-transparent;
+  border-bottom: $scrollbar-arrow-transparent;
+  border-left: $scrollbar-arrow-solid;
+}
+::-webkit-scrollbar-button:vertical:start:decrement {
+  border-bottom: $scrollbar-arrow-solid;
+  border-left: $scrollbar-arrow-transparent;
+  border-right: $scrollbar-arrow-transparent;
+}
+::-webkit-scrollbar-button:vertical:end:increment {
+  border-top: $scrollbar-arrow-solid;
+  border-left: $scrollbar-arrow-transparent;
+  border-right: $scrollbar-arrow-transparent;
+}
+
+.markdown {
+  table {
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: solid 1px #000;
+    padding: 0.25rem;
+  }
+  pre {
+    font-size: 1rem;
+  }
+}

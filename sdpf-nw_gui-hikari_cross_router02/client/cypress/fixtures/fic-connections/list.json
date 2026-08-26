@@ -1,0 +1,22 @@
+{
+  "ficConnections": [
+    {
+      "bandwidth": "10Mbps",
+      "creationTime": "2023-08-10T14:57:05+09:00",
+      "customerNote": "aa",
+      "ficConnectionId": "Z123456789",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "completed",
+      "publicServiceKey": "sample",
+      "ref": "/v1/fic-connections/Z123456789",
+      "referenceFicConnectionId": "F1234567890123",
+      "resourceStatus": "active",
+      "routeAdvertisement": "fullRoute",
+      "serviceStartTime": "2023-08-10T14:57:20+09:00",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "updateTime": "2023-08-10T14:57:20+09:00",
+      "vpnId": "Z123456789",
+      "ficPremium": true
+    }
+  ]
+}

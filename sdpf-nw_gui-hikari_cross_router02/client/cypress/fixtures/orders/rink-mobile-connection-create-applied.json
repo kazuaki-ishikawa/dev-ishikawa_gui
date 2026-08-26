@@ -1,0 +1,20 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z123456789",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "resourceType": "rink-mobile",
+  "requestType": "create",
+  "orderStatus": "applied",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "orderType": "create-network-rinkConnection",
+    "reservedConstructionDate": "2025-12-21T10:00:48+09:00",
+    "cancellationDeadline": "2025-12-12T10:00:48+09:00"
+  },
+  "response": {
+    "statusCode": 202,
+    "remarks": null
+  }
+}

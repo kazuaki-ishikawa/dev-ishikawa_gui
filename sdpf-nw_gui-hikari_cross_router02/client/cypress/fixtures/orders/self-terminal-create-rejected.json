@@ -1,0 +1,101 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "82e4a80139d9f8ff1bc9f37fb3012de2",
+  "bulkOrderId": "",
+  "ref": "/v1/orders/82e4a80139d9f8ff1bc9f37fb3012de2",
+  "resourceType": "self-terminal",
+  "requestType": "create",
+  "orderStatus": "rejected",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "customerNote": "自営端末新規作成テスト用オーダー(rejected)",
+    "installationPostalCode": "123-1222",
+    "installationAddress": "東京都千代田区大手町１−２−３",
+    "primaryCircuitType": "guarantee",
+    "guarantee": {
+      "guaranteeId": "Z000000002",
+      "internet": {
+        "advertise": true,
+        "pingMonitoring": true
+      },
+      "vpn": {
+        "act": {
+          "connectedIpv4Prefix": "10.5.1.1/30"
+        },
+        "sby": {
+          "connectedIpv4Prefix": "10.5.2.1/30"
+        }
+      }
+    },
+    "trafficReportFlowAnalyzer": {
+      "trafficReportFlowAnalyzerPlan": "50GB"
+    },
+    "vpnId": "Z123456789",
+    "vpnRouteLimit": 100,
+    "asNumber": "12345"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "terminalId": "Z000000998",
+      "ref": "/v1/self-terminals/Z000000998",
+      "tenantId": "67fad6dc66b2ecdfc1b7da7e8b181b1d",
+      "resourceStatus": "inactive",
+      "orderId": "82e4a80139d9f8ff1bc9f37fb3012de2",
+      "orderStatus": "processing",
+      "creationTime": "2024-02-29T12:09:29+09:00",
+      "updateTime": "2024-02-29T12:09:29+09:00",
+      "serviceStartTime": "2024-02-29T12:09:29+09:00",
+      "customerNote": "自営端末新規作成テスト用オーダー(rejected)",
+      "installationPostalCode": "123-1222",
+      "installationAddress": "東京都千代田区大手町１−２−３",
+      "vpnId": "Z123456789",
+      "vpnRouteLimit": 100,
+      "asNumber": "12345",
+      "guarantee": {
+        "guaranteeId": "Z000000002",
+        "internet": {
+          "advertise": true,
+          "pingMonitoring": true,
+          "globalIpAddress": "1.1.1.1",
+          "act": {
+            "connectedIpv4Prefix": "2.2.2.2",
+            "peConnectedIPv4Address": "3.3.3.3/30",
+            "cpeConnectedIpv4Address": "4.4.4.4/30",
+            "vlan": 100
+          },
+          "sby": {
+            "connectedIpv4Prefix": "5.5.5.5",
+            "peConnectedIPv4Address": "6.6.6.6/30",
+            "cpeConnectedIpv4Address": "7.7.7.7/30",
+            "vlan": 200
+          }
+        },
+        "vpn": {
+          "act": {
+            "connectedIpv4Prefix": "8.8.8.8",
+            "peConnectedIPv4Address": "9.9.9.9/30",
+            "cpeConnectedIpv4Address": "10.10.10.10/30",
+            "vlan": 300
+          },
+          "sby": {
+            "connectedIpv4Prefix": "11.11.11.11",
+            "peConnectedIPv4Address": "12.12.12.12/30",
+            "cpeConnectedIpv4Address": "13.13.13.13/30",
+            "vlan": 400
+          }
+        }
+      },
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "Z000000002"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "50GB"
+      }
+    },
+    "remarks": ""
+  }
+}

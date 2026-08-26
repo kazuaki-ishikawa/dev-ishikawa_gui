@@ -1,0 +1,15 @@
+{
+  "bulkOperationId": "bulk-002",
+  "status": "completed",
+  "requestTime": "2024-12-24T10:00:00+09:00",
+  "completedTime": "2024-12-24T10:30:00+09:00",
+  "operations": [
+    {
+      "terminalId": "Z123456799",
+      "operation": "firmwareUpdate",
+      "status": "completed",
+      "requestTime": "2024-12-24T10:00:00+09:00",
+      "completedTime": "2024-12-24T10:30:00+09:00"
+    }
+  ]
+}

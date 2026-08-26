@@ -1,0 +1,16 @@
+{
+  "constructionDates": [
+    {
+      "scheduledDate": "2022-02-02",
+      "scheduledTimes": [
+        { "scheduledTime": "9-10" },
+        { "scheduledTime": "9-12" },
+        { "scheduledTime": "10-12" },
+        { "scheduledTime": "13-17" },
+        { "scheduledTime": "13-14" },
+        { "scheduledTime": "13-15" },
+        { "scheduledTime": "15-17" }
+      ]
+    }
+  ]
+}

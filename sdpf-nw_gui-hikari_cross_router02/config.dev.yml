@@ -1,0 +1,27 @@
+## productionモード
+production: false
+
+## コンテンツ設定
+content:
+  securityPolicy: none
+
+  ## ベースディレクトリ
+  base: ./client/dist
+
+  ## メインファイル
+  main: index.html
+
+## バックエンドAPI設定(proxypathの指定がない場合、CORSアクセス)
+backend:
+  - proxypath: /rink-wan
+    target: http://apigw:9000/v1
+  - proxypath: /rink-mobile
+    target: http://apigw:9000/v1
+  - proxypath: /rink-idaas
+    target: http://apigw:9000/v1
+  - proxypath: /rink-msb
+    target: http://apigw:9000/v1
+
+## 認証・認可
+authentication:
+  strategy: qmonus

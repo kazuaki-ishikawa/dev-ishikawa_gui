@@ -1,0 +1,33 @@
+{
+  "fieldSurveyLess": false,
+  "fieldSurvey": {
+    "operationAdjustment": false,
+    "preContactCompanyName": "ＮＴＴドコモビジネス１",
+    "preContactPersonName": "山田　太郎１",
+    "preContactPhoneNumber": "03-1234-0000",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス２",
+    "attendancePersonName": "山田　太郎２",
+    "attendancePhoneNumber": "03-1234-1111",
+    "admissionApplicationRequired": false
+  },
+  "construction": {
+    "operationAdjustment": false,
+    "preContactCompanyName": "ＮＴＴドコモビジネス３",
+    "preContactPersonName": "山田　太郎３",
+    "preContactPhoneNumber": "03-1234-2222",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス４",
+    "attendancePersonName": "山田　太郎４",
+    "attendancePhoneNumber": "03-1234-3333",
+    "admissionApplicationRequired": false
+  },
+  "removal": {
+    "operationAdjustment": false,
+    "preContactCompanyName": "ＮＴＴドコモビジネス５",
+    "preContactPersonName": "山田　太郎５",
+    "preContactPhoneNumber": "03-1234-4444",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス５",
+    "attendancePersonName": "山田　太郎６",
+    "attendancePhoneNumber": "03-1234-5555",
+    "admissionApplicationRequired": true
+  }
+}

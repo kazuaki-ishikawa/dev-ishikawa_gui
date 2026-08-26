@@ -1,0 +1,69 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "guaranteeId": "Z123456789",
+  "ref": "/v1/guarantees/Z123456789",
+  "resourceStatus": "active",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "completed",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "serviceStartTime": "2019-05-21T10:05:48+09:00",
+  "customerNote": "現調・工事情報がapprovedのギャランティアクセス",
+  "userInterfaceType": "100BASE-TX",
+  "physicalBandwidth": "100M",
+  "internet": {
+    "rateLimit": "20M",
+    "alertSetting": {
+      "threshold": "70",
+      "duration": "1hour",
+      "notificationInterval": "1day"
+    }
+  },
+  "vpn": {
+    "rateLimit": "70M",
+    "alertSetting": {
+      "threshold": "50",
+      "duration": "15min",
+      "notificationInterval": "1day"
+    }
+  },
+  "installationPlaceCode": "212dd263522c4e73887212edfc7273e6",
+  "constructionType": "toTerminal",
+  "wiringType": "rental",
+  "communicationMode": "auto-nego",
+  "fieldSurveyLess": false,
+  "fieldSurvey": {
+    "operationAdjustment": false,
+    "reserveStatus": "approved",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "workerInfoUpdateTime": "2022-01-02T10:05:48+09:00",
+    "workerInfo": {
+      "constructionType": "fieldSurvey"
+    },
+    "preContactCompanyName": "ＮＴＴドコモビジネス",
+    "preContactPersonName": "山田　太郎",
+    "preContactPhoneNumber": "03-1234-5678",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス",
+    "attendancePersonName": "山田　太郎",
+    "attendancePhoneNumber": "03-1234-5678",
+    "admissionApplicationRequired": true
+  },
+  "construction": {
+    "operationAdjustment": false,
+    "reserveStatus": "approved",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "workerInfoUpdateTime": "2022-01-02T10:05:48+09:00",
+    "workerInfo": {
+      "constructionType": "construction"
+    },
+    "preContactCompanyName": "ＮＴＴドコモビジネス",
+    "preContactPersonName": "山田　太郎",
+    "preContactPhoneNumber": "03-1234-5678",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス",
+    "attendancePersonName": "山田　太郎",
+    "attendancePhoneNumber": "03-1234-5678",
+    "admissionApplicationRequired": true
+  }
+}

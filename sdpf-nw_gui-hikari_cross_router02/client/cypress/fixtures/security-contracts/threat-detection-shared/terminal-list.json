@@ -1,0 +1,268 @@
+{
+  "total": 8,
+  "offset": 0,
+  "terminals": [
+    {
+      "terminalId": "Z000000001",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "モバイル - active - 利用なし",
+      "ipoeId": null,
+      "vpnId": "V000000001",
+      "mobileId": "M000000001",
+      "loopbackIpv4Address": "1.1.1.1",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000001"
+      },
+      "ref": "/v1/terminals/Z000000001",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "active",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "10GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "6months",
+        "flowCollectorUsage": 5000000000,
+        "flowCollectorStartDate": "2025-07-01"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000002",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "IPoE+モバイル - active - 3ヶ月",
+      "ipoeId": "I000000001",
+      "vpnId": null,
+      "mobileId": "M000000002",
+      "loopbackIpv4Address": "2.2.2.2",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "I000000001"
+      },
+      "secondaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000002"
+      },
+      "ref": "/v1/terminals/Z000000001",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "active",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "6months",
+        "flowCollectorUsage": 5000000000,
+        "flowCollectorStartDate": "2025-07-01"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000003",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "ギャランティ+モバイル - active - 12ヶ月",
+      "ipoeId": null,
+      "vpnId": null,
+      "mobileId": "M000000002",
+      "guaranteeId": "G000000001",
+      "loopbackIpv4Address": "3.3.3.3",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000001"
+      },
+      "secondaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000002",
+        "ref": ""
+      },
+      "ref": "/v1/terminals/Z000000003",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "active",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "12months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000004",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "ギャランティ+IPoE - inactive - 12ヶ月",
+      "ipoeId": "I000000002",
+      "vpnId": null,
+      "guaranteeId": "G000000002",
+      "loopbackIpv4Address": "4.4.4.4",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000002"
+      },
+      "secondaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "I000000002"
+      },
+      "ref": "/v1/terminals/Z000000004",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "inactive",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "12months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000005",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "ギャランティ単体 - rental - inactive - 3ヶ月",
+      "vpnId": "V000000002",
+      "guaranteeId": "G000000003",
+      "loopbackIpv4Address": "4.4.4.4",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000003"
+      },
+      "ref": "/v1/terminals/Z000000005",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "inactive",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "5GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    },
+    {
+      "terminalId": "Z000000006",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "IPoE単体 - inactive - 利用なし",
+      "ipoeId": "I000000003",
+      "vpnId": "V000000003",
+      "loopbackIpv4Address": "6.6.6.6",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "I000000003"
+      },
+      "ref": "/v1/terminals/Z000000006",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "inactive",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000007",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "ギャランティ単体 - self - inactive - 利用なし",
+      "vpnId": "V000000004",
+      "guaranteeId": "G000000004",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000004"
+      },
+      "ref": "/v1/terminals/Z000000007",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "inactive",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "selfTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "50GB"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "noSubscription"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "noSubscription"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    },
+    {
+      "terminalId": "Z000000008",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "customerNote": "ギャランティ単体 - self - active - 3ヶ月",
+      "vpnId": null,
+      "guaranteeId": "G000000005",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000005"
+      },
+      "ref": "/v1/terminals/Z000000008",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "resourceStatus": "active",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "terminalType": "selfTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      },
+      "threatDetection": {
+        "threatDetectionPlan": "3months"
+      },
+      "flowCollector": {
+        "flowCollectorPlan": "12months",
+        "flowCollectorUsage": 10000000000,
+        "flowCollectorStartDate": "2025-07-01"
+      },
+      "behaviorDetection": {
+        "behaviorDetectionPlan": "subscription"
+      }
+    }
+  ]
+}

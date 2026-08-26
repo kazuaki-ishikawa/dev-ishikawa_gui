@@ -1,0 +1,105 @@
+{
+  "plan": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111",
+        "planLimitAlias": "default_dataPlan_C"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222",
+        "planLimitAlias": "default_dataPlan_C"
+      }
+    ]
+  },
+  "reissue": {
+    "packageRecipient": "山田　太郎",
+    "phoneNumber": "0312345678",
+    "shippingAddressBlock": "２丁目",
+    "shippingAddressNumber": "３番１号",
+    "shippingBuilding": "大手町プレイスウエストタワー",
+    "shippingCity": "千代田区",
+    "shippingCityAdditionalInfo": "大手町",
+    "shippingPostalCode": "1008019",
+    "shippingPrefecture": "東京都",
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222"
+      }
+    ]
+  },
+  "authentication": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111",
+        "authenticationId": "n_device_a",
+        "authenticationPassword": "001"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222",
+        "authenticationId": "n_device_b"
+      }
+    ]
+  },
+  "additional-limit": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111",
+        "additionalLimit": 536870912
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222",
+        "additionalLimit": 53687091200
+      }
+    ]
+  },
+  "deactivate": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222"
+      }
+    ]
+  },
+  "reactivate": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02077777777"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02088888888"
+      }
+    ]
+  },
+  "line-prefix": {
+    "linesList": [
+      {
+        "lineIndex": 1,
+        "lineNumber": "02011111111",
+        "actIpAddress": "10.128.192.0/32",
+        "sbyIpAddress": "10.128.193.0/32"
+      },
+      {
+        "lineIndex": 2,
+        "lineNumber": "02022222222",
+        "actIpAddress": "10.148.2.0/32"
+      }
+    ]
+  }
+}

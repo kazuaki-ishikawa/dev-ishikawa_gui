@@ -1,0 +1,55 @@
+{
+  "terminalId": "Z000000002",
+  "ref": "/v1/self-terminals/Z100000020",
+  "resourceStatus": "active",
+  "orderId": "2b1d881d7ecb94ef7e33eabdbc927210",
+  "creationTime": "2024-10-19T05:48:27.979Z",
+  "updateTime": "2024-10-19T05:50:12.860Z",
+  "serviceStartTime": "2024-10-19",
+  "customerNote": "自営ルーター削除",
+  "installationPostalCode": "123-1234",
+  "installationAddress": "東京都千代田区大手町１−２−３",
+  "vpnId": "V000000001",
+  "asNumber": "1234",
+  "vpnRouteLimit": 200,
+  "vpnAdvertiseNetworks": ["192.0.2.0/30", "192.168.1.0/24"],
+  "guarantee": {
+    "guaranteeId": "Z000000002",
+    "internet": {
+      "advertise": true,
+      "pingMonitoring": true
+    },
+    "vpn": {
+      "act": {
+        "vlan": 1437,
+        "connectedIpv4Prefix": "10.0.0.0/30",
+        "peConnectedIPv4Address": "23.240.165.209",
+        "cpeConnectedIpv4Address": "76.1.99.243"
+      },
+      "sby": {
+        "vlan": 1522,
+        "connectedIpv4Prefix": "10.0.0.0/30",
+        "peConnectedIPv4Address": "187.137.13.25",
+        "cpeConnectedIpv4Address": "89.8.223.183"
+      }
+    }
+  },
+  "primaryCircuit": {
+    "circuitType": "guarantee",
+    "circuitId": "Z000000020",
+    "ref": "/v1/guarantee/Z000000020"
+  },
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "5GB",
+    "trafficReportFlowAnalyzerAlert": true
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "3months"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "12months"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "noSubscription"
+  }
+}

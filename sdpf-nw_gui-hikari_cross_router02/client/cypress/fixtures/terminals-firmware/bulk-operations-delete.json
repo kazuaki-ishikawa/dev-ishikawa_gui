@@ -1,0 +1,24 @@
+{
+  "bulkOperationId": "bulk-001",
+  "operation": "firmwareUpdate",
+  "status": "cancelled",
+  "requestTime": "2024-12-25T10:00:00+09:00",
+  "completedTime": "2024-12-25T10:10:00+09:00",
+  "operations": [
+    {
+      "terminalId": "Z123456789",
+      "status": "cancelled",
+      "completedTime": "2024-12-25T10:10:00+09:00"
+    },
+    {
+      "terminalId": "Z123456799",
+      "status": "cancelled",
+      "completedTime": "2024-12-25T10:05:00+09:00"
+    },
+    {
+      "terminalId": "Z123459999",
+      "status": "cancelled",
+      "completedTime": "2024-12-25T10:10:00+09:00"
+    }
+  ]
+}

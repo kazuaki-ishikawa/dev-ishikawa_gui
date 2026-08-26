@@ -1,0 +1,25 @@
+[
+  {
+    "zId": "Z000000001",
+    "connectionType": "vpn-breakout",
+    "vpnId": "Z000000138"
+  },
+  {
+    "zId": "Z000000002",
+    "connectionType": "internet-only"
+  },
+  {
+    "zId": "Z000000003",
+    "connectionType": "internet-only"
+  },
+  {
+    "zId": "Z000000004",
+    "connectionType": "internet-vpn",
+    "vpnId": "Z000000149"
+  },
+  {
+    "zId": "Z000000005",
+    "connectionType": "vpn-only",
+    "vpnId": "Z000000119"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "terminalIds": ["Z000000001", "Z000000002", "Z000000003"],
+  "vpnId": "Z123456789",
+  "trafficReportFlowAnalyzerPlan": "noSubscription",
+  "trafficReportFlowAnalyzerAlert": false,
+  "threatDetectionPlan": "12months",
+  "flowCollectorPlan": "noSubscription",
+  "behaviorDetectionPlan": "noSubscription"
+}

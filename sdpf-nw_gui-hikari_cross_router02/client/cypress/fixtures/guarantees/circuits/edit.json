@@ -1,0 +1,19 @@
+{
+  "customerNote": "update customer note",
+  "internet": {
+    "rateLimit": "50M",
+    "alertSetting": {
+      "threshold": "80",
+      "duration": "5min",
+      "notificationInterval": "1day"
+    }
+  },
+  "vpn": {
+    "rateLimit": "30M",
+    "alertSetting": {
+      "threshold": "90",
+      "duration": "15min",
+      "notificationInterval": "1day"
+    }
+  }
+}

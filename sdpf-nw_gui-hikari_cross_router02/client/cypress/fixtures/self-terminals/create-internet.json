@@ -1,0 +1,25 @@
+{
+  "customerNote": "自営ルーター新規作成（インターネット）",
+  "installationPostalCode": "100-0004",
+  "installationAddress": "東京都千代田区大手町",
+  "guarantee": {
+    "guaranteeId": "Z000000002",
+    "internet": {
+      "advertise": true,
+      "pingMonitoring": true
+    }
+  },
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "noSubscription",
+    "trafficReportFlowAnalyzerAlert": false
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "3months"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "12months"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "noSubscription"
+  }
+}

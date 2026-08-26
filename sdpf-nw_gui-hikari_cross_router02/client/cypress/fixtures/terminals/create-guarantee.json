@@ -1,0 +1,58 @@
+{
+  "terminal": {
+    "customerNote": "端末新規作成ギャランティ",
+    "terminalDeviceType": "router01",
+    "breakOut": [],
+    "interceptDnsServers": [],
+    "deliveryName": "山田　太郎",
+    "deliveryDepartmentName": "営業課",
+    "deliveryPhoneNumber": "03-0000-0000",
+    "deliveryPostalCode": "100-0005",
+    "deliveryAddress": "東京都千代田区丸の内",
+    "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+    "deliveryDate": "2025-03-01",
+    "installationPostalCode": "100-0004",
+    "installationAddress": "東京都千代田区大手町",
+    "primaryCircuitType": "guarantee",
+    "guarantee": {
+      "guaranteeId": "Z000000004"
+    },
+    "loopbackIpv4Address": "123.123.123.123",
+    "lanType": "routedPort",
+    "lans": [
+      {
+        "type": "primary",
+        "ipv4Address": "1.1.1.1",
+        "ipv4PrefixLength": "23",
+        "vpnRouting": false,
+        "portNumber": 1
+      },
+      {
+        "type": "primary",
+        "ipv4Address": "10.20.30.1",
+        "ipv4PrefixLength": "24",
+        "vpnRouting": true,
+        "portNumber": 3
+      }
+    ],
+    "lanStaticRoutes": [],
+    "wanStaticRoutes": [],
+    "defaultGateway": {
+      "nexthopNetwork": "internet"
+    },
+    "trafficReportFlowAnalyzer": {
+      "trafficReportFlowAnalyzerPlan": "noSubscription",
+      "trafficReportFlowAnalyzerAlert": false
+    },
+    "threatDetection": {
+      "threatDetectionPlan": "noSubscription"
+    },
+    "flowCollector": {
+      "flowCollectorPlan": "noSubscription"
+    },
+    "behaviorDetection": {
+      "behaviorDetectionPlan": "noSubscription"
+    }
+  },
+  "dhcpRelayServers": [{ "serverIpv4Address": "7.7.7.7" }, { "serverIpv4Address": "8.8.8.8" }]
+}

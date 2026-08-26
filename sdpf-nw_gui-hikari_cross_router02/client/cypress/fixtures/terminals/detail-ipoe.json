@@ -1,0 +1,139 @@
+{
+  "terminalId": "Z123456789",
+  "ref": "/v1/terminals/Z123456789",
+  "tenantId": "10262b146c5229334f85a209805daffe",
+  "resourceStatus": "active",
+  "creationTime": "2023-08-30T11:07:37+09:00",
+  "updateTime": "2023-08-30T11:07:52+09:00",
+  "serviceStartTime": "2023-08-30T00:00:00+09:00",
+  "customerNote": "IPoE回線(SIMなし)",
+  "terminalDeviceType": "router01",
+  "defaultGateway": {
+    "nexthopNetwork": "internet"
+  },
+  "breakOut": [],
+  "breakOutDnsServers": [],
+  "interceptDnsServers": [],
+  "deliveryName": "山田　太郎",
+  "deliveryCompanyName": "エヌ・ティ・ティ・ドコモビジネス　株式会社",
+  "deliveryDepartmentName": "営業課",
+  "deliveryPostalCode": "100-0005",
+  "deliveryAddress": "東京都千代田区丸の内",
+  "deliveryPhoneNumber": "03-2222-2222",
+  "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+  "deliveryDate": "2023-09-09",
+  "removalName": null,
+  "removalDepartmentName": null,
+  "removalPostalCode": null,
+  "removalAddress": null,
+  "removalAddressKana": null,
+  "removalPhoneNumber": null,
+  "installationPostalCode": "100-0004",
+  "installationAddress": "東京都千代田区大手町",
+  "ipoeId": "Z000000001",
+  "vpnId": null,
+  "lanType": "switchPort",
+  "loopbackIpv4Address": "1.1.1.1",
+  "guarantee": null,
+  "terminalDevices": [
+    {
+      "model": "NXR-610X5G",
+      "deviceAttribute": "active",
+      "serialNumber": "112340123-313",
+      "firmwareVersion": {
+        "displayName": "202410-01",
+        "attribute": "latest"
+      }
+    },
+    {
+      "model": "ZXR-325Z",
+      "deviceAttribute": "coldStandby",
+      "serialNumber": "112340123-314",
+      "firmwareVersion": {
+        "displayName": "202410-01",
+        "attribute": "firmwareUpdateRecommended"
+      }
+    }
+  ],
+  "primaryCircuit": {
+    "circuitType": "ipoe",
+    "circuitId": "Z000000001"
+  },
+  "lans": [
+    {
+      "type": "primary",
+      "ipv4Address": "123.123.123.222",
+      "ipv4PrefixLength": "22",
+      "vpnRouting": true,
+      "vpnNats": [
+        {
+          "type": "partialNat",
+          "innerIpv4Prefix": "3.3.3.3/21",
+          "outerIpv4Prefix": "2.2.2.2/22"
+        }
+      ],
+      "dhcpServer": {
+        "ipv4AddressRanges": [
+          { "end": "2.2.2.2", "start": "13.3.3.32" },
+          { "end": "2.2.2.2", "start": "123.123.123.123" }
+        ],
+        "domain": "dom.dom",
+        "primaryWinsServer": "2.2.2.2",
+        "secondaryDnsServer": "3.3.3.3",
+        "secondaryWinsServer": "1.1.1.1"
+      }
+    }
+  ],
+  "lanStaticRoutes": [
+    {
+      "nexthopIpv4Address": "2.2.222.222",
+      "destinationIpv4Prefix": "122.222.222.222/22",
+      "vpnRouting": false,
+      "vpnNats": []
+    }
+  ],
+  "wanStaticRoutes": [
+    {
+      "nexthopNetwork": "internet",
+      "destinationIpv4Prefix": "12.12.12.111/21"
+    }
+  ],
+  "inet4OutFilters": {
+    "defaultPolicy": "accept",
+    "accessControlList": [
+      {
+        "action": "accept",
+        "protocol": "tcp",
+        "sourcePort": "any",
+        "destinationPort": "any",
+        "sourceIpv4Prefix": "3.3.3.231/21",
+        "destinationIpv4Prefix": "12.123.123.12/12"
+      },
+      {
+        "action": "accept",
+        "protocol": "icmp",
+        "sourcePort": "",
+        "destinationPort": "",
+        "sourceIpv4Prefix": "3.3.3.3/21",
+        "destinationIpv4Prefix": "123.12.2.122/12"
+      }
+    ]
+  },
+  "vpnInFilters": null,
+  "vpnOutFilters": null,
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "noSubscription",
+    "trafficReportFlowAnalyzerAlert": false
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "12months"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "6months",
+    "flowCollectorUsage": 10000000000,
+    "flowCollectorStartDate": "2025-07-01"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "noSubscription"
+  }
+}

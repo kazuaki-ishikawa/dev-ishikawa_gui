@@ -1,0 +1,42 @@
+{
+  "unoConnections": [
+    {
+      "unoConnectionId": "Z000000001",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "V000000002",
+      "ref": "/v1/uno-connections/Z000000001",
+      "resourceStatus": "active",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "completed",
+      "creationTime": "2026-05-21T10:05:48+09:00",
+      "updateTime": "2026-05-21T10:05:48+09:00",
+      "serviceStartTime": "2026-05-21T10:05:48+09:00",
+      "customerNote": "Arcstar Universal One接続",
+      "unoContractNumber": "N123456789",
+      "unoVpnId": "V12345678",
+      "unoInternalAddress": "10.128.0.0/26",
+      "unoConnectivityAddress": "10.128.0.1",
+      "rinkConnectivityAddress": "10.128.0.2",
+      "unoApplicationDate": "2026-06-01"
+    },
+    {
+      "unoConnectionId": "Z000000002",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "Z123456789",
+      "ref": "/v1/uno-connections/Z000000002",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440001",
+      "orderStatus": "processing",
+      "creationTime": "2026-05-22T10:05:48+09:00",
+      "updateTime": "2026-05-22T10:05:48+09:00",
+      "customerNote": "Arcstar Universal One接続2",
+      "unoContractNumber": "N987654321",
+      "unoVpnId": "V87654321",
+      "unoInternalAddress": "10.128.1.0/26",
+      "unoApplicationDate": "2026-06-02",
+      "serviceStartTime": "2026-05-21T10:05:48+09:00",
+      "unoConnectivityAddress": "10.128.0.5",
+      "rinkConnectivityAddress": "10.128.0.6"
+    }
+  ]
+}

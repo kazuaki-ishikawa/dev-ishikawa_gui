@@ -1,0 +1,21 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 18.108 21.876"
+>
+  <path
+    d="M5.813,1.738a1.738,1.738,0,0,1,3.477,0c0,.052-3.477.052-3.477,0"
+    transform="translate(1.428 0)"
+    fill="currentColor"
+  />
+  <path
+    d="M17.475,17.109c.5,0,.9-.49.409-1.758a13.666,13.666,0,0,1-1.126-3.575C16.168,7.651,15.571,1.11,9.054,1.11S1.94,7.651,1.35,11.776A13.659,13.659,0,0,1,.223,15.351c-.492,1.268-.086,1.758.41,1.758Z"
+    transform="translate(0 0.272)"
+    fill="currentColor"
+  />
+  <path
+    d="M11.311,14.85a3.378,3.378,0,0,1-6.755,0Z"
+    transform="translate(1.119 3.648)"
+    fill="currentColor"
+  />
+</svg>

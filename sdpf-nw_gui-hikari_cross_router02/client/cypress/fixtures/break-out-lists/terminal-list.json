@@ -1,0 +1,123 @@
+{
+  "limit": 100,
+  "offset": 0,
+  "total": 5,
+  "terminals": [
+    {
+      "terminalId": "Z123456789",
+      "ref": "/v1/terminals/Z123456789",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "東京支店ルーター",
+      "vpnId": "Z123456789",
+      "ipoeId": "Z123456789",
+      "mobileId": "Z123456789",
+      "loopbackIpv4Address": "10.0.0.1",
+      "primaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "Z123456789",
+        "ref": "/v1/ipoe/hikari-collabo/Z123456789"
+      },
+      "secondaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "Z123456789",
+        "ref": "/v1/ipoe/hikari-collabo/Z123456789"
+      },
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000001",
+      "ref": "/v1/terminals/Z000000001",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "inactive",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "ルーター１(inactive)",
+      "vpnId": null,
+      "ipoeId": null,
+      "mobileId": "M000000001",
+      "loopbackIpv4Address": "10.0.0.1",
+      "primaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000001"
+      },
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000002",
+      "ref": "/v1/terminals/Z000000002",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "terminated",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "ルーター２(terminated)",
+      "vpnId": null,
+      "ipoeId": null,
+      "mobileId": "M000000002",
+      "loopbackIpv4Address": "10.0.0.1",
+      "primaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000002"
+      },
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000003",
+      "ref": "/v1/terminals/Z000000003",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "ルーター３",
+      "vpnId": null,
+      "ipoeId": null,
+      "mobileId": "M000000003",
+      "loopbackIpv4Address": "10.0.0.1",
+      "primaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000003"
+      },
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    },
+    {
+      "terminalId": "Z000000004",
+      "ref": "/v1/terminals/Z000000004",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceStatus": "active",
+      "creationTime": "2019-05-21T10:05:48+09:00",
+      "updateTime": "2019-05-21T10:05:48+09:00",
+      "serviceStartTime": "2019-05-21T10:05:48+09:00",
+      "customerNote": "ルーター４",
+      "vpnId": null,
+      "ipoeId": null,
+      "mobileId": "M000000004",
+      "loopbackIpv4Address": "10.0.0.1",
+      "primaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000004"
+      },
+      "terminalType": "rentalTerminal",
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    }
+  ]
+}

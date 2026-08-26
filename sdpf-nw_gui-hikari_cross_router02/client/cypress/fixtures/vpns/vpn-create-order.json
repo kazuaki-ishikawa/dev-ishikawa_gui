@@ -1,0 +1,34 @@
+{
+  "tenantId": "67fad6dc66b2ecdfc1b7da7e8b181b1d",
+  "resourceId": "Z000000064",
+  "orderId": "760e714617b65212a5169dda4ac6a634",
+  "ref": "/v1/vpns/Z000000064",
+  "resourceType": "vpn",
+  "requestType": "create",
+  "orderStatus": "completed",
+  "creationTime": "2024-07-02T10:27:11+09:00",
+  "updateTime": "2024-07-02T10:27:26+09:00",
+  "request": {
+    "customerNote": "post intercept",
+    "internalAddress": "100.100.100.100/26"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "tenantId": "67fad6dc66b2ecdfc1b7da7e8b181b1d",
+      "vpnId": "Z000000064",
+      "ref": "/v1/vpns/Z000000064",
+      "resourceStatus": "inactive",
+      "orderId": "760e714617b65212a5169dda4ac6a634",
+      "orderStatus": "processing",
+      "creationTime": "2024-07-02T10:27:11+09:00",
+      "updateTime": "2024-07-02T10:27:11+09:00",
+      "serviceStartTime": null,
+      "customerNote": "9q",
+      "internalAddress": "0.0.0.0/26",
+      "routeCount": null,
+      "routes": null
+    },
+    "remarks": null
+  }
+}

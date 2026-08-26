@@ -1,0 +1,36 @@
+// color
+$light-info-alpha-color: rgb(var(--v-theme-info-lighten-3), 0.5);
+
+// border
+$split-border: 1px solid $light-info-alpha-color;
+$split-bold-border: 2px solid $light-info-alpha-color;
+
+// z-index
+$pdf-preview-z-index: 1500;
+$dialog-z-index: 1000;
+$tooltip-z-index: 500;
+$sidebar-z-index: 500;
+
+// width
+$sidebar-width: 316px;
+$container-min-width: 830px;
+$label-width: 290px;
+
+// height
+$sidebar-min-height: 1000px;
+
+// radius
+$container-border-radius: 1.25rem;
+$child-border-radius: 0.75rem;
+
+// input
+$input-height: 34px;
+$input-font-size: 0.875rem;
+
+// bg-image
+$bg-image: 'assets/bg.png';
+$bg-min-width: calc($sidebar-width + $container-min-width);
+
+// color-list in components/constants
+$highcharts-color-list: #3169b3, #07af7b, #6bc8f3, #f0908a, #446c80, #7e5854;
+$default: #f5f9fc;

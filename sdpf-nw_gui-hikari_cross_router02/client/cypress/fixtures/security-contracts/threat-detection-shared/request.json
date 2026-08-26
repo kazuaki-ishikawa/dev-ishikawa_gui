@@ -1,0 +1,22 @@
+{
+  "requestId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/threat-detection-shared/requests/62ec2b62646740b5809f695dea7b2bbf",
+  "requestDirection": "sent",
+  "status": "pendingApproval",
+  "requestType": "threatDetectionShareRequest",
+  "creationTime": "2026-03-23T10:05:48+09:00",
+  "updateTime": "2026-03-23T10:05:48+09:00",
+  "sharedTenantId": "550e8400e29b41d4a716446655440000",
+  "contractorName": "ＮＴＴドコモビジネス株式会社",
+  "terminals": [
+    {
+      "terminalId": "Z123456789",
+      "customerNote": "東京支店ルーター"
+    },
+    {
+      "terminalId": "Z123456790",
+      "customerNote": "大阪支店ルーター"
+    }
+  ],
+  "billingMethod": "receiverPays"
+}

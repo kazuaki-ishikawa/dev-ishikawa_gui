@@ -1,0 +1,21 @@
+{
+  "diversionNumber": "E1234567890",
+  "contractInfo": {
+    "contractType": "corporation",
+    "contractorName": "エヌ・ティ・ティ・ドコモビジネス　株式会社",
+    "contractorNameKana": "エヌ・ティ・ティ・ドコモビジネス　カブシキガイシャ"
+  },
+  "diversionCheckResult": {
+    "result": true,
+    "diversionShortestDate": "2025-12-01"
+  },
+  "customerNote": "IPoE回線2",
+  "fletsType": "mansion200M",
+  "ipoeType": "wide",
+  "appControl": true,
+  "onSiteRepairOption": true,
+  "installationPlace": {
+    "postalCode": "100-8019",
+    "address": "東京都千代田区永田町４丁目 ２３ー６ 鈴木ビル"
+  }
+}

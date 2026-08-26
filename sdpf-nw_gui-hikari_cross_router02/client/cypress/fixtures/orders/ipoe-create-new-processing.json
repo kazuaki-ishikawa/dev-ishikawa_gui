@@ -1,0 +1,36 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "requestType": "create",
+  "orderStatus": "processing",
+  "resourceType": "ipoe",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "ipoeType": "wide",
+    "fletsType": "mansion1G",
+    "appControl": true,
+    "customerNote": "e",
+    "fletsOrderType": "new",
+    "constructionOption": {
+      "siteRouteSurvey": true,
+      "lineConfirmation": true,
+      "photographConsent": true,
+      "photographConsentName": "e",
+      "specifiedVisitDateTime": true,
+      "wiringRouteConstruction": true,
+      "constructionResultReport": true
+    },
+    "onSiteRepairOption": true,
+    "installationPlaceCode": "efc7e406abc4400381ef3c05e96d043c"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "message": "Requested circuitId does not exist."
+    },
+    "remarks": ""
+  }
+}

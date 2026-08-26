@@ -1,0 +1,63 @@
+{
+  "internet-only": {
+    "dnsIpAddressPrimary": "192.168.1.1/32",
+    "dnsIpAddressSecondary": "192.168.2.2/32",
+    "poiRedundancy": true,
+    "lineActPrefix": ["10.128.192.0/24"],
+    "lineSbyPrefix": ["10.128.193.0/24"]
+  },
+  "vpn-only": {
+    "vpnId": "V000000002",
+    "poiRedundancy": false,
+    "lineActPrefix": ["10.128.192.0/24"],
+    "vpnNetworkPrefix": "10.10.0.0/28"
+  },
+  "internet-vpn": {
+    "vpnId": "V000000002",
+    "vpnConnectionPrefix": ["8.8.8.0/24", "13.107.0.0/16", "9.9.9.9/32"],
+    "dnsIpAddressPrimary": "2.2.1.1/32",
+    "dnsIpAddressSecondary": "1.1.2.2/32",
+    "poiRedundancy": false,
+    "lineActPrefix": ["10.128.192.0/24"],
+    "vpnNetworkPrefix": "10.101.10.110/28"
+  },
+  "vpn-breakout": {
+    "vpnId": "Z123456789",
+    "systemLocalBreakOutList": [{ "name": "teams" }, { "name": "googleMeet" }, { "name": "box" }],
+    "optionLocalBreakOut": true,
+    "customLocalBreakOutList": [
+      {
+        "name": "custom1",
+        "nameAlias": "custom1-nameAlias",
+        "dstPrefixList": [{ "prefix": "192.0.2.1/32" }, { "prefix": "192.168.1.0/24" }],
+        "fqdnList": [{ "fqdn": "a.example.com" }, { "fqdn": "*.example.com" }, { "fqdn": "c-d.example.com" }]
+      },
+      {
+        "name": "custom2",
+        "nameAlias": "custom2-nameAlias"
+      },
+      {
+        "name": "custom3",
+        "nameAlias": "custom3-nameAlias"
+      },
+      {
+        "name": "custom4",
+        "nameAlias": "custom4-nameAlias"
+      },
+      {
+        "name": "custom5",
+        "nameAlias": "custom5-nameAlias"
+      },
+      {
+        "name": "custom6",
+        "nameAlias": "custom6-nameAlias"
+      }
+    ],
+    "dnsIpAddressPrimary": "192.2.1.1/32",
+    "dnsIpAddressSecondary": "192.2.2.2/32",
+    "poiRedundancy": true,
+    "lineActPrefix": ["10.128.192.0/24"],
+    "lineSbyPrefix": ["10.128.193.0/24"],
+    "vpnNetworkPrefix": "10.101.10.110/28"
+  }
+}

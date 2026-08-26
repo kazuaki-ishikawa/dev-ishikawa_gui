@@ -1,0 +1,89 @@
+{
+  "offset": 0,
+  "total": 2,
+  "terminals": [
+    {
+      "customerNote": "ルーター1",
+      "breakOut": ["teams", "zoom", "webex"],
+      "deliveryName": "山田　太郎",
+      "deliveryDepartmentName": "営業課",
+      "deliveryPhoneNumber": "03-0000-0000",
+      "deliveryPostalCode": "123-1234",
+      "deliveryAddress": "東京都",
+      "deliveryAddressKana": "トウキョウト",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "123-0000",
+      "installationAddress": "東京都千代田区",
+      "primaryCircuitType": "ipoe",
+      "secondaryCircuitType": "mobile",
+      "ipoeId": "Z000000001",
+      "loopbackIpv4Address": "123.123.123.123",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false,
+          "vpnNats": [
+            { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+            { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+          ]
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "vpn",
+        "nexthopIpv4Address": "12.12.12.12",
+        "vpnRouting": true
+      },
+      "dhcpServer": {
+        "ipv4AddressRanges": [
+          { "start": "1.1.1.1", "end": "2.2.2.2" },
+          { "start": "3.3.3.3", "end": "4.4.4.4" }
+        ],
+        "domain": "example.com",
+        "primaryDnsServer": "3.3.3.3",
+        "secondaryDnsServer": "4.4.4.4",
+        "primaryWinsServer": "5.5.5.5",
+        "secondaryWinsServer": "6.6.6.6"
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    },
+    {
+      "customerNote": "モバイル回線1",
+      "breakOut": ["zoom"],
+      "deliveryName": "山田　太郎",
+      "deliveryDepartmentName": "営業課",
+      "deliveryPhoneNumber": "03-0000-0000",
+      "deliveryPostalCode": "123-1234",
+      "deliveryAddress": "東京都",
+      "deliveryAddressKana": "トウキョウト",
+      "deliveryDate": "2025-03-01",
+      "installationPostalCode": "123-0000",
+      "installationAddress": "東京都千代田区",
+      "primaryCircuitType": "mobile",
+      "loopbackIpv4Address": "123.123.123.123",
+      "lans": [
+        {
+          "type": "primary",
+          "ipv4Address": "1.1.1.1",
+          "ipv4PrefixLength": "23",
+          "vpnRouting": false,
+          "vpnNats": [
+            { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+            { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+          ]
+        }
+      ],
+      "defaultGateway": {
+        "nexthopNetwork": "lan",
+        "nexthopIpv4Address": "123.123.123.123",
+        "vpnRouting": false
+      },
+      "trafficReportFlowAnalyzer": {
+        "trafficReportFlowAnalyzerPlan": "noSubscription"
+      }
+    }
+  ]
+}

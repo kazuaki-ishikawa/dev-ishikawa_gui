@@ -1,0 +1,50 @@
+{
+  "total": 3,
+  "limit": 10,
+  "offset": 0,
+  "bulkOperations": [
+    {
+      "bulkOperationId": "bulk-001",
+      "status": "processing",
+      "requestTime": "2024-12-25T10:00:00+09:00",
+      "operations": [
+        {
+          "terminalId": "Z123456789",
+          "operation": "firmwareUpdate",
+          "status": "processing",
+          "requestTime": "2024-12-25T10:00:00+09:00"
+        }
+      ]
+    },
+    {
+      "bulkOperationId": "bulk-002",
+      "status": "completed",
+      "requestTime": "2024-12-24T10:00:00+09:00",
+      "completedTime": "2024-12-24T10:30:00+09:00",
+      "operations": [
+        {
+          "terminalId": "Z123456799",
+          "operation": "firmwareUpdate",
+          "status": "completed",
+          "requestTime": "2024-12-24T10:00:00+09:00",
+          "completedTime": "2024-12-24T10:30:00+09:00"
+        }
+      ]
+    },
+    {
+      "bulkOperationId": "bulk-003",
+      "status": "cancelled",
+      "requestTime": "2024-12-23T10:00:00+09:00",
+      "completedTime": "2024-12-23T10:15:00+09:00",
+      "operations": [
+        {
+          "terminalId": "Z123459999",
+          "operation": "firmwareUpdate",
+          "status": "cancelled",
+          "requestTime": "2024-12-23T10:00:00+09:00",
+          "completedTime": "2024-12-23T10:15:00+09:00"
+        }
+      ]
+    }
+  ]
+}

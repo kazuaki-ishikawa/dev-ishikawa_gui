@@ -1,0 +1,118 @@
+{
+  "terminal": {
+    "customerNote": "端末新規作成ワイヤレスアクセス",
+    "terminalDeviceType": "router01",
+    "breakOut": [],
+    "interceptDnsServers": [],
+    "deliveryName": "山田　太郎",
+    "deliveryCompanyName": "エヌ・ティ・ティ・ドコモビジネス　株式会社",
+    "deliveryDepartmentName": "営業課",
+    "deliveryPhoneNumber": "03-0000-0000",
+    "deliveryPostalCode": "100-0005",
+    "deliveryAddress": "東京都千代田区丸の内",
+    "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+    "deliveryDate": "2025-03-01",
+    "installationPostalCode": "100-0004",
+    "installationAddress": "東京都千代田区大手町",
+    "primaryCircuitType": "mobile",
+    "loopbackIpv4Address": "123.123.123.123",
+    "lanType": "switchPort",
+    "lans": [
+      {
+        "type": "primary",
+        "ipv4Address": "1.1.1.1",
+        "ipv4PrefixLength": "23",
+        "vpnRouting": false,
+        "dhcpServer": {
+          "ipv4AddressRanges": [
+            { "start": "1.1.1.1", "end": "2.2.2.2" },
+            { "start": "3.3.3.3", "end": "4.4.4.4" }
+          ],
+          "domain": "domain.server",
+          "primaryDnsServer": "3.3.3.3",
+          "secondaryDnsServer": "4.4.4.4",
+          "primaryWinsServer": "5.5.5.5",
+          "secondaryWinsServer": "6.6.6.6"
+        }
+      }
+    ],
+    "lanStaticRoutes": [],
+    "wanStaticRoutes": [],
+    "defaultGateway": {
+      "nexthopNetwork": "lan",
+      "nexthopIpv4Address": "123.123.123.123",
+      "vpnRouting": true
+    },
+    "vpnInFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "any",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "1.1.1.1/1",
+          "destinationIpv4Prefix": "1.1.1.1/24",
+          "action": "discard"
+        }
+      ]
+    },
+    "vpnOutFilters": {
+      "defaultPolicy": "discard",
+      "accessControlList": [
+        {
+          "protocol": "tcp",
+          "sourcePort": "80",
+          "destinationPort": "100",
+          "sourceIpv4Prefix": "2.2.2.2/1",
+          "destinationIpv4Prefix": "2.2.2.2/24",
+          "action": "accept"
+        }
+      ]
+    },
+    "inet4OutFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "icmp",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "3.3.3.3/1",
+          "destinationIpv4Prefix": "3.3.3.3/2",
+          "action": "accept"
+        }
+      ]
+    },
+    "trafficReportFlowAnalyzer": {
+      "trafficReportFlowAnalyzerPlan": "noSubscription",
+      "trafficReportFlowAnalyzerAlert": false
+    },
+    "threatDetection": {
+      "threatDetectionPlan": "3months"
+    },
+    "flowCollector": {
+      "flowCollectorPlan": "3months"
+    },
+    "behaviorDetection": {
+      "behaviorDetectionPlan": "subscription"
+    }
+  },
+  "mobile": {
+    "rat": "lte",
+    "japanCorporateNumber": "700110005901",
+    "picName": "山田　太郎",
+    "picNameKana": "ヤマダ　タロウ",
+    "picPostalCode": "100-0005",
+    "picAddress": "東京都千代田区丸の内",
+    "picAddressKana": "トウキョウトチヨダクマルノウチ",
+    "picPhoneNumber": "03-0000-0000",
+    "picDateOfBirth": "2019-01-01",
+    "picEmploymentDocumentType": "powerOfAttorney",
+    "picEmploymentDocumentId": "",
+    "networkPinCode": "1234",
+    "customerReceiptRequired": false,
+    "callDetailDesired": true,
+    "callDetailBreakdownSetting": "hideLast4Digits",
+    "callDetailDestinationNumberSetting": "showAll",
+    "jpkiRequestId": "jpki-request-id-12345"
+  }
+}

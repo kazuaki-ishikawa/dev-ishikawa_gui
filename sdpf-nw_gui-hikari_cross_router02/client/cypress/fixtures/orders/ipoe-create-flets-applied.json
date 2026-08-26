@@ -1,0 +1,24 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "requestType": "create",
+  "orderStatus": "applied",
+  "resourceType": "ipoe",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "customerNote": "フレッツ別契約新規作成オーダー",
+    "fletsId": "CAF0123456789",
+    "fletsOpen": true,
+    "ipoeType": "normal",
+    "ipoeApplicationDate": "2022-02-02",
+    "appControl": false,
+    "accessKey": "1a2b3c4D"
+  },
+  "response": {
+    "statusCode": 202,
+    "remarks": ""
+  }
+}

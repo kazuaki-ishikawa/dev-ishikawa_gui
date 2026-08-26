@@ -1,0 +1,31 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000333",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "resourceType": "ipoe",
+  "requestType": "delete",
+  "orderStatus": "applied",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "lanCollect": true,
+    "collectType": "visit"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "ipoeId": "Z000000333",
+      "fletsOrderType": "migrate",
+      "ref": "/v1/ipoe/hikari-collabo/Z000000333",
+      "removal": {
+        "workerCompanyName": "訪問回収の作業会社名Ｍ",
+        "workerCompanyPhoneNumber": "訪問回収の会社連絡先Ｍ",
+        "workerResponsiblePersonName": "訪問回収の責任者名Ｍ",
+        "collectType": "visit",
+        "lanCollect": true
+      }
+    },
+    "remarks": null
+  }
+}

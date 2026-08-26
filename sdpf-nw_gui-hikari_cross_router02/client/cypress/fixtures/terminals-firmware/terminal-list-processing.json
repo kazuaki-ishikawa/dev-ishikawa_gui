@@ -1,0 +1,95 @@
+{
+  "total": 3,
+  "offset": 0,
+  "terminals": [
+    {
+      "terminalId": "Z123456789",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "customerNote": "ルーター1",
+      "resourceStatus": "active",
+      "terminalType": "rentalTerminal",
+      "ref": "/v1/terminals/Z123456789",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "orderId": "1220d1292debc1882dad4b69e2528305",
+      "orderStatus": "completed",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000001"
+      },
+      "secondaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "I000000001"
+      },
+      "terminalDevices": [
+        {
+          "model": "NEC IX2215",
+          "deviceAttribute": "mainUnit",
+          "serialNumber": "SN001",
+          "firmwareVersion": {
+            "displayName": "2024-08-25",
+            "attribute": "firmwareUpdateRecommended"
+          }
+        }
+      ]
+    },
+    {
+      "terminalId": "Z123456799",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "customerNote": "ルーター2",
+      "resourceStatus": "active",
+      "terminalType": "rentalTerminal",
+      "ref": "/v1/terminals/Z123456799",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "orderId": "1220d1292debc1882dad4b69e2528306",
+      "orderStatus": "completed",
+      "primaryCircuit": {
+        "circuitType": "guarantee",
+        "circuitId": "G000000002"
+      },
+      "secondaryCircuit": {
+        "circuitType": "mobile",
+        "circuitId": "M000000001"
+      },
+      "terminalDevices": [
+        {
+          "model": "NEC IX2215",
+          "deviceAttribute": "mainUnit",
+          "serialNumber": "SN002",
+          "firmwareVersion": {
+            "displayName": "2024-08-20",
+            "attribute": "firmwareUpdateRequired"
+          }
+        }
+      ]
+    },
+    {
+      "terminalId": "Z123459999",
+      "creationTime": "2023-08-30T11:07:37+09:00",
+      "updateTime": "2023-08-30T11:07:52+09:00",
+      "customerNote": "ルーター3",
+      "resourceStatus": "active",
+      "terminalType": "rentalTerminal",
+      "ref": "/v1/terminals/Z123459999",
+      "tenantId": "10262b146c5229334f85a209805daffe",
+      "orderId": "1220d1292debc1882dad4b69e2528307",
+      "orderStatus": "completed",
+      "primaryCircuit": {
+        "circuitType": "ipoe",
+        "circuitId": "I000000002"
+      },
+      "terminalDevices": [
+        {
+          "model": "NEC IX2215",
+          "deviceAttribute": "mainUnit",
+          "serialNumber": "SN003",
+          "firmwareVersion": {
+            "displayName": "2024-08-25",
+            "attribute": "firmwareUpdateRecommended"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "00000000000000000000000000000001",
+  "orderId": "550e8400e29b41d4a716446655440002",
+  "ref": "/msb/v1/rink-msb-contracts/00000000000000000000000000000001",
+  "resourceType": "edr-lite",
+  "requestType": "update",
+  "orderStatus": "completed",
+  "creationTime": "2024-07-02T10:27:11+09:00",
+  "updateTime": "2024-07-02T10:27:26+09:00",
+  "request": {
+    "emailAddress": "updated@example.com",
+    "customerSpecialNote": "更新後のメモ",
+    "licensePacks": {
+      "1licensePacks": 0,
+      "10licensePacks": 0,
+      "100licensePacks": 1,
+      "1000licensePacks": 0,
+      "10000licensePacks": 1
+    }
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "resourceId": "00000000000000000000000000000001",
+      "orderId": "550e8400e29b41d4a716446655440002"
+    },
+    "remarks": null
+  }
+}

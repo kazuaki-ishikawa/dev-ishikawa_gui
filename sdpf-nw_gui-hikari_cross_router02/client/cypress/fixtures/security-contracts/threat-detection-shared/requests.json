@@ -1,0 +1,159 @@
+{
+  "total": 8,
+  "offset": 0,
+  "limit": 10,
+  "threatDetectionsSharedRequests": [
+    {
+      "requestId": "requestId-001",
+      "ref": "/v1/threat-detection-shared/requests/requestId-001",
+      "requestDirection": "sent",
+      "status": "pendingApproval",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-001",
+      "contractorName": "ＮＴＴドコモビジネス株式会社１",
+      "terminals": [
+        {
+          "terminalId": "Z000000001",
+          "customerNote": "東京支店ルーター",
+          "installationAddress": "東京都"
+        }
+      ],
+      "billingMethod": "receiverPays"
+    },
+    {
+      "requestId": "requestId-002",
+      "ref": "/v1/threat-detection-shared/requests/requestId-002",
+      "requestDirection": "sent",
+      "status": "approved",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-002",
+      "contractorName": "ＮＴＴドコモビジネス株式会社２",
+      "terminals": [
+        {
+          "terminalId": "Z000000002",
+          "customerNote": "神奈川支店ルーター",
+          "installationAddress": "神奈川県"
+        }
+      ],
+      "billingMethod": "providerPays"
+    },
+    {
+      "requestId": "requestId-003",
+      "ref": "/v1/threat-detection-shared/requests/requestId-003",
+      "requestDirection": "sent",
+      "status": "rejected",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-003",
+      "contractorName": "ＮＴＴドコモビジネス株式会社３",
+      "terminals": [
+        {
+          "terminalId": "Z000000003",
+          "customerNote": "千葉支店ルーター",
+          "installationAddress": "千葉県"
+        }
+      ],
+      "billingMethod": "split"
+    },
+    {
+      "requestId": "requestId-004",
+      "ref": "/v1/threat-detection-shared/requests/requestId-004",
+      "requestDirection": "sent",
+      "status": "cancelled",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-004",
+      "contractorName": "ＮＴＴドコモビジネス株式会社４",
+      "terminals": [
+        {
+          "terminalId": "Z000000004",
+          "customerNote": "静岡支店ルーター",
+          "installationAddress": "静岡県"
+        }
+      ],
+      "billingMethod": "split"
+    },
+    {
+      "requestId": "requestId-005",
+      "ref": "/v1/threat-detection-shared/requests/requestId-005",
+      "requestDirection": "sent",
+      "status": "approved",
+      "requestType": "threatDetectionStopShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-005",
+      "contractorName": "ＮＴＴドコモビジネス株式会社５",
+      "terminals": [
+        {
+          "terminalId": "Z000000005",
+          "customerNote": "立川支店ルーター",
+          "installationAddress": "東京都立川市"
+        }
+      ],
+      "billingMethod": "receiverPays"
+    },
+    {
+      "requestId": "requestId-006",
+      "ref": "/v1/threat-detection-shared/requests/requestId-006",
+      "requestDirection": "received",
+      "status": "pendingApproval",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-006",
+      "contractorName": "ＮＴＴドコモビジネス株式会社６",
+      "terminals": [
+        {
+          "terminalId": "Z000000006",
+          "customerNote": "立川支店ルーター",
+          "installationAddress": "東京都立川市"
+        }
+      ],
+      "billingMethod": "providerPays"
+    },
+    {
+      "requestId": "requestId-007",
+      "ref": "/v1/threat-detection-shared/requests/requestId-007",
+      "requestDirection": "received",
+      "status": "pendingApproval",
+      "requestType": "threatDetectionShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-007",
+      "contractorName": "ＮＴＴドコモビジネス株式会社７",
+      "terminals": [
+        {
+          "terminalId": "Z000000007",
+          "customerNote": "立川支店ルーター",
+          "installationAddress": "東京都立川市"
+        }
+      ],
+      "billingMethod": "split"
+    },
+    {
+      "requestId": "requestId-008",
+      "ref": "/v1/threat-detection-shared/requests/requestId-008",
+      "requestDirection": "received",
+      "status": "pendingApproval",
+      "requestType": "threatDetectionStopShareRequest",
+      "creationTime": "2026-03-23T10:05:48+09:00",
+      "updateTime": "2026-03-23T10:05:48+09:00",
+      "sharedTenantId": "sharedTenantId-008",
+      "contractorName": "ＮＴＴドコモビジネス株式会社８",
+      "terminals": [
+        {
+          "terminalId": "Z000000006",
+          "customerNote": "八王子支店ルーター",
+          "installationAddress": "東京都八王子市"
+        }
+      ],
+      "billingMethod": "receiverPays"
+    }
+  ]
+}

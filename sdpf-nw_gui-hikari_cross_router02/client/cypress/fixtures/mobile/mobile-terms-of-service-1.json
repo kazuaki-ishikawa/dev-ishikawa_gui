@@ -1,0 +1,7 @@
+{
+  "agreementCode": "agreementCode",
+  "termsOfService": {
+    "規約名1": "000000000000000000000001"
+  },
+  "listedTermsOfService": [{ "name": "規約名1", "uuid": "000000000000000000000001" }]
+}

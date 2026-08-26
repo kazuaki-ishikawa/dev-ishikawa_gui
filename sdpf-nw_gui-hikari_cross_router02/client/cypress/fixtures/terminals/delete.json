@@ -1,0 +1,30 @@
+{
+  "removalName": "返却キット送付先　担当者名",
+  "removalDepartmentName": "返却キット送付先部課名",
+  "removalPostalCode": "100-0006",
+  "removalAddress": "東京都千代田区有楽町",
+  "removalAddressKana": "トウキョウトチヨダクユウラクチョウ",
+  "removalPhoneNumber": "090-0000-0000",
+  "mobile": {
+    "japanCorporateNumber": "8700110005901",
+    "contractIdentificationDocumentType": "certificateOfPresentMatters",
+    "contractIdentificationDocumentId": "",
+    "picName": "鈴木　太郎",
+    "picNameKana": "スズキ　タロウ",
+    "picPostalCode": "108-0014",
+    "picAddress": "東京都港区芝",
+    "picAddressKana": "トウキョウトミナトクシバ",
+    "picPhoneNumber": "03-1111-1111",
+    "picDateOfBirth": "1990-01-21",
+    "picIdentificationDocumentType": "driversLisence",
+    "picIdentificationNumber": "9876543210",
+    "picIdentificationFrontDocumentId": "",
+    "picIdentificationBackDocumentId": "",
+    "picIdentificationAdditionalDocumentId": "",
+    "picAuxiliaryIdentificationDocumentType": "residentCertificate",
+    "picAuxiliaryIdentificationDocumentId": "",
+    "picEmploymentDocumentType": "employeeIdCard",
+    "picEmployeeCode": "98765",
+    "picEmploymentDocumentId": ""
+  }
+}

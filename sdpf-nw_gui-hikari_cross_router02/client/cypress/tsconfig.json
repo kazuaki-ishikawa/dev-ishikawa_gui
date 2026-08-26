@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "dom", "dom.iterable", "webworker"],
+    "sourceMap": true,
+    "types": ["cypress", "node", "./support/index.d.ts"],
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "../",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@cypress/*": ["cypress/*"]
+    }
+  }
+}

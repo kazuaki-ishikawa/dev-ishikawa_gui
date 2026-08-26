@@ -1,0 +1,20 @@
+{
+  "rat": "auto",
+  "japanCorporateNumber": "8700110005901",
+  "picName": "山田　太郎",
+  "picNameKana": "ヤマダ　タロウ",
+  "picPostalCode": "108-0014",
+  "picAddress": "東京都港区芝",
+  "picAddressKana": "トウキョウトミナトクシバ",
+  "picPhoneNumber": "03-0000-0000",
+  "picDateOfBirth": "2019-01-01",
+  "picEmploymentDocumentType": "employeeIdCard",
+  "picEmployeeCode": "12345",
+  "picEmploymentDocumentId": "",
+  "networkPinCode": "1234",
+  "customerReceiptRequired": true,
+  "callDetailDesired": true,
+  "callDetailBreakdownSetting": "showAll",
+  "callDetailDestinationNumberSetting": "hideLast4Digits",
+  "jpkiRequestId": "jpki-req-123456"
+}

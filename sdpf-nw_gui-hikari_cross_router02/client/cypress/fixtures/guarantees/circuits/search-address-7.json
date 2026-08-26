@@ -1,0 +1,11 @@
+{
+  "postalCode": "160-0023",
+  "prefecture": "東京都",
+  "municipalityList": ["新宿区"],
+  "largerSectionList": ["西新宿"],
+  "sectionList": ["３丁目"],
+  "houseNumber1List": ["１９"],
+  "houseNumber2List": ["２０"],
+  "houseNumber3List": ["１"],
+  "buildingName1List": ["山田ビル", "佐藤ビル", "鈴木ビル"]
+}

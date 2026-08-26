@@ -1,0 +1,12 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceStatus": "active",
+  "breakOutListId": "550e8400e29b41d4a716446655440001",
+  "ref": "/v1/break-out-lists/550e8400e29b41d4a716446655440001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "customerNote": "特定通信ブレイクアウト対象リスト削除",
+  "fqdnList": ["example.com", "example.jp", "*.example.com"],
+  "prefixList": ["192.0.2.0/24", "198.51.100.0/24", "203.0.11.1/32"]
+}

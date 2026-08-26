@@ -1,0 +1,89 @@
+# params定義部分
+# 使うパラメータの定義は全部書く
+params:
+  - name: k8sNamespace
+    type: string
+  - name: version
+    type: string
+  - name: casvalImage
+    type: string
+  - name: globalIp
+    type: string
+  - name: redisIp
+    type: string
+  - name: internalPublicEndpoint
+    type: string
+  - name: publicEndpoint
+    type: string
+  - name: certName
+    type: string
+  - name: securityPolicy
+    type: string
+  - name: sslPolicy
+    type: string
+  - name: configPath
+    type: string
+  - name: internalIp
+    type: string
+
+  # 機密情報に関する定義, typeは全てsecret
+  - name: keystonePassword
+    type: secret
+
+
+# 参照するCloud Native Adapter (Infrastructure + CI/CD Adapter)の場所
+modules:
+  - name: github.com/qmonus/qmonus-sdk-cloud-native-adapter
+    revision: v0.73.0
+
+
+# 利用するCloud Native Adapte一覧
+designPatterns:
+
+  # 以下は、利用するInfrastructure Adapter
+  # manifest compile時に利用される
+
+  ## namespaceを作成するパターン
+  - pattern: qmonus.net/adapter/qmonus-sdk/kubernetes:namespace
+    params:
+      name: $(params.k8sNamespace)
+
+
+  ## QmonusApiFront (旧称: casval)コンポーネントを作成するパターン
+  - pattern: qmonus.net/adapter/qmonus-sdk/usecase/casval:casval
+    params:
+      k8sNamespace: $(params.k8sNamespace)
+      version: $(params.version)
+      image: $(params.casvalImage)
+      globalIp: $(params.globalIp)
+      internalIp: $(params.internalIp)
+      redisIp: $(params.redisIp)
+      internalPublicEndpoint: $(params.internalPublicEndpoint)
+      publicEndpoint: $(params.publicEndpoint)
+      certName: $(params.certName)
+      securityPolicy: $(params.securityPolicy)
+      sslPolicy: $(params.sslPolicy)
+      replicas: 3
+      configPath: $(params.configPath)
+      secret: 
+        rid: casval-secrets
+        data:
+          KEYSTONE_PASSWORD: $(params.keystonePassword)
+
+
+# --------------------------------------------------------------------
+  # 以下は、利用するCI/CD Adapter
+  # pipeline compile時に利用される
+
+  ## QmonusApiFront(旧称: casval)のイメージをkanikoでbuildするパターン
+  - pattern: qmonus.net/adapter/official/pipeline/build:kaniko
+
+  ## アプリケーションをRolling Update方式でデプロイするパターン
+  - pattern: qmonus.net/adapter/official/pipeline/deploy:simple
+    pipelineParams:
+      useDebug: true
+
+  ## アプリケーションをRolling Update方式でデプロイするパターン(確認機能付)
+  - pattern: qmonus.net/adapter/official/pipeline/deploy:preview
+    pipelineParams:
+      useDebug: true

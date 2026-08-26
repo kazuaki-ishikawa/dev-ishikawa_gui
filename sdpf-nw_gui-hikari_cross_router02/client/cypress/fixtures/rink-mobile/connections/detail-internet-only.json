@@ -1,0 +1,11 @@
+{
+  "connectionType": "internet-only",
+  "dnsIpAddressPrimary": "192.168.1.1/32",
+  "dnsIpAddressSecondary": "192.168.1.112/32",
+  "authDomainName": "example.internet-only.com",
+  "apn": "w.rink.ntt.com",
+  "poiRedundancy": true,
+  "lineActPrefix": ["10.128.192.0/24"],
+  "lineSbyPrefix": ["10.128.193.0/24"],
+  "createdAt": "2024-06-01T12:00:00Z"
+}

@@ -1,0 +1,11 @@
+{
+  "backend": [
+    "http://localhost/ztgict/v1",
+    "http://localhost/rink-mobile/v1",
+    "http://localhost/rink-idaas/v1",
+    "http://localhost/msb/v1"
+  ],
+  "auth": {
+    "menus": ["sss.menu.rink_msb", "rink.direct_sales"]
+  }
+}

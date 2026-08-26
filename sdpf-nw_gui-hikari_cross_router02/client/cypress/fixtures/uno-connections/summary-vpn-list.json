@@ -1,0 +1,28 @@
+{
+  "vpns": [
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "V000000002",
+      "ref": "/v1/vpns/V000000002",
+      "resourceStatus": "active",
+      "customerNote": "拠点間通信用VPN",
+      "internalAddress": "10.128.0.0/26"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "Z123456789",
+      "ref": "/v1/vpns/Z123456789",
+      "resourceStatus": "inactive",
+      "customerNote": "東VPN",
+      "internalAddress": "10.128.1.0/26"
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "V000000009",
+      "ref": "/v1/vpns/V000000009",
+      "resourceStatus": "terminated",
+      "customerNote": "廃止VPN",
+      "internalAddress": "10.128.2.0/26"
+    }
+  ]
+}

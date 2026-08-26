@@ -1,0 +1,39 @@
+{
+  "accessKey": "1a2b3c4D",
+  "ipoeApplicationDate": "2025-12-21",
+  "appControl": false,
+  "applicant": {
+    "name": "東京　太郎",
+    "nameKana": "トウキョウ　タロウ",
+    "phoneNumber": "080-1234-5678",
+    "mailAddress": "taro@example.com"
+  },
+  "creationTime": "2023-07-13T20:02:21+09:00",
+  "customerNote": "IPoE回線新設",
+  "fletsId": "CAF1234567890",
+  "fletsOpen": false,
+  "fletsOpenDate": "2023-07-13",
+  "hikariPlan": "next",
+  "installationPlace": {
+    "postalCode": "123-4567",
+    "phoneNumber": "080-1234-5678"
+  },
+  "ipoeId": "Z123456789",
+  "ipoeType": "normal",
+  "ipv4Address": "12.34.56.78",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "completed",
+  "originContractor": {
+    "name": "東京　太郎",
+    "nameKana": "トウキョウ　タロウ",
+    "phoneNumber": "080-1234-5678",
+    "postalCode": "123-4567",
+    "mailAddress": "taro@example.com"
+  },
+  "ref": "/v1/ipoe/separate-contract/Z123456789",
+  "resourceStatus": "active",
+  "serviceStartTime": null,
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "terminalId": null,
+  "updateTime": "2023-08-10T11:04:42+09:00"
+}

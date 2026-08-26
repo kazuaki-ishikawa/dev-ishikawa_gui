@@ -1,0 +1,50 @@
+apiVersion: vs.axis-dev.io/v1
+kind: AssemblyLine
+metadata:
+  name: stg-gui
+  annotations:
+    vs.axis-dev.io/event-type: change-created
+spec:
+  params:
+    - name: gitRevision
+      description: ""
+  results:
+    - name: gitRevision
+      value: $(inputs.gitRevision)
+    - name: casvalImage
+      value: $(stages.staging-build.results.imageFullNameTag)
+  artifacts:
+    - path: manifests
+  stages:
+    - name: staging-build
+      spec:
+        deployment:
+          app: gui
+          name: staging
+        params:
+          - name: gitRevision
+            value: $(inputs.gitRevision)
+          - name: imageRegistryPath
+            value: asia-northeast1-docker.pkg.dev/$(params.gcpProjectId)/ztgict-qmonus
+          - name: imageShortName
+            value: gui
+          - name: imageTag
+            value: $(inputs.gitRevision)
+          - name: pathToDockerFile
+            value: build/Dockerfile
+        pipeline: gui-build
+    - name: staging-deploy
+      spec:
+        deployment:
+          app: gui
+          name: staging
+        params:
+          - name: gitRevision
+            value: $(inputs.gitRevision)
+          - name: version
+            value: $(inputs.gitRevision)
+          - name: casvalImage
+            value: $(stages.staging-build.results.imageFullNameTag)
+        pipeline: gui-deploy
+      runAfter:
+        - staging-build

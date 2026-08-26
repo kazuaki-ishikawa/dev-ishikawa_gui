@@ -1,0 +1,71 @@
+{
+  "linesList": [
+    {
+      "lineIndex": 1,
+      "accessType": "LTE",
+      "planLimit": "モバイルアクセス データ通信 1GB",
+      "planLimitAlias": "plan_limit_1gb",
+      "deviceName": "通信機器購入なし",
+      "authenticationId": "auth_001",
+      "authenticationPassword": "testpass123",
+      "actIpAddress": "10.128.192.0/32",
+      "sbyIpAddress": "10.128.193.0/32"
+    },
+    {
+      "lineIndex": 2,
+      "accessType": "5GNSA",
+      "planLimit": "モバイルアクセス データ通信 3GB",
+      "planLimitAlias": "plan_limit_3gb",
+      "deviceName": "MR10LN",
+      "deviceNameAlias": "device_mr10ln",
+      "authenticationId": "auth_002",
+      "authenticationPassword": "testpass456",
+      "actIpAddress": "10.138.16.255/32",
+      "sbyIpAddress": "10.138.17.255/32"
+    },
+    {
+      "lineIndex": 3,
+      "accessType": "5GNSA",
+      "planLimit": "モバイルアクセス データ通信 3GB",
+      "planLimitAlias": "plan_limit_3gb",
+      "deviceName": "MR10LN",
+      "deviceNameAlias": "device_mr10ln",
+      "authenticationId": "auth_003",
+      "authenticationPassword": "testpass456",
+      "actIpAddress": "10.148.2.0/32"
+    },
+    {
+      "lineIndex": 4,
+      "accessType": "LTE",
+      "planLimit": "モバイルアクセス データ通信 1GB",
+      "planLimitAlias": "plan_limit_1gb",
+      "deviceName": "test",
+      "deviceNameAlias": "device_test",
+      "authenticationId": "auth_004",
+      "authenticationPassword": "testpass456",
+      "actIpAddress": "10.148.2.0/32"
+    }
+  ],
+  "applicationInfo": [
+    [{ "quantity": 4 }],
+    [{ "quantity": 3 }, { "deviceNameAlias": "device_mr10ln", "quantity": 1 }],
+    [{ "quantity": 2 }, { "deviceNameAlias": "device_mr10ln", "quantity": 2 }],
+    [
+      { "quantity": 1 },
+      { "deviceNameAlias": "device_mr10ln", "quantity": 2 },
+      { "deviceNameAlias": "device_test", "quantity": 1 }
+    ]
+  ],
+  "csvApplicationInfo": [{ "quantity": 1 }, { "deviceNameAlias": "device_mr10ln", "quantity": 1 }],
+  "shippingInfo": {
+    "packageRecipient": "東京　太郎",
+    "shippingPostalCode": "1000001",
+    "shippingPrefecture": "東京都",
+    "shippingCity": "千代田区",
+    "shippingCityAdditionalInfo": "千代田",
+    "shippingAddressBlock": "２丁目",
+    "shippingAddressNumber": "３番１号",
+    "shippingBuilding": "大手町プレイスウエストタワー",
+    "phoneNumber": "0312345678"
+  }
+}

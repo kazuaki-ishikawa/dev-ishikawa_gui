@@ -1,0 +1,29 @@
+apiVersion: vs.axis-dev.io/v1
+kind: AssemblyLine
+metadata:
+  name: prod-gui
+spec:
+  params:
+    - name: gitRevision
+      description: ""
+    - name: casvalImage
+      description: ""
+  results:
+    - name: gitRevision
+      value: $(inputs.gitRevision)
+  artifacts:
+    - path: manifests
+  stages:
+    - name: production-deploy-preview
+      spec:
+        deployment:
+          app: gui
+          name: production
+        params:
+          - name: gitRevision
+            value: $(inputs.gitRevision)
+          - name: version
+            value: $(inputs.gitRevision)
+          - name: casvalImage
+            value: $(inputs.casvalImage)
+        pipeline: gui-deploy-preview

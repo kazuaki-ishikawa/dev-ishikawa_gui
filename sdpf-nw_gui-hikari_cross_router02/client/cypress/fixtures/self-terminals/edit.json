@@ -1,0 +1,36 @@
+{
+  "customerNote": "お客さま自営ルーター編集（VPN利用あり）",
+  "installationPostalCode": "150-0001",
+  "installationAddress": "東京都渋谷区神宮前",
+  "vpnId": "V000000002",
+  "vpnRouteLimit": 100,
+  "vpnAdvertiseNetworks": ["1.1.1.0/30", "1.1.3.0/30"],
+  "guarantee": {
+    "guaranteeId": "Z000000001",
+    "internet": {
+      "advertise": false,
+      "pingMonitoring": false
+    },
+    "vpn": {
+      "act": {
+        "connectedIpv4Prefix": "2.2.2.2/30"
+      },
+      "sby": {
+        "connectedIpv4Prefix": "2.2.2.2/30"
+      }
+    }
+  },
+  "trafficReportFlowAnalyzer": {
+    "trafficReportFlowAnalyzerPlan": "noSubscription",
+    "trafficReportFlowAnalyzerAlert": false
+  },
+  "threatDetection": {
+    "threatDetectionPlan": "noSubscription"
+  },
+  "flowCollector": {
+    "flowCollectorPlan": "noSubscription"
+  },
+  "behaviorDetection": {
+    "behaviorDetectionPlan": "subscription"
+  }
+}

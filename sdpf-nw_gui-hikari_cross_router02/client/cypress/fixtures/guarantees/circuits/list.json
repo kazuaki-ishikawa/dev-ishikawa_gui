@@ -1,0 +1,138 @@
+{
+  "total": 6,
+  "offset": 0,
+  "guarantees": [
+    {
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "guaranteeId": "Z123456789",
+      "resourceStatus": "active",
+      "orderId": "Z123456789",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z123456789",
+      "terminalId": "Z123456789",
+      "customerNote": "端末連携済み-スイッチポート方式(Z123456789)",
+      "physicalBandwidth": "100M",
+      "userInterfaceType": "100BASE-TX",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "20M"
+      },
+      "vpn": {
+        "rateLimit": "20M"
+      }
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440001",
+      "guaranteeId": "Z000000001",
+      "resourceStatus": "active",
+      "orderId": "Z000000001",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z000000001",
+      "terminalId": null,
+      "customerNote": "端末申込用１-スイッチポート方式(Z000000001)",
+      "physicalBandwidth": "100M",
+      "userInterfaceType": "100BASE-TX",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "20M"
+      },
+      "vpn": {
+        "rateLimit": "20M"
+      }
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440002",
+      "guaranteeId": "Z000000002",
+      "resourceStatus": "active",
+      "orderId": "Z000000002",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z000000002",
+      "terminalId": null,
+      "customerNote": "端末申込用２-スイッチポート方式(Z000000002)",
+      "physicalBandwidth": "100M",
+      "userInterfaceType": "100BASE-TX",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "100M"
+      },
+      "vpn": {
+        "rateLimit": "90M"
+      }
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440003",
+      "guaranteeId": "Z000000003",
+      "resourceStatus": "active",
+      "orderId": "Z000000003",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z000000003",
+      "terminalId": null,
+      "customerNote": "端末申込用３-スイッチポート方式(Z000000003)",
+      "physicalBandwidth": "100M",
+      "userInterfaceType": "100BASE-TX",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "100M"
+      },
+      "vpn": {
+        "rateLimit": "90M"
+      }
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440003",
+      "guaranteeId": "Z000000004",
+      "resourceStatus": "active",
+      "orderId": "Z000000004",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z000000004",
+      "terminalId": null,
+      "customerNote": "端末申込用４-ルーテッドポート方式(Z000000004)",
+      "physicalBandwidth": "1G",
+      "userInterfaceType": "1000BASE-T",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "200M"
+      },
+      "vpn": {
+        "rateLimit": "100M"
+      }
+    },
+    {
+      "tenantId": "550e8400e29b41d4a716446655440003",
+      "guaranteeId": "Z000000011",
+      "resourceStatus": "terminated",
+      "orderId": "Z000000011",
+      "orderStatus": "applied",
+      "creationTime": "2024-01-25T14:33:17+09:00",
+      "updateTime": "2024-01-26T11:46:44+09:00",
+      "serviceStartTime": "2024-01-25T23:32:00+09:00",
+      "ref": "/v1/guarantees/Z000000011",
+      "terminalId": null,
+      "customerNote": "terminated (Z000000011)",
+      "physicalBandwidth": "1G",
+      "userInterfaceType": "1000BASE-T",
+      "installationPlaceCode": "100",
+      "internet": {
+        "rateLimit": "100M"
+      },
+      "vpn": {
+        "rateLimit": "100M"
+      }
+    }
+  ]
+}

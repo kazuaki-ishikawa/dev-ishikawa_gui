@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "orderStatus": "applied",
+  "effectiveDate": "2019-05-21",
+  "supportUrl": "https://example.com/security",
+  "supportEmail": "aaa@example.com",
+  "supportedTerminalCount": 10
+}

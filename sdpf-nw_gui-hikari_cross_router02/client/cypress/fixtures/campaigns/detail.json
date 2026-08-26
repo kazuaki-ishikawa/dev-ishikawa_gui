@@ -1,0 +1,10 @@
+{
+  "campaignType": "guaranteeOneRankUp",
+  "resourceType": "guarantee",
+  "resourceId": "Z000000001",
+  "startTime": "2024-10-01T00:00:00+00:00",
+  "expirationTime": "2024-12-31T23:59:59+00:00",
+  "campaignInfo": {
+    "networkType": "internet"
+  }
+}

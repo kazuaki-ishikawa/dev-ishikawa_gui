@@ -1,0 +1,25 @@
+{
+  "visit": {
+    "collectType": "visit",
+    "lanCollect": true
+  },
+  "kitSendAddress": {
+    "companyName": "ＮＴＴドコモビジネス",
+    "personName": "山田　太郎",
+    "addressCode": "13104070003",
+    "address": "東京都新宿区西新宿３丁目",
+    "houseNumber": "１９−２−５",
+    "buildingName": "山田ビル"
+  },
+  "reserveDate": {
+    "type": "removal",
+    "date": "2022-02-02",
+    "time": "9-10",
+    "admissionApplicationInfo": "companyInfoAndWorkCandidateName",
+    "attendanceCompanyName": "ＮＴＴドコモビジネス",
+    "attendanceDepartmentName": "プラットフォームサービス本部",
+    "attendancePersonName": "山田　太郎",
+    "attendancePersonNameKana": "ヤマダ　タロウ",
+    "attendancePhoneNumber": "03-1234-5678"
+  }
+}

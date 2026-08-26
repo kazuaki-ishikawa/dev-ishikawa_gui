@@ -1,0 +1,13 @@
+{
+  "connectionType": "internet-vpn",
+  "vpnId": "Z123456789",
+  "vpnConnectionPrefix": ["104.16.0.0/12", "9.9.9.9/32", "8.8.8.0/24"],
+  "dnsIpAddressPrimary": "192.168.123.1/32",
+  "dnsIpAddressSecondary": "1.1.1.1/32",
+  "authDomainName": "example.internet-vpn.com",
+  "apn": "w.rink.ntt.com",
+  "poiRedundancy": false,
+  "lineActPrefix": ["10.128.192.0/24"],
+  "vpnNetworkPrefix": "10.101.10.110/28",
+  "createdAt": "2024-06-02T12:00:00Z"
+}

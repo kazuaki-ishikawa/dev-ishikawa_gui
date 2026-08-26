@@ -1,0 +1,25 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000001",
+  "orderId": "62ec2b62646740b5809f695dea7b2bbf",
+  "ref": "/v1/orders/62ec2b62646740b5809f695dea7b2bbf",
+  "resourceType": "ipoe",
+  "requestType": "update",
+  "orderStatus": "processing",
+  "creationTime": "2019-05-21T10:05:48+09:00",
+  "updateTime": "2019-05-21T10:05:48+09:00",
+  "request": {
+    "diversionNumber": "E1234567890",
+    "contractInfo": {
+      "contractType": "corporation",
+      "contractorName": "エヌ・ティ・ティ・ドコモビジネス　株式会社",
+      "contractorNameKana": "エヌ・ティ・ティ・ドコモビジネス　カブシキガイシャ"
+    },
+    "diversionDate": "2025-12-01"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {},
+    "remarks": null
+  }
+}

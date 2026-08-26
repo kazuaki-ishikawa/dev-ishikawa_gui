@@ -1,0 +1,5 @@
+{
+  "terminalIds": ["Z123456789", "Z123456799", "Z123459999"],
+  "operation": "firmwareUpdate",
+  "requestTime": "2024-12-24T10:00:00+09:00"
+}

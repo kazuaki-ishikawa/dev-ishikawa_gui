@@ -1,0 +1,18 @@
+{
+  "corporation": {
+    "diversionNumber": "E0000000001",
+    "contractInfo": {
+      "contractType": "corporation",
+      "contractorName": "エヌ・ティ・ティ・ドコモビジネス　株式会社",
+      "contractorNameKana": "エヌ・ティ・ティ・ドコモビジネス　カブシキガイシャ"
+    }
+  },
+  "individual": {
+    "diversionNumber": "E0000000002",
+    "contractInfo": {
+      "contractType": "individual",
+      "contractorName": "山田　太郎",
+      "contractorNameKana": "ヤマダ　タロウ"
+    }
+  }
+}

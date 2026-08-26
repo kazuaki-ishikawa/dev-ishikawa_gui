@@ -1,0 +1,18 @@
+{
+  "internet": {
+    "campaignType": "guaranteeOneRankUp",
+    "resourceType": "guarantee",
+    "resourceId": "Z123456789",
+    "campaignInfo": {
+      "networkType": "internet"
+    }
+  },
+  "vpn": {
+    "campaignType": "guaranteeOneRankUp",
+    "resourceType": "guarantee",
+    "resourceId": "Z123456789",
+    "campaignInfo": {
+      "networkType": "vpn"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "installationPlaceCode": "12345678901",
+  "judgeResultList": [
+    {
+      "fletsType": "family200M",
+      "result": "constructionPossible"
+    },
+    {
+      "fletsType": "family1G",
+      "result": "constructionPossible"
+    },
+    {
+      "fletsType": "mansion200M",
+      "result": "constructionPossible"
+    },
+    {
+      "fletsType": "mansion1G",
+      "result": "constructionPossible"
+    }
+  ],
+  "fieldSurveyRequirement": true
+}

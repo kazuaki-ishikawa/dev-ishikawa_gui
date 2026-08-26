@@ -1,0 +1,52 @@
+{
+  "default": {
+    "requestType": "fletsSeparate",
+    "customerNote": "IPoE回線新設顧客情報あり",
+    "hikariPlan": "next",
+    "ipoeType": "wide",
+    "appControl": true,
+    "ipoeApplicationDate": "2025-12-21",
+    "fletsOpen": false,
+    "fletsOpenDate": "2025-12-21",
+    "applicant": {
+      "name": "東京　太郎",
+      "nameKana": "トウキョウ　タロウ",
+      "phoneNumber": "080-1234-5678",
+      "mailAddress": "taro@example.com"
+    },
+    "originContractor": {
+      "name": "東京太郎",
+      "nameKana": "トウキョウタロウ",
+      "phoneNumber": "080-1234-5678",
+      "postalCode": "123-4567",
+      "mailAddress": "taro@example.com"
+    },
+    "installationPlace": {
+      "postalCode": "123-4567",
+      "phoneNumber": "080-1234-5678"
+    }
+  },
+  "withoutCustomerInformation": {
+    "requestType": "fletsSeparate",
+    "customerNote": "IPoE回線新設顧客情報なし",
+    "fletsId": "CAF1234567890",
+    "hikariPlan": "next",
+    "ipoeType": "normal",
+    "appControl": false,
+    "accessKey": "1a2b3c4D",
+    "ipoeApplicationDate": "2025-12-21",
+    "fletsOpen": true
+  },
+  "hikariCross": {
+    "requestType": "fletsSeparate",
+    "customerNote": "IPoE回線新設光クロス",
+    "fletsId": "CAF1234567890",
+    "hikariPlan": "cross",
+    "ipoeType": "superWide",
+    "appControl": true,
+    "accessKey": "1a2b3c4D",
+    "ipoeApplicationDate": "2025-12-21",
+    "fletsOpen": false,
+    "fletsOpenDate": "2025-12-21"
+  }
+}

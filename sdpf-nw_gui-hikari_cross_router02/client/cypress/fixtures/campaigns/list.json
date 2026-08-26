@@ -1,0 +1,14 @@
+{
+  "campaigns": [
+    {
+      "campaignType": "guaranteeOneRankUp",
+      "resourceType": "guarantee",
+      "resourceId": "Z123456789",
+      "startTime": "2024-01-25T14:33:17+09:00",
+      "expirationTime": null,
+      "campaignInfo": {
+        "networkType": "vpn"
+      }
+    }
+  ]
+}

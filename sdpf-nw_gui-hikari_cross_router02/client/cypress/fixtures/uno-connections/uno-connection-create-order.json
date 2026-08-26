@@ -1,0 +1,39 @@
+{
+  "tenantId": "550e8400e29b41d4a716446655440000",
+  "resourceId": "Z000000003",
+  "orderId": "550e8400e29b41d4a716446655440000",
+  "ref": "/v1/uno-connections/Z000000003",
+  "resourceType": "uno-connection",
+  "requestType": "create",
+  "orderStatus": "processing",
+  "creationTime": "2026-05-21T10:05:48+09:00",
+  "updateTime": "2026-05-21T10:05:48+09:00",
+  "request": {
+    "customerNote": "post intercept",
+    "vpnId": "V000000002",
+    "unoContractNumber": "N123456789",
+    "unoVpnId": "V12345678",
+    "unoApplicationDate": "2026-06-01"
+  },
+  "response": {
+    "statusCode": 202,
+    "message": {
+      "unoConnectionId": "Z000000003",
+      "tenantId": "550e8400e29b41d4a716446655440000",
+      "vpnId": "V000000002",
+      "ref": "/v1/uno-connections/Z000000003",
+      "resourceStatus": "inactive",
+      "orderId": "550e8400e29b41d4a716446655440000",
+      "orderStatus": "processing",
+      "creationTime": "2026-05-21T10:05:48+09:00",
+      "updateTime": "2026-05-21T10:05:48+09:00",
+      "serviceStartTime": null,
+      "customerNote": "post intercept",
+      "unoContractNumber": "N123456789",
+      "unoVpnId": "V12345678",
+      "unoInternalAddress": "10.128.2.0/26",
+      "unoApplicationDate": "2026-06-01"
+    },
+    "remarks": null
+  }
+}

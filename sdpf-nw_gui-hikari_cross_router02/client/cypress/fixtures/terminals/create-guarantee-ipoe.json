@@ -1,0 +1,147 @@
+{
+  "terminal": {
+    "customerNote": "端末新規作成ギャランティIPoEアクセス",
+    "terminalDeviceType": "router01",
+    "breakOut": [],
+    "interceptDnsServers": [],
+    "deliveryName": "山田　太郎",
+    "deliveryDepartmentName": "営業課",
+    "deliveryPhoneNumber": "03-0000-0000",
+    "deliveryPostalCode": "100-0005",
+    "deliveryAddress": "東京都千代田区丸の内",
+    "deliveryAddressKana": "トウキョウトチヨダクマルノウチ",
+    "deliveryDate": "2025-03-01",
+    "installationPostalCode": "100-0004",
+    "installationAddress": "東京都千代田区大手町",
+    "primaryCircuitType": "guarantee",
+    "secondaryCircuitType": "ipoe",
+    "guarantee": {
+      "guaranteeId": "Z000000004",
+      "vpn": {
+        "act": {
+          "connectedIpv4Prefix": "10.5.1.1/30"
+        },
+        "sby": {
+          "connectedIpv4Prefix": "10.5.2.1/30"
+        }
+      }
+    },
+    "ipoeId": "Z123456789",
+    "vpnId": "Z123456789",
+    "loopbackIpv4Address": "123.123.123.123",
+    "lanType": "routedPort",
+    "lans": [
+      {
+        "type": "primary",
+        "ipv4Address": "1.1.1.1",
+        "ipv4PrefixLength": "23",
+        "vpnRouting": false,
+        "portNumber": 2,
+        "vpnNats": [
+          { "type": "nat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" },
+          { "type": "partialNat", "innerIpv4Prefix": "1.1.1.1/1", "outerIpv4Prefix": "1.1.1.1/24" }
+        ],
+        "lanInFilters": {
+          "defaultPolicy": "discard",
+          "accessControlList": [
+            {
+              "action": "accept",
+              "protocol": "udp",
+              "sourcePort": "53",
+              "destinationPort": "53",
+              "sourceIpv4Prefix": "10.0.0.0/8",
+              "destinationIpv4Prefix": "172.16.0.0/12"
+            }
+          ]
+        }
+      },
+      {
+        "type": "primary",
+        "ipv4Address": "10.20.30.1",
+        "ipv4PrefixLength": "24",
+        "vpnRouting": true,
+        "portNumber": 3
+      }
+    ],
+    "lanStaticRoutes": [
+      {
+        "destinationIpv4Prefix": "12.12.12.12/12",
+        "nexthopIpv4Address": "13.13.13.13",
+        "vpnRouting": true,
+        "vpnNats": [
+          {
+            "type": "partialNat",
+            "innerIpv4Prefix": "2.2.2.2/1",
+            "outerIpv4Prefix": "2.2.2.2/24"
+          }
+        ]
+      }
+    ],
+    "wanStaticRoutes": [
+      {
+        "destinationIpv4Prefix": "5.5.5.5/5",
+        "nexthopNetwork": "vpn"
+      },
+      {
+        "destinationIpv4Prefix": "15.15.15.15/15",
+        "nexthopNetwork": "internet"
+      }
+    ],
+    "defaultGateway": {
+      "nexthopNetwork": "internet"
+    },
+    "vpnInFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "any",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "1.1.1.1/1",
+          "destinationIpv4Prefix": "1.1.1.1/24",
+          "action": "discard"
+        }
+      ]
+    },
+    "vpnOutFilters": {
+      "defaultPolicy": "discard",
+      "accessControlList": [
+        {
+          "protocol": "tcp",
+          "sourcePort": "80",
+          "destinationPort": "100",
+          "sourceIpv4Prefix": "2.2.2.2/1",
+          "destinationIpv4Prefix": "2.2.2.2/24",
+          "action": "accept"
+        }
+      ]
+    },
+    "inet4OutFilters": {
+      "defaultPolicy": "accept",
+      "accessControlList": [
+        {
+          "protocol": "icmp",
+          "sourcePort": "",
+          "destinationPort": "",
+          "sourceIpv4Prefix": "3.3.3.3/1",
+          "destinationIpv4Prefix": "3.3.3.3/2",
+          "action": "accept"
+        }
+      ]
+    },
+    "trafficReportFlowAnalyzer": {
+      "trafficReportFlowAnalyzerPlan": "20GB",
+      "trafficReportFlowAnalyzerAlert": true
+    },
+    "threatDetection": {
+      "threatDetectionPlan": "12months"
+    },
+    "flowCollector": {
+      "flowCollectorPlan": "6months"
+    },
+    "behaviorDetection": {
+      "behaviorDetectionPlan": "subscription"
+    }
+  },
+  "dhcpRelayServers": [{ "serverIpv4Address": "7.7.7.7" }, { "serverIpv4Address": "8.8.8.8" }]
+}
